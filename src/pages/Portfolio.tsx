@@ -53,7 +53,7 @@ const Portfolio = () => {
     }
   ]
 
-  const categories = ['All', 'Haircut', 'Beard', 'Shave']
+
 
   return (
     <div className="pt-16">

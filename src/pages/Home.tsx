@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Star, Award, Scissors, Clock, MapPin, Phone } from 'lucide-react'
+import { Star, Scissors, Clock } from 'lucide-react'
 import ParallaxHero from '../components/ParallaxHero'
 
 const Home = () => {

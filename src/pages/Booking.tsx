@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, Clock, User, Phone, Mail, MapPin, CheckCircle } from 'lucide-react'
+import { Clock, Phone, Mail, MapPin } from 'lucide-react'
 
 const Booking = () => {
   const [selectedService, setSelectedService] = useState('')

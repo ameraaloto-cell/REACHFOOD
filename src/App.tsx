@@ -15,7 +15,6 @@ import Contact from './pages/Contact'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
-  const [currentRoute, setCurrentRoute] = useState('/')
 
   useEffect(() => {
     // Simulate loading time for premium experience
