@@ -13,7 +13,7 @@ const Shop = () => {
       reviews: 127,
       features: ['8 self-heating meals', '2-year shelf life', 'No cooking equipment needed', 'Halal certified'],
       badge: 'Best Seller',
-      image: '/images/product 1.jpg',
+      image: '/images/product1.jpg',
       category: 'Emergency Relief'
     },
     {
