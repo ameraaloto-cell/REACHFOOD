@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { gsap } from 'gsap'
-import { Scissors, Award } from 'lucide-react'
+import { Zap, Flame } from 'lucide-react'
 
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0)
@@ -10,9 +10,9 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     const texts = [
       'Initializing...',
-      'Loading premium experience...',
-      'Preparing luxury interface...',
-      'Setting up Germany\'s Best Barber 2016...',
+      'Loading food technology...',
+      'Preparing nutrition interface...',
+      'Setting up self-heating innovation...',
       'Ready!'
     ]
 
@@ -38,7 +38,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   }, [onComplete])
 
   useEffect(() => {
-    gsap.to('.scissors-icon', {
+    gsap.to('.flame-icon', {
       rotation: 360,
       duration: 2,
       repeat: -1,
@@ -51,7 +51,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       <motion.div
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-dark-900 flex items-center justify-center"
+        className="fixed inset-0 z-50 bg-slate-900 flex items-center justify-center"
       >
         <div className="text-center">
           {/* Logo Animation */}
@@ -62,22 +62,22 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             className="mb-8"
           >
             <div className="relative">
-              <Scissors className="scissors-icon w-16 h-16 text-primary-400 mx-auto mb-4" />
-              <Award className="w-8 h-8 text-primary-400 absolute -top-2 -right-2" />
+              <Flame className="flame-icon w-16 h-16 text-teal-400 mx-auto mb-4" />
+              <Zap className="w-8 h-8 text-orange-400 absolute -top-2 -right-2" />
             </div>
-            <h1 className="text-4xl font-serif font-bold gradient-text">
-              AUX THE BARBER
+            <h1 className="text-4xl font-serif font-bold bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
+              ReachFood
             </h1>
-            <p className="text-primary-400 font-semibold mt-2">
-              Germany's Best Barber 2016
+            <p className="text-teal-400 font-semibold mt-2">
+              Revolutionary Self-Heating Technology
             </p>
           </motion.div>
 
           {/* Progress Bar */}
           <div className="w-80 mx-auto mb-6">
-            <div className="bg-dark-700 rounded-full h-2 overflow-hidden">
+            <div className="bg-slate-700 rounded-full h-2 overflow-hidden">
               <motion.div
-                className="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full"
+                className="bg-gradient-to-r from-teal-400 to-teal-600 h-full rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.3 }}
@@ -91,14 +91,14 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="text-gray-400 text-lg"
+            className="text-slate-400 text-lg"
           >
             {currentText}
           </motion.p>
 
           {/* Progress Percentage */}
           <motion.p
-            className="text-primary-400 font-bold text-2xl mt-4"
+            className="text-teal-400 font-bold text-2xl mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -111,4 +111,4 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   )
 }
 
-export default LoadingScreen 
+export default LoadingScreen

@@ -1,11 +1,125 @@
 import { motion } from 'framer-motion'
-import { Award, Scissors, Star, MapPin, Clock, Phone } from 'lucide-react'
+import { Atom, Globe, Lightbulb, Heart, Leaf } from 'lucide-react'
 
 const About = () => {
+  const foundingValues = [
+    {
+      icon: Lightbulb,
+      title: 'Innovation',
+      description: 'Pioneering breakthrough food technology that transforms how nutrition is accessed worldwide',
+      color: 'text-orange-400'
+    },
+    {
+      icon: Heart,
+      title: 'Impact',
+      description: 'Creating solutions for emergency relief, adventure, professional life, and family wellness',
+      color: 'text-red-400'
+    },
+    {
+      icon: Leaf,
+      title: 'Sustainability',
+      description: 'Building a circular economy where packaging becomes part of the natural ecosystem',
+      color: 'text-green-400'
+    },
+    {
+      icon: Globe,
+      title: 'Accessibility',
+      description: 'Ensuring nutrition is accessible to all communities regardless of circumstances or abilities',
+      color: 'text-blue-400'
+    }
+  ]
+
+  const teamMembers = [
+    {
+      name: 'Dr. Sarah Al-Rahman',
+      role: 'CEO & Co-Founder',
+      background: 'Former NASA food scientist with 15 years in space nutrition technology',
+      expertise: 'Food Science, Space Technology, Product Innovation',
+      image: '/api/placeholder/200/200'
+    },
+    {
+      name: 'Ahmed Kaseem',
+      role: 'CTO & Co-Founder',
+      background: 'Chemical engineer specializing in sustainable packaging and reaction chemistry',
+      expertise: 'Chemical Engineering, Sustainable Materials, Technology Development',
+      image: '/api/placeholder/200/200'
+    },
+    {
+      name: 'Dr. Maria Santos',
+      role: 'Head of Nutrition',
+      background: 'Registered dietitian and food technologist with expertise in emergency nutrition',
+      expertise: 'Clinical Nutrition, Food Safety, Cultural Cuisine',
+      image: '/api/placeholder/200/200'
+    },
+    {
+      name: 'Omar Ibrahim',
+      role: 'Head of Sustainability',
+      background: 'Environmental scientist focused on circular economy and biodegradable materials',
+      expertise: 'Environmental Science, Circular Economy, Biodegradable Packaging',
+      image: '/api/placeholder/200/200'
+    }
+  ]
+
+  const milestones = [
+    {
+      year: '2020',
+      title: 'Foundation',
+      description: 'ReachFood founded with mission to revolutionize emergency nutrition access'
+    },
+    {
+      year: '2021',
+      title: 'Technology Breakthrough',
+      description: 'Successfully developed safe, reliable self-heating technology using calcium oxide reactions'
+    },
+    {
+      year: '2022',
+      title: 'Sustainability Innovation',
+      description: 'Created first biodegradable packaging embedded with native wildflower seeds'
+    },
+    {
+      year: '2023',
+      title: 'Cultural Partnership',
+      description: 'Partnered with MENA culinary experts to ensure authentic flavors and Halal certification'
+    },
+    {
+      year: '2024',
+      title: 'Accessibility Integration',
+      description: 'Launched Braille labeling and audio scanning features for inclusive access'
+    },
+    {
+      year: '2025',
+      title: 'Global Scale',
+      description: 'Expanding to serve emergency organizations, outdoor enthusiasts, and corporate wellness programs'
+    }
+  ]
+
+  const stats = [
+    {
+      number: '5',
+      unit: 'Minutes',
+      description: 'Heating time from ambient to 65°C'
+    },
+    {
+      number: '100%',
+      unit: 'Biodegradable',
+      description: 'Packaging transforms into wildflowers'
+    },
+    {
+      number: '15+',
+      unit: 'Countries',
+      description: 'Emergency relief deployments'
+    },
+    {
+      number: '1M+',
+      unit: 'Meals',
+      description: 'Served in critical situations'
+    }
+  ]
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -13,23 +127,24 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <Award className="w-8 h-8 text-primary-400 mr-3" />
-              <span className="text-primary-400 font-semibold text-lg">
-                Germany's Best Barber 2016
+              <Atom className="w-8 h-8 text-teal-400 mr-3" />
+              <span className="text-teal-400 font-semibold text-lg">
+                Revolutionizing Nutrition Technology
               </span>
             </div>
             
-            <h1 className="section-title">About Sezer Soylu</h1>
-            <p className="section-subtitle">
-              Meet the master craftsman behind AUX THE BARBER. Discover the journey, 
-              passion, and dedication that earned Sezer the prestigious title of Germany's Best Barber 2016.
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">About ReachFood</h1>
+            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
+              We're on a mission to ensure that hot, nutritious meals are accessible to everyone, everywhere. 
+              Through groundbreaking self-heating technology and sustainable innovation, we're transforming 
+              how the world thinks about nutrition access.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 bg-dark-800">
+      {/* Mission & Story Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -37,47 +152,64 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-serif font-bold text-white mb-6">
-                The Journey to Excellence
+              <h2 className="text-3xl font-serif font-bold text-slate-900 mb-6">
+                Our Mission: Nutrition Without Limits
               </h2>
-              <div className="space-y-4 text-gray-300">
+              <div className="space-y-4 text-slate-700">
                 <p>
-                  Sezer Soylu's journey in the art of barbering began over 15 years ago, 
-                  driven by a passion for precision and a deep appreciation for the craft. 
-                  What started as an apprenticeship in traditional barbering techniques 
-                  evolved into a lifelong pursuit of excellence.
+                  ReachFood was born from a simple but powerful realization: access to hot, nutritious food 
+                  shouldn't depend on infrastructure, location, or circumstances. Whether you're an aid worker 
+                  in a crisis zone, an adventurer on a mountain peak, or a busy professional in the city, 
+                  everyone deserves quality nutrition.
                 </p>
                 <p>
-                  Through years of dedicated practice and continuous learning, Sezer 
-                  mastered both classic and contemporary barbering techniques. His 
-                  commitment to perfection and attention to detail quickly set him apart 
-                  in the industry, earning him recognition among peers and clients alike.
+                  Our founders, Dr. Sarah Al-Rahman and Ahmed Kaseem, combined their expertise in space food 
+                  technology and sustainable chemistry to create a solution that seemed impossible: meals that 
+                  heat themselves safely and completely, with packaging that gives back to the environment.
                 </p>
                 <p>
-                  In 2016, Sezer's exceptional skills, innovative techniques, and 
-                  unwavering dedication to customer satisfaction earned him the prestigious 
-                  title of Germany's Best Barber, a recognition that continues to inspire 
-                  his work every day.
+                  Today, ReachFood represents more than just innovative technology. We're building a movement 
+                  toward inclusive, sustainable nutrition that respects cultural heritage while serving the 
+                  most critical needs of our time.
                 </p>
               </div>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="bg-gradient-to-br from-teal-50 to-slate-50 rounded-xl p-8"
             >
-              <div className="aspect-square bg-dark-700 rounded-lg flex items-center justify-center">
-                <Scissors className="w-32 h-32 text-primary-400" />
+              <div className="grid grid-cols-2 gap-6">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.description}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-2xl md:text-3xl font-bold text-teal-600 mb-1">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm font-semibold text-slate-600 mb-2">
+                      {stat.unit}
+                    </div>
+                    <div className="text-xs text-slate-500">
+                      {stat.description}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Awards & Recognition */}
-      <section className="py-20 bg-dark-900">
+      {/* Values Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,182 +217,162 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Awards & Recognition</h2>
-            <p className="section-subtitle">
-              The accolades that validate our commitment to excellence
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="card text-center"
-            >
-              <Award className="w-16 h-16 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Germany's Best Barber 2016</h3>
-              <p className="text-gray-400">
-                National recognition for excellence in barbering, customer service, and innovation
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card text-center"
-            >
-              <Star className="w-16 h-16 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Customer Excellence Award</h3>
-              <p className="text-gray-400">
-                Consistent 5-star ratings and exceptional client satisfaction over 10+ years
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card text-center"
-            >
-              <Scissors className="w-16 h-16 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Master Craftsman Certification</h3>
-              <p className="text-gray-400">
-                Advanced certification in precision cutting and contemporary styling techniques
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-20 bg-dark-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="section-title">Our Philosophy</h2>
-            <p className="section-subtitle">
-              The principles that guide every cut, every style, and every client interaction
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Our Core Values</h2>
+            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
+              Every decision we make is guided by our commitment to innovation, impact, sustainability, and accessibility
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">1</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Precision</h3>
-              <p className="text-gray-400">
-                Every cut is executed with surgical precision and attention to detail
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Innovation</h3>
-              <p className="text-gray-400">
-                Combining traditional techniques with contemporary trends and styles
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Excellence</h3>
-              <p className="text-gray-400">
-                Unwavering commitment to delivering the highest quality service
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">4</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Experience</h3>
-              <p className="text-gray-400">
-                Creating memorable experiences that exceed client expectations
-              </p>
-            </motion.div>
+            {foundingValues.map((value, index) => {
+              const IconComponent = value.icon
+              return (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 text-center hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
+                  whileHover={{ 
+                    y: -5,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-800/50 mb-4"
+                  >
+                    <IconComponent className={`w-8 h-8 ${value.color}`} />
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                  <p className="text-teal-100 text-sm leading-relaxed">{value.description}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-20 bg-dark-900">
+      {/* Team Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <MapPin className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
-              <p className="text-gray-400">Berlin, Germany</p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Meet Our Team</h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              Our diverse team brings together expertise in food science, technology, sustainability, and cultural cuisine
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center"
-            >
-              <Clock className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Hours</h3>
-              <p className="text-gray-400">Mon-Sat: 9AM-8PM</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <Phone className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Contact</h3>
-              <p className="text-gray-400">+49 30 1234 5678</p>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300"
+                whileHover={{ 
+                  y: -5,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-teal-400 to-teal-500 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h3>
+                <p className="text-teal-600 font-medium text-sm mb-3">{member.role}</p>
+                <p className="text-slate-600 text-sm mb-3 leading-relaxed">{member.background}</p>
+                <div className="text-xs text-slate-500">
+                  <strong>Expertise:</strong> {member.expertise}
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Our Journey</h2>
+            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
+              From breakthrough innovation to global impact - the ReachFood timeline
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={milestone.year}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
+              >
+                <div className="text-2xl font-bold text-teal-400 mb-2">{milestone.year}</div>
+                <h3 className="text-lg font-semibold text-white mb-3">{milestone.title}</h3>
+                <p className="text-teal-100 text-sm leading-relaxed">{milestone.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+              Join the Nutrition Revolution
+            </h2>
+            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+              Whether you're interested in our technology, want to partner with us, or simply share our vision 
+              for accessible nutrition, we'd love to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="/contact"
+                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Partner With Us
+              </motion.a>
+              <motion.a
+                href="/services"
+                className="border-2 border-teal-500 text-teal-600 font-semibold py-4 px-8 rounded-lg hover:bg-teal-500 hover:text-white transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Our Technology
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
   )
 }
 
-export default About 
+export default About

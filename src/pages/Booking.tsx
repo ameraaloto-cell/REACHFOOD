@@ -1,298 +1,498 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Clock, Phone, Mail, MapPin } from 'lucide-react'
+import { 
+  ShoppingCart, 
+  Package, 
+  Truck, 
+  Shield, 
+  Clock, 
+  Star,
+  Check,
+  Zap,
+  Leaf,
+  Globe,
+  Heart
+} from 'lucide-react'
 
 const Booking = () => {
-  const [selectedService, setSelectedService] = useState('')
-  const [selectedDate, setSelectedDate] = useState('')
-  const [selectedTime, setSelectedTime] = useState('')
+  const [selectedPlan, setSelectedPlan] = useState('')
+  const [orderType, setOrderType] = useState<'one-time' | 'subscription'>('subscription')
   const [step, setStep] = useState(1)
 
-  const services = [
-    { id: 'premium-haircut', name: 'Premium Haircut', price: '€45', duration: '45 min' },
-    { id: 'executive-cut', name: 'Executive Cut', price: '€55', duration: '60 min' },
-    { id: 'beard-trim', name: 'Beard Trim & Style', price: '€25', duration: '30 min' },
-    { id: 'hot-towel-shave', name: 'Hot Towel Shave', price: '€35', duration: '40 min' },
-    { id: 'executive-package', name: 'The Executive Package', price: '€85', duration: '90 min' },
-    { id: 'vip-experience', name: 'The VIP Experience', price: '€120', duration: '120 min' }
+  const subscriptionPlans = [
+    {
+      id: 'emergency-prep',
+      name: 'Emergency Preparedness',
+      price: '$89.99',
+      period: 'monthly',
+      meals: 8,
+      description: 'Essential emergency nutrition for families and organizations',
+      features: ['High shelf-life meals', 'Emergency response support', 'Bulk storage friendly', 'Multi-language labels'],
+      icon: Shield,
+      color: 'text-red-400',
+      popular: false
+    },
+    {
+      id: 'adventure-explorer',
+      name: 'Adventure Explorer',
+      price: '$49.99',
+      period: 'monthly',
+      meals: 4,
+      description: 'Perfect for regular outdoor adventures and camping trips',
+      features: ['Lightweight packaging', 'High energy density', 'Weather resistant', 'Compact storage'],
+      icon: Globe,
+      color: 'text-green-400',
+      popular: true
+    },
+    {
+      id: 'professional-go',
+      name: 'Professional On-the-Go',
+      price: '$69.99',
+      period: 'monthly',
+      meals: 6,
+      description: 'Convenient nutrition for busy work schedules',
+      features: ['Office-friendly heating', 'Balanced nutrition', 'Quick consumption', 'Professional packaging'],
+      icon: Clock,
+      color: 'text-blue-400',
+      popular: false
+    },
+    {
+      id: 'family-wellness',
+      name: 'Family Wellness',
+      price: '$129.99',
+      period: 'monthly',
+      meals: 12,
+      description: 'Nutritious family meals for busy households',
+      features: ['Family-size portions', 'Kid-friendly options', 'Traditional flavors', 'Sharing meals'],
+      icon: Heart,
+      color: 'text-purple-400',
+      popular: false
+    }
   ]
 
-  const timeSlots = [
-    '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
-    '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
-    '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
-    '18:00', '18:30', '19:00', '19:30'
+  const oneTimePacks = [
+    {
+      id: 'emergency-starter',
+      name: 'Emergency Starter Pack',
+      price: '$49.99',
+      meals: 4,
+      description: '4 emergency relief meals for immediate preparedness'
+    },
+    {
+      id: 'adventure-weekend',
+      name: 'Adventure Weekend Pack',
+      price: '$29.99',
+      meals: 2,
+      description: '2 lightweight meals perfect for weekend adventures'
+    },
+    {
+      id: 'professional-week',
+      name: 'Professional Week Pack',
+      price: '$39.99',
+      meals: 3,
+      description: '3 office-friendly meals for busy work weeks'
+    },
+    {
+      id: 'family-trial',
+      name: 'Family Trial Pack',
+      price: '$59.99',
+      meals: 5,
+      description: '5 family-style meals to try our service'
+    }
   ]
 
-  const handleServiceSelect = (serviceId: string) => {
-    setSelectedService(serviceId)
+  const handlePlanSelect = (planId: string) => {
+    setSelectedPlan(planId)
     setStep(2)
-  }
-
-  const handleDateSelect = (date: string) => {
-    setSelectedDate(date)
-    setStep(3)
-  }
-
-  const handleTimeSelect = (time: string) => {
-    setSelectedTime(time)
-    setStep(4)
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle booking submission
-    console.log('Booking submitted:', { selectedService, selectedDate, selectedTime })
+    console.log('Order submitted:', { selectedPlan, orderType })
   }
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="section-title">Book Your Appointment</h1>
-            <p className="section-subtitle">
-              Experience luxury grooming with Germany's Best Barber 2016. 
-              Select your service and preferred time to secure your appointment.
+            <div className="flex items-center justify-center mb-6">
+              <Zap className="w-8 h-8 text-teal-400 mr-3" />
+              <span className="text-teal-400 font-semibold text-lg">
+                Revolutionary Meal Delivery
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Order Your Meals</h1>
+            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
+              Choose from our subscription plans for regular delivery or order individual meal packs. 
+              Hot, sustainable, and culturally authentic nutrition delivered to your door.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Booking Steps */}
-      <section className="py-20 bg-dark-800">
+      {/* Order Type Selection */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">
+              How would you like to order?
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className={`border-2 rounded-xl p-6 cursor-pointer transition-all ${
+                orderType === 'subscription' 
+                  ? 'border-teal-500 bg-teal-50' 
+                  : 'border-slate-200 hover:border-teal-300'
+              }`}
+              onClick={() => setOrderType('subscription')}
+            >
+              <div className="text-center">
+                <Package className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Subscription Plans</h3>
+                <p className="text-slate-600 mb-4">
+                  Regular delivery of meals tailored to your lifestyle with flexible scheduling and savings
+                </p>
+                <div className="flex items-center justify-center space-x-4 text-sm text-slate-500">
+                  <span className="flex items-center">
+                    <Check className="w-4 h-4 mr-1 text-green-500" />
+                    Save up to 20%
+                  </span>
+                  <span className="flex items-center">
+                    <Check className="w-4 h-4 mr-1 text-green-500" />
+                    Skip anytime
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className={`border-2 rounded-xl p-6 cursor-pointer transition-all ${
+                orderType === 'one-time' 
+                  ? 'border-teal-500 bg-teal-50' 
+                  : 'border-slate-200 hover:border-teal-300'
+              }`}
+              onClick={() => setOrderType('one-time')}
+            >
+              <div className="text-center">
+                <ShoppingCart className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">One-Time Purchase</h3>
+                <p className="text-slate-600 mb-4">
+                  Perfect for trying our meals or stocking up for specific needs and occasions
+                </p>
+                <div className="flex items-center justify-center space-x-4 text-sm text-slate-500">
+                  <span className="flex items-center">
+                    <Check className="w-4 h-4 mr-1 text-green-500" />
+                    No commitment
+                  </span>
+                  <span className="flex items-center">
+                    <Check className="w-4 h-4 mr-1 text-green-500" />
+                    Instant delivery
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex items-center justify-between mb-4">
-              {[1, 2, 3, 4].map((stepNumber) => (
+              {[1, 2, 3].map((stepNumber) => (
                 <div
                   key={stepNumber}
                   className={`flex items-center ${
-                    stepNumber < 4 ? 'flex-1' : ''
+                    stepNumber < 3 ? 'flex-1' : ''
                   }`}
                 >
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                       step >= stepNumber
-                        ? 'bg-primary-600 text-white'
-                        : 'bg-dark-700 text-gray-400'
+                        ? 'bg-teal-500 text-white'
+                        : 'bg-slate-200 text-slate-400'
                     }`}
                   >
                     {stepNumber}
                   </div>
-                  {stepNumber < 4 && (
+                  {stepNumber < 3 && (
                     <div
                       className={`flex-1 h-1 mx-2 ${
-                        step > stepNumber ? 'bg-primary-600' : 'bg-dark-700'
+                        step > stepNumber ? 'bg-teal-500' : 'bg-slate-200'
                       }`}
                     />
                   )}
                 </div>
               ))}
             </div>
-            <div className="flex justify-between text-sm text-gray-400">
-              <span>Select Service</span>
-              <span>Choose Date</span>
-              <span>Pick Time</span>
-              <span>Confirm</span>
+            <div className="flex justify-between text-sm text-slate-500">
+              <span>Select Plan</span>
+              <span>Customize</span>
+              <span>Checkout</span>
             </div>
           </div>
 
-          {/* Step 1: Service Selection */}
+          {/* Step 1: Plan Selection */}
           {step === 1 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-                Select Your Service
+              <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
+                {orderType === 'subscription' ? 'Choose Your Subscription Plan' : 'Select a Meal Pack'}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {services.map((service) => (
-                  <motion.div
-                    key={service.id}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="card cursor-pointer"
-                    onClick={() => handleServiceSelect(service.id)}
-                  >
-                    <div className="text-center">
-                      <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
-                      <div className="flex items-center justify-center space-x-4 mb-4">
-                        <span className="text-2xl font-bold text-primary-400">{service.price}</span>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-gray-400 flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {service.duration}
-                        </span>
+              
+              {orderType === 'subscription' ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {subscriptionPlans.map((plan) => {
+                    const IconComponent = plan.icon
+                    return (
+                      <motion.div
+                        key={plan.id}
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`relative border-2 rounded-xl p-6 cursor-pointer transition-all ${
+                          plan.popular 
+                            ? 'border-teal-500 shadow-lg' 
+                            : 'border-slate-200 hover:border-teal-300'
+                        }`}
+                        onClick={() => handlePlanSelect(plan.id)}
+                      >
+                        {plan.popular && (
+                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span className="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                              Most Popular
+                            </span>
+                          </div>
+                        )}
+                        
+                        <div className="text-center">
+                          <IconComponent className={`w-12 h-12 ${plan.color} mx-auto mb-4`} />
+                          <h3 className="text-xl font-semibold text-slate-900 mb-2">{plan.name}</h3>
+                          <div className="flex items-center justify-center space-x-2 mb-4">
+                            <span className="text-3xl font-bold text-teal-600">{plan.price}</span>
+                            <span className="text-slate-500">/{plan.period}</span>
+                          </div>
+                          <div className="text-slate-600 mb-4">
+                            {plan.meals} meals included
+                          </div>
+                          <p className="text-slate-600 mb-6 text-sm">{plan.description}</p>
+                          
+                          <div className="space-y-2">
+                            {plan.features.map((feature, index) => (
+                              <div key={index} className="flex items-center space-x-2 text-sm">
+                                <Check className="w-4 h-4 text-teal-500 flex-shrink-0" />
+                                <span className="text-slate-700">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {oneTimePacks.map((pack) => (
+                    <motion.div
+                      key={pack.id}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="border-2 border-slate-200 hover:border-teal-300 rounded-xl p-6 cursor-pointer transition-all"
+                      onClick={() => handlePlanSelect(pack.id)}
+                    >
+                      <div className="text-center">
+                        <Package className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                        <h3 className="text-xl font-semibold text-slate-900 mb-2">{pack.name}</h3>
+                        <div className="flex items-center justify-center space-x-2 mb-4">
+                          <span className="text-3xl font-bold text-teal-600">{pack.price}</span>
+                        </div>
+                        <div className="text-slate-600 mb-4">
+                          {pack.meals} meals included
+                        </div>
+                        <p className="text-slate-600 text-sm">{pack.description}</p>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </motion.div>
           )}
 
-          {/* Step 2: Date Selection */}
+          {/* Step 2: Customization */}
           {step === 2 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-                Choose Your Date
+              <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
+                Customize Your Order
               </h2>
-              <div className="grid grid-cols-7 gap-2">
-                {Array.from({ length: 14 }, (_, i) => {
-                  const date = new Date()
-                  date.setDate(date.getDate() + i)
-                  const dateString = date.toISOString().split('T')[0]
-                  const dayName = date.toLocaleDateString('en-US', { weekday: 'short' })
-                  const dayNumber = date.getDate()
-                  
-                  return (
-                    <motion.button
-                      key={dateString}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`p-4 rounded-lg text-center ${
-                        selectedDate === dateString
-                          ? 'bg-primary-600 text-white'
-                          : 'bg-dark-700 text-gray-300 hover:bg-dark-600'
-                      }`}
-                      onClick={() => handleDateSelect(dateString)}
-                    >
-                      <div className="text-xs mb-1">{dayName}</div>
-                      <div className="text-lg font-semibold">{dayNumber}</div>
-                    </motion.button>
-                  )
-                })}
+              
+              <div className="bg-slate-50 rounded-xl p-6 mb-8">
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">Selected Plan</h3>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-700">
+                    {orderType === 'subscription' 
+                      ? subscriptionPlans.find(p => p.id === selectedPlan)?.name
+                      : oneTimePacks.find(p => p.id === selectedPlan)?.name
+                    }
+                  </span>
+                  <span className="text-teal-600 font-bold">
+                    {orderType === 'subscription' 
+                      ? subscriptionPlans.find(p => p.id === selectedPlan)?.price
+                      : oneTimePacks.find(p => p.id === selectedPlan)?.price
+                    }
+                  </span>
+                </div>
               </div>
+
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-slate-700 font-medium mb-2">Delivery Frequency</label>
+                  <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none">
+                    <option>Every 4 weeks</option>
+                    <option>Every 6 weeks</option>
+                    <option>Every 8 weeks</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-slate-700 font-medium mb-2">Dietary Preferences</label>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {['Halal', 'Vegetarian', 'Vegan', 'Gluten-Free'].map((diet) => (
+                      <label key={diet} className="flex items-center space-x-2">
+                        <input type="checkbox" className="text-teal-500" />
+                        <span className="text-slate-700">{diet}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-slate-700 font-medium mb-2">Special Instructions</label>
+                  <textarea
+                    className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
+                    rows={3}
+                    placeholder="Any special dietary needs or delivery instructions..."
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={() => setStep(3)}
+                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
+              >
+                Continue to Checkout
+              </button>
             </motion.div>
           )}
 
-          {/* Step 3: Time Selection */}
+          {/* Step 3: Checkout */}
           {step === 3 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-                Select Your Time
+              <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
+                Complete Your Order
               </h2>
-              <div className="grid grid-cols-4 md:grid-cols-6 gap-3">
-                {timeSlots.map((time) => (
-                  <motion.button
-                    key={time}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`p-3 rounded-lg text-center ${
-                      selectedTime === time
-                        ? 'bg-primary-600 text-white'
-                        : 'bg-dark-700 text-gray-300 hover:bg-dark-600'
-                    }`}
-                    onClick={() => handleTimeSelect(time)}
-                  >
-                    {time}
-                  </motion.button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* Step 4: Confirmation */}
-          {step === 4 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="space-y-6"
-            >
-              <h2 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-                Confirm Your Booking
-              </h2>
-              
-              <div className="card">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Service:</span>
-                    <span className="text-white font-semibold">
-                      {services.find(s => s.id === selectedService)?.name}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Date:</span>
-                    <span className="text-white font-semibold">
-                      {new Date(selectedDate).toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Time:</span>
-                    <span className="text-white font-semibold">{selectedTime}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Price:</span>
-                    <span className="text-primary-400 font-bold text-xl">
-                      {services.find(s => s.id === selectedService)?.price}
-                    </span>
-                  </div>
-                </div>
-              </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-300 mb-2">Full Name</label>
+                    <label className="block text-slate-700 font-medium mb-2">Full Name</label>
                     <input
                       type="text"
                       required
-                      className="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-primary-400 focus:outline-none"
+                      className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-300 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      required
-                      className="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-primary-400 focus:outline-none"
-                      placeholder="+49 30 1234 5678"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">Email</label>
+                    <label className="block text-slate-700 font-medium mb-2">Email</label>
                     <input
                       type="email"
                       required
-                      className="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-primary-400 focus:outline-none"
+                      className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
                       placeholder="your@email.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-300 mb-2">Special Requests</label>
-                    <textarea
-                      className="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-primary-400 focus:outline-none"
-                      rows={3}
-                      placeholder="Any special requests or notes..."
+                    <label className="block text-slate-700 font-medium mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      required
+                      className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-700 font-medium mb-2">Delivery Address</label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
+                      placeholder="Street address"
                     />
                   </div>
                 </div>
 
-                <button type="submit" className="btn-primary w-full text-lg py-4">
-                  Confirm Booking
+                <div className="bg-slate-50 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-4">Order Summary</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Plan:</span>
+                      <span>
+                        {orderType === 'subscription' 
+                          ? subscriptionPlans.find(p => p.id === selectedPlan)?.name
+                          : oneTimePacks.find(p => p.id === selectedPlan)?.name
+                        }
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Meals:</span>
+                      <span>
+                        {orderType === 'subscription' 
+                          ? subscriptionPlans.find(p => p.id === selectedPlan)?.meals
+                          : oneTimePacks.find(p => p.id === selectedPlan)?.meals
+                        } meals
+                      </span>
+                    </div>
+                    <div className="border-t pt-2 flex justify-between font-bold">
+                      <span>Total:</span>
+                      <span>
+                        {orderType === 'subscription' 
+                          ? subscriptionPlans.find(p => p.id === selectedPlan)?.price
+                          : oneTimePacks.find(p => p.id === selectedPlan)?.price
+                        }
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all">
+                  Complete Order
                 </button>
               </form>
             </motion.div>
@@ -303,7 +503,7 @@ const Booking = () => {
             <div className="flex justify-between mt-8">
               <button
                 onClick={() => setStep(step - 1)}
-                className="btn-secondary"
+                className="border-2 border-slate-300 text-slate-700 px-6 py-2 rounded-lg hover:border-slate-400 transition-colors"
               >
                 Back
               </button>
@@ -312,44 +512,64 @@ const Booking = () => {
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-20 bg-dark-900">
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <MapPin className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
-              <p className="text-gray-400">Berlin, Germany</p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Why Choose ReachFood?</h2>
+            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
+              More than just convenience - we're committed to your nutrition and our planet
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center"
-            >
-              <Phone className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-              <p className="text-gray-400">+49 30 1234 5678</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <Mail className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-              <p className="text-gray-400">info@auxthebarber.com</p>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Truck,
+                title: 'Free Shipping',
+                description: 'Free delivery on all subscription plans',
+                color: 'text-blue-400'
+              },
+              {
+                icon: Shield,
+                title: 'Quality Guarantee',
+                description: '100% satisfaction or your money back',
+                color: 'text-green-400'
+              },
+              {
+                icon: Leaf,
+                title: 'Sustainable',
+                description: 'Plantable packaging that grows into herbs',
+                color: 'text-teal-400'
+              },
+              {
+                icon: Star,
+                title: 'Premium Quality',
+                description: 'Restaurant-quality meals with authentic flavors',
+                color: 'text-yellow-400'
+              }
+            ].map((benefit, index) => {
+              const IconComponent = benefit.icon
+              return (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <IconComponent className={`w-12 h-12 ${benefit.color} mx-auto mb-4`} />
+                  <h3 className="text-xl font-semibold text-white mb-2">{benefit.title}</h3>
+                  <p className="text-teal-100">{benefit.description}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

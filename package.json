@@ -1,5 +1,5 @@
 {
-  "name": "aux-the-barber",
+  "name": "reachfood-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react-router-dom": "^5.3.3",
+    "@types/three": "^0.179.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.23.11",
     "gsap": "^3.13.0",
