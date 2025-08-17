@@ -4,9 +4,10 @@ const ParallaxHero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image - Full Display */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/bannger.jpg)' }}
+      <img 
+        src="/images/bannger.jpg"
+        alt="ReachFood hero background"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       
       {/* Content Container */}

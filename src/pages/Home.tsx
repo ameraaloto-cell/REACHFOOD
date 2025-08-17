@@ -282,10 +282,11 @@ const Home = () => {
 
       {/* Technology Showcase Section */}
       <section className="py-20 relative bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: 'url(/images/bannger.jpg)' }}
-        ></div>
+        <img 
+          src="/images/bannger.jpg"
+          alt="Technology showcase background"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-teal-900/70 to-slate-900/70"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <motion.div

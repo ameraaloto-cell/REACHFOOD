@@ -212,10 +212,11 @@ const About = () => {
       {/* Founding Values */}
       <section className="py-20 relative bg-white">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/owners.jpg)' }}
-        ></div>
+        <img 
+          src="/images/owners.jpg"
+          alt="ReachFood founders background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-slate-900/70"></div>
         
