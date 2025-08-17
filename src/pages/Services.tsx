@@ -1,163 +1,132 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  ShoppingBag, 
-  CheckCircle, 
-  Flame, 
-  Leaf, 
   Shield, 
+  Mountain, 
+  Building, 
+  Heart,
   Globe,
   Zap,
-  Heart,
-  Mountain,
-  Building
+  Users,
+  Truck,
+  Clock,
+  Award
 } from 'lucide-react'
 
 const Services = () => {
-  const mealCategories = [
+  const serviceCategories = [
     {
-      category: 'Emergency Relief Meals',
+      category: 'Emergency Relief Services',
       icon: Shield,
       color: 'text-red-400',
       bgColor: 'bg-red-500/10',
-      items: [
-        {
-          name: 'Hearty Beef Stew',
-          price: '$12.99',
-          servings: '2 servings',
-          description: 'Slow-cooked beef with root vegetables in a rich bone broth. High protein and nutrient density for emergency situations.',
-          features: ['High protein content', 'Extended shelf life', 'No cooking equipment needed', 'Halal certified'],
-          badge: 'Best Seller',
-          image: '/api/placeholder/300/200'
-        },
-        {
-          name: 'Lentil & Vegetable Soup',
-          price: '$11.99',
-          servings: '2 servings',
-          description: 'Protein-rich lentils with aromatic vegetables and spices. Perfect for vegetarian emergency nutrition.',
-          features: ['Plant-based protein', 'Fiber rich', 'Essential vitamins', 'Gluten-free'],
-          badge: 'Vegan',
-          image: '/api/placeholder/300/200'
-        },
-        {
-          name: 'Chicken & Rice Pilaf',
-          price: '$12.99',
-          servings: '2 servings',
-          description: 'Tender chicken and fragrant rice with traditional MENA spices. A comforting, familiar taste.',
-          features: ['Complete protein', 'Complex carbohydrates', 'Traditional flavors', 'Quick heating'],
-          badge: 'New',
-          image: '/api/placeholder/300/200'
-        }
-      ]
+      description: 'Rapid nutrition deployment for disaster zones and crisis situations',
+      applications: [
+        'Disaster response and relief operations',
+        'Refugee camp nutrition programs',
+        'Emergency preparedness kits',
+        'First responder support'
+      ],
+      image: '/images/1.jpg',
+      stats: { deployments: '15+ countries', response: '24-hour', capacity: '10,000+ meals' }
     },
     {
-      category: 'Adventure Meals',
+      category: 'Adventure & Outdoor Services',
       icon: Mountain,
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
-      items: [
-        {
-          name: 'Moroccan Tagine',
-          price: '$13.99',
-          servings: '1 serving',
-          description: 'Authentic Moroccan spices with vegetables and chickpeas. Lightweight and energy-dense for outdoor adventures.',
-          features: ['Lightweight packaging', 'High energy density', 'Authentic spices', 'Compact size'],
-          badge: 'Adventure Pro',
-          image: '/api/placeholder/300/200'
-        },
-        {
-          name: 'Turkish Lamb Curry',
-          price: '$14.99',
-          servings: '1 serving',
-          description: 'Rich lamb curry with aromatic spices and tender vegetables. Perfect for cold mountain nights.',
-          features: ['High calorie content', 'Warming spices', 'Premium ingredients', 'Weather resistant'],
-          badge: 'Premium',
-          image: '/api/placeholder/300/200'
-        }
-      ]
+      description: 'Lightweight nutrition solutions for extreme environments and outdoor activities',
+      applications: [
+        'Mountain climbing expeditions',
+        'Military field operations',
+        'Remote research stations',
+        'Extended camping trips'
+      ],
+      image: '/images/2.jpg',
+      stats: { altitude: '8,000m tested', weight: '40% lighter', temperature: '-40°C rated' }
     },
     {
-      category: 'Professional Quick Meals',
+      category: 'Corporate Wellness Services',
       icon: Building,
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
-      items: [
-        {
-          name: 'Mediterranean Bowl',
-          price: '$11.99',
-          servings: '1 serving',
-          description: 'Balanced nutrition with quinoa, vegetables, and olive oil. Perfect for busy work schedules.',
-          features: ['Balanced nutrition', 'Office-friendly', 'No mess heating', 'Sustained energy'],
-          badge: 'Office Favorite',
-          image: '/api/placeholder/300/200'
-        },
-        {
-          name: 'Protein Power Bowl',
-          price: '$13.99',
-          servings: '1 serving',
-          description: 'High-protein blend of legumes, grains, and vegetables. Ideal for active professionals.',
-          features: ['25g protein', 'Sustained energy', 'Mental clarity', 'Quick consumption'],
-          badge: 'High Protein',
-          image: '/api/placeholder/300/200'
-        }
-      ]
+      description: 'Office-friendly nutrition programs for busy professionals and teams',
+      applications: [
+        '24/7 workplace nutrition',
+        'Remote worker meal programs',
+        'Conference and event catering',
+        'Shift worker nutrition support'
+      ],
+      image: '/images/3.jpg',
+      stats: { companies: '200+ served', productivity: '+25% reported', satisfaction: '98% rating' }
     },
     {
-      category: 'Family Wellness Meals',
+      category: 'Healthcare & Senior Services',
       icon: Heart,
+      color: 'text-pink-400',
+      bgColor: 'bg-pink-500/10',
+      description: 'Specialized nutrition support for healthcare facilities and senior communities',
+      applications: [
+        'Hospital patient nutrition',
+        'Senior living facilities',
+        'Home healthcare support',
+        'Therapeutic diet programs'
+      ],
+      image: '/images/4.jpg',
+      stats: { facilities: '150+ partners', compliance: '100% dietary', satisfaction: '96% rating' }
+    },
+    {
+      category: 'Educational Institution Services',
+      icon: Users,
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
-      items: [
-        {
-          name: 'Kids\' Favorite Pasta',
-          price: '$10.99',
-          servings: '2 servings',
-          description: 'Child-friendly pasta with hidden vegetables and familiar flavors. Nutritious and appealing to young palates.',
-          features: ['Kid-approved taste', 'Hidden vegetables', 'No artificial colors', 'Family size'],
-          badge: 'Kid Friendly',
-          image: '/api/placeholder/300/200'
-        },
-        {
-          name: 'Grandma\'s Comfort Stew',
-          price: '$12.99',
-          servings: '3 servings',
-          description: 'Traditional home-style stew with tender meat and vegetables. Brings families together around nourishing meals.',
-          features: ['Family recipe', 'Comfort food', 'Sharing size', 'Traditional spices'],
-          badge: 'Family Size',
-          image: '/api/placeholder/300/200'
-        }
-      ]
+      description: 'Campus nutrition solutions for students and educational programs',
+      applications: [
+        'University dining programs',
+        'School emergency preparedness',
+        'Field study expeditions',
+        'International exchange programs'
+      ],
+      image: '/images/5.jpg',
+      stats: { students: '50,000+ served', schools: '75+ institutions', nutrition: '100% balanced' }
+    },
+    {
+      category: 'Global Distribution Services',
+      icon: Globe,
+      color: 'text-teal-400',
+      bgColor: 'bg-teal-500/10',
+      description: 'Worldwide supply chain and distribution network for scalable nutrition access',
+      applications: [
+        'International aid distribution',
+        'Remote location delivery',
+        'Bulk institutional supply',
+        'Custom packaging solutions'
+      ],
+      image: '/images/6.jpg',
+      stats: { countries: '25+ active', logistics: '48-hour delivery', scale: '1M+ meals/month' }
     }
   ]
 
-  const subscriptionPlans = [
+  const keyFeatures = [
     {
-      name: 'Emergency Preparedness',
-      price: '$89.99',
-      period: 'monthly',
-      meals: '8 meals',
-      description: 'Essential emergency nutrition for families and organizations'
+      icon: Zap,
+      title: '3-5 Minute Activation',
+      description: 'Revolutionary self-heating technology that works anywhere'
     },
     {
-      name: 'Adventure Explorer',
-      price: '$49.99',
-      period: 'monthly',
-      meals: '4 meals',
-      description: 'Perfect for regular outdoor adventures and camping trips'
+      icon: Clock,
+      title: '24/7 Availability',
+      description: 'Round-the-clock support and emergency response capabilities'
     },
     {
-      name: 'Professional On-the-Go',
-      price: '$69.99',
-      period: 'monthly',
-      meals: '6 meals',
-      description: 'Convenient nutrition for busy work schedules'
+      icon: Award,
+      title: 'Certified Quality',
+      description: 'Halal certified, FDA approved, and accessibility compliant'
     },
     {
-      name: 'Family Wellness',
-      price: '$129.99',
-      period: 'monthly',
-      meals: '12 meals',
-      description: 'Nutritious family meals for busy households'
+      icon: Truck,
+      title: 'Global Delivery',
+      description: 'Worldwide distribution network with rapid deployment'
     }
   ]
 
@@ -172,117 +141,47 @@ const Services = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <Flame className="w-8 h-8 text-teal-400 mr-3" />
+              <Globe className="w-8 h-8 text-teal-400 mr-3" />
               <span className="text-teal-400 font-semibold text-lg">
-                Revolutionary Self-Heating Technology
+                Global Nutrition Services
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Curated Meal Kits</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Service Categories</h1>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Carefully crafted to suit diverse lifestyles and nutritional needs. Made with real ingredients 
-              and cultural authenticity, each meal is packed with rich flavor and supports improved wellness.
+              Comprehensive nutrition solutions tailored to diverse environments and communities. 
+              From emergency relief to corporate wellness, we deliver hot, nutritious meals anywhere they're needed.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Meal Categories Grid */}
-      <section className="py-20 bg-white">
+      {/* Key Features Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {mealCategories.map((category, categoryIndex) => {
-            const IconComponent = category.icon
-            return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {keyFeatures.map((feature, index) => (
               <motion.div
-                key={category.category}
+                key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ delay: categoryIndex * 0.2 }}
-                className="mb-16"
+                className="text-center"
               >
-                <div className="flex items-center justify-center mb-8">
-                  <IconComponent className={`w-8 h-8 ${category.color} mr-3`} />
-                  <h2 className="text-3xl font-serif font-bold text-slate-900">
-                    {category.category}
-                  </h2>
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-100 flex items-center justify-center">
+                  <feature.icon className="w-8 h-8 text-teal-600" />
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {category.items.map((meal, index) => (
-                    <motion.div
-                      key={meal.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: (categoryIndex * 0.2) + (index * 0.1) }}
-                      className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 hover:border-teal-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
-                      whileHover={{ 
-                        scale: 1.05,
-                        y: -10,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      {/* Product Image */}
-                      <div className="relative mb-4 overflow-hidden rounded-lg">
-                        <img 
-                          src={meal.image} 
-                          alt={meal.name}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                        {meal.badge && (
-                          <div className="absolute top-3 right-3 bg-teal-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            {meal.badge}
-                          </div>
-                        )}
-                        <div className="absolute bottom-3 left-3 bg-black/70 text-white px-2 py-1 rounded-full text-xs">
-                          <Zap className="w-3 h-3 inline mr-1" />
-                          5 min heating
-                        </div>
-                      </div>
-
-                      <div className="text-center mb-6">
-                        <h3 className="text-xl font-semibold text-slate-900 mb-2">{meal.name}</h3>
-                        <div className="flex items-center justify-center space-x-4 mb-4">
-                          <span className="text-2xl font-bold text-teal-600">{meal.price}</span>
-                          <span className="text-slate-500">•</span>
-                          <span className="text-slate-600 flex items-center">
-                            <ShoppingBag className="w-4 h-4 mr-1" />
-                            {meal.servings}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-slate-600 mb-6 text-center text-sm leading-relaxed">{meal.description}</p>
-                      
-                      <div className="space-y-2 mb-6">
-                        {meal.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="w-4 h-4 text-teal-500 flex-shrink-0" />
-                            <span className="text-slate-700 text-sm">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className="flex space-x-2">
-                        <Link to="/shop" className="bg-gradient-to-r from-teal-500 to-teal-600 text-white py-2 px-4 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all flex-1 text-center font-semibold">
-                          Add to Cart
-                        </Link>
-                        <Link to="/booking" className="border-2 border-teal-500 text-teal-600 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-all font-semibold">
-                          Subscribe
-                        </Link>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{feature.title}</h3>
+                <p className="text-slate-600 text-sm">{feature.description}</p>
               </motion.div>
-            )
-          })}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Subscription Plans Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+      {/* Service Categories Section */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -290,48 +189,66 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Subscription Plans</h2>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Regular delivery of nutrition solutions tailored to your lifestyle and needs
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Our Service Solutions</h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              Specialized nutrition services designed for specific environments, communities, and use cases
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subscriptionPlans.map((plan, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {serviceCategories.map((service, index) => (
               <motion.div
-                key={plan.name}
+                key={service.category}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-slate-800/50 backdrop-blur-sm border-2 border-teal-700/30 hover:border-teal-500/50 rounded-xl p-6 text-center hover:scale-105 transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.05,
-                  y: -5,
-                  transition: { duration: 0.3 }
-                }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-white mb-2">{plan.name}</h3>
-                  <div className="flex items-center justify-center space-x-1 mb-2">
-                    <span className="text-2xl font-bold text-teal-400">{plan.price}</span>
-                    <span className="text-teal-200">/{plan.period}</span>
-                  </div>
-                  <div className="text-teal-200 text-sm mb-4">
-                    {plan.meals} included
+                <div className="relative h-48">
+                  <img 
+                    src={service.image} 
+                    alt={service.category}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className={`absolute top-4 left-4 p-3 rounded-full ${service.bgColor}`}>
+                    <service.icon className={`w-6 h-6 ${service.color}`} />
                   </div>
                 </div>
-                <p className="text-teal-100 text-sm mb-6 leading-relaxed">{plan.description}</p>
-                <Link to="/booking" className="bg-gradient-to-r from-teal-500 to-teal-600 text-white py-2 px-6 rounded-lg hover:from-teal-400 hover:to-teal-500 transition-all font-semibold w-full block text-center">
-                  Subscribe Now
-                </Link>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.category}</h3>
+                  <p className="text-slate-600 mb-4">{service.description}</p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-slate-700 mb-2">Key Applications:</h4>
+                    <ul className="space-y-1">
+                      {service.applications.map((app, appIndex) => (
+                        <li key={appIndex} className="text-sm text-slate-600 flex items-start">
+                          <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                          {app}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200">
+                    {Object.entries(service.stats).map(([key, value]) => (
+                      <div key={key} className="text-center">
+                        <div className="text-sm font-semibold text-teal-600">{value}</div>
+                        <div className="text-xs text-slate-500 capitalize">{key}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose ReachFood */}
+      {/* Why Choose Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -341,54 +258,46 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-              Why Choose ReachFood?
+              Why Choose R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D Services?
             </h2>
             <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
-              Revolutionary technology meets sustainable innovation to deliver nutrition wherever you need it most
+              Comprehensive nutrition solutions backed by revolutionary technology and global expertise
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <Zap className="w-16 h-16 text-teal-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">5-Minute Hot Meals</h3>
-              <p className="text-slate-600">
-                Revolutionary self-heating technology delivers hot, nutritious meals anywhere without cooking equipment
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center"
-            >
-              <Leaf className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Sustainable Innovation</h3>
-              <p className="text-slate-600">
-                Our packaging transforms into plantable seeds, creating a truly circular, sustainable food system
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <Globe className="w-16 h-16 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Cultural Authenticity</h3>
-              <p className="text-slate-600">
-                MENA-inspired flavors with Halal certification and accessibility features for everyone
-              </p>
-            </motion.div>
+            {[
+              {
+                title: 'Proven Reliability',
+                description: 'Deployed in 25+ countries with 99.9% success rate in critical situations',
+                icon: Shield
+              },
+              {
+                title: 'Scalable Solutions',
+                description: 'From individual meals to large-scale institutional deployments',
+                icon: Zap
+              },
+              {
+                title: 'Global Support',
+                description: '24/7 worldwide support network with rapid response capabilities',
+                icon: Globe
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-teal-100 flex items-center justify-center">
+                  <benefit.icon className="w-8 h-8 text-teal-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">{benefit.title}</h3>
+                <p className="text-slate-600">{benefit.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -402,17 +311,23 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Ready to Revolutionize Your Meals?
+              Ready to Deploy Nutrition Solutions?
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-              Join thousands who've discovered the future of nutrition. Hot, sustainable, culturally authentic meals - anytime, anywhere.
+              Contact our team to discuss your specific requirements and create a custom nutrition solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/shop" className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all">
-                Order Individual Meals
+              <Link
+                to="/contact"
+                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
+              >
+                Contact Our Team
               </Link>
-              <Link to="/booking" className="bg-white text-slate-900 font-semibold py-4 px-8 rounded-lg hover:bg-slate-100 transition-colors">
-                Start Subscription
+              <Link
+                to="/shop"
+                className="border-2 border-teal-400 text-teal-300 font-semibold py-4 px-8 rounded-lg hover:bg-teal-400 hover:text-white transition-all"
+              >
+                Browse Products
               </Link>
             </div>
           </motion.div>
@@ -422,4 +337,4 @@ const Services = () => {
   )
 }
 
-export default Services 
+export default Services

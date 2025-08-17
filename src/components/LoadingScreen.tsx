@@ -66,7 +66,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               <Zap className="w-8 h-8 text-orange-400 absolute -top-2 -right-2" />
             </div>
             <h1 className="text-4xl font-serif font-bold bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
-              ReachFood
+              R<span className="text-orange-400 bg-none">E</span>ACHF<span className="text-orange-400 bg-none">OO</span>D
             </h1>
             <p className="text-teal-400 font-semibold mt-2">
               Revolutionary Self-Heating Technology

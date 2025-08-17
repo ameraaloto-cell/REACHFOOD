@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  Star, 
   Shield, 
   Leaf, 
   Globe, 
@@ -77,60 +76,54 @@ const Home = () => {
     }
   ]
 
-  const testimonials = [
+  const technologyImpacts = [
     {
-      name: 'Dr. Sarah Ahmed',
-      role: 'Emergency Response Coordinator, Red Cross',
-      organization: 'International Red Cross',
-      rating: 5,
-      text: 'ReachFood has revolutionized how we provide nutrition in crisis situations. When infrastructure is destroyed, these meals literally save lives. The 5-minute heating without power is a miracle.',
-      image: '/api/placeholder/60/60',
-      location: 'Field Operations, Syria'
+      icon: Globe,
+      title: 'Global Reach Ready',
+      metric: '50+ Countries',
+      description: 'Deployment capability with rapid international distribution network',
+      color: 'text-blue-500',
+      bgColor: 'bg-blue-100'
     },
     {
-      name: 'Captain James Rodriguez',
-      role: 'Search & Rescue Team Leader',
-      organization: 'Mountain Rescue Service',
-      rating: 5,
-      text: 'In extreme conditions at 14,000 feet, when every ounce matters and weather is brutal, ReachFood delivers hot nutrition that keeps our team operational. This technology saves missions.',
-      image: '/api/placeholder/60/60',
-      location: 'Colorado Rockies'
+      icon: Leaf,
+      title: 'Environmental Impact',
+      metric: '100% Sustainable',
+      description: 'Every package becomes wildflowers, reducing waste completely',
+      color: 'text-green-500',
+      bgColor: 'bg-green-100'
     },
     {
-      name: 'Amira Hassan',
-      role: 'Corporate Wellness Director',
-      organization: 'Tech Innovation Hub',
-      rating: 5,
-      text: 'Our 24/7 development teams needed nutrition that fits their schedule. ReachFood eliminated the unhealthy midnight fast food runs and boosted productivity with proper nutrition.',
-      image: '/api/placeholder/60/60',
-      location: 'Dubai Technology Park'
+      icon: Zap,
+      title: 'Technology Innovation',
+      metric: '99.9% Reliability',
+      description: '5-minute heating works in extreme conditions from -40°C to 60°C',
+      color: 'text-orange-500',
+      bgColor: 'bg-orange-100'
     },
     {
-      name: 'Maria Santos',
-      role: 'Single Mother & Nurse',
-      organization: 'City General Hospital',
-      rating: 5,
-      text: 'Between 12-hour shifts and raising two kids, ReachFood gives me peace of mind. Healthy meals ready in 5 minutes, and my children love that the packaging grows flowers in our garden.',
-      image: '/api/placeholder/60/60',
-      location: 'São Paulo, Brazil'
+      icon: UserCheck,
+      title: 'Accessibility Features',
+      metric: 'Universal Design',
+      description: 'Braille labeling, audio scanning, and inclusive nutrition access',
+      color: 'text-purple-500',
+      bgColor: 'bg-purple-100'
     },
     {
-      name: 'Ahmad Khalil',
-      role: 'Humanitarian Aid Worker',
-      organization: 'UN World Food Programme',
-      rating: 5,
-      text: 'In refugee camps where cooking fuel is scarce and dangerous, ReachFood provides dignity through hot meals. The cultural authenticity means families can maintain their food traditions.',
-      image: '/api/placeholder/60/60',
-      location: 'Jordan Refugee Camps'
+      icon: Heart,
+      title: 'Cultural Authenticity',
+      metric: '25+ Recipes',
+      description: 'Traditional MENA flavors with Halal certification and cultural respect',
+      color: 'text-red-500',
+      bgColor: 'bg-red-100'
     },
     {
-      name: 'Dr. Emily Chen',
-      role: 'Expedition Leader',
-      organization: 'Arctic Research Institute',
-      rating: 5,
-      text: 'At -40°C in the Arctic, when every calorie counts for survival, ReachFood delivers hot nutrition that keeps our research team healthy and focused on critical climate research.',
-      image: '/api/placeholder/60/60',
-      location: 'Arctic Research Station'
+      icon: Shield,
+      title: 'Emergency Ready',
+      metric: '2-Year Shelf Life',
+      description: 'No power required, works anywhere, perfect for crisis response',
+      color: 'text-teal-500',
+      bgColor: 'bg-teal-100'
     }
   ]
 
@@ -198,7 +191,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">The ReachFood Difference</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">The R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D Difference</h2>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
               Revolutionary technology meets sustainable innovation to deliver nutrition wherever you need it most.
             </p>
@@ -240,7 +233,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Technology Impact */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -249,16 +242,16 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Trusted by Those Who Matter</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Technology That Makes a Difference</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Real experiences from people who depend on reliable nutrition solutions
+              Revolutionary capabilities that transform how nutrition reaches people worldwide
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.slice(0, 6).map((testimonial, index) => (
+            {technologyImpacts.map((impact, index) => (
               <motion.div
-                key={testimonial.name}
+                key={impact.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -269,32 +262,18 @@ const Home = () => {
                   transition: { duration: 0.3 }
                 }}
               >
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-white font-semibold">
-                      {testimonial.name.charAt(0)}
-                    </span>
+                <div className="text-center">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${impact.bgColor} flex items-center justify-center`}>
+                    <impact.icon className={`w-8 h-8 ${impact.color}`} />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-slate-900 font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-600 text-sm">{testimonial.role}</p>
-                    <p className="text-teal-600 text-xs font-medium">{testimonial.organization}</p>
-                    <p className="text-slate-500 text-xs">{testimonial.location}</p>
-                    <div className="flex items-center mt-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ delay: index * 0.1 + i * 0.1 }}
-                        >
-                          <Star className="w-4 h-4 text-teal-500 fill-current" />
-                        </motion.div>
-                      ))}
-                    </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{impact.title}</h3>
+                  <div className={`text-3xl font-bold ${impact.color} mb-3`}>
+                    {impact.metric}
                   </div>
+                  <p className="text-slate-600 leading-relaxed text-sm">
+                    {impact.description}
+                  </p>
                 </div>
-                <p className="text-slate-700 italic leading-relaxed text-sm">"{testimonial.text}"</p>
               </motion.div>
             ))}
           </div>
@@ -302,8 +281,13 @@ const Home = () => {
       </section>
 
       {/* Technology Showcase Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{ backgroundImage: 'url(/images/bannger.jpg)' }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-teal-900/70 to-slate-900/70"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

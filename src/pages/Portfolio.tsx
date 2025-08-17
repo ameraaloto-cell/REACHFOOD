@@ -244,29 +244,29 @@ const Portfolio = () => {
             {[
               {
                 step: '01',
-                title: 'Activate',
-                description: 'Press the designated heating spot on the package',
+                title: 'Press',
+                description: 'Press the pack to start heating',
                 icon: Zap,
                 color: 'text-orange-400'
               },
               {
                 step: '02',
-                title: 'React',
-                description: 'Calcium oxide mixes with water to generate heat',
+                title: 'Place',
+                description: 'Place this side facing downward on the ground',
                 icon: Beaker,
                 color: 'text-blue-400'
               },
               {
                 step: '03',
-                title: 'Heat',
-                description: 'Meal reaches optimal 65°C temperature in 5 minutes',
+                title: 'Wait',
+                description: 'Leave it for 3–5 minutes until heating is complete',
                 icon: Thermometer,
                 color: 'text-red-400'
               },
               {
                 step: '04',
                 title: 'Enjoy',
-                description: 'Hot, nutritious meal ready to eat anywhere',
+                description: 'Open the pack from the top sides away from the steam outlet, take out the food pack, and enjoy a delicious taste and good health',
                 icon: Clock,
                 color: 'text-green-400'
               }

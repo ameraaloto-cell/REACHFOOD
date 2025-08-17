@@ -44,8 +44,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-serif font-bold"
             >
-              <span className="text-white">Reach</span>
-              <span className="text-teal-400">Food</span>
+              <span className="text-white">R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D</span>
             </motion.div>
           </Link>
 

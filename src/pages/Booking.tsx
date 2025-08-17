@@ -521,7 +521,7 @@ const Booking = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Why Choose ReachFood?</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Why Choose R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D?</h2>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
               More than just convenience - we're committed to your nutrition and our planet
             </p>

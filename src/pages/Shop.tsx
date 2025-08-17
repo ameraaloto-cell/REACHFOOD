@@ -13,7 +13,7 @@ const Shop = () => {
       reviews: 127,
       features: ['8 self-heating meals', '2-year shelf life', 'No cooking equipment needed', 'Halal certified'],
       badge: 'Best Seller',
-      image: '/api/placeholder/300/300',
+      image: '/images/product 1.jpg',
       category: 'Emergency Relief'
     },
     {
@@ -26,7 +26,7 @@ const Shop = () => {
       reviews: 89,
       features: ['5 compact meals', 'High calorie density', 'Weather resistant', 'Ultra-lightweight'],
       badge: 'Adventure Pro',
-      image: '/api/placeholder/300/300',
+      image: '/images/pro3.jpg',
       category: 'Adventure'
     },
     {
@@ -39,7 +39,7 @@ const Shop = () => {
       reviews: 203,
       features: ['4 balanced meals', 'No mess heating', 'Office-appropriate', 'Sustained energy'],
       badge: 'Office Favorite',
-      image: '/api/placeholder/300/300',
+      image: '/images/pro5.jpg',
       category: 'Professional'
     },
     {
@@ -52,7 +52,7 @@ const Shop = () => {
       reviews: 156,
       features: ['6 family-size meals', 'Kid-approved taste', 'Hidden vegetables', 'Family sharing'],
       badge: 'Family Size',
-      image: '/api/placeholder/300/300',
+      image: '/images/pro36.jpg',
       category: 'Family'
     },
     {
@@ -65,7 +65,7 @@ const Shop = () => {
       reviews: 94,
       features: ['5 cultural meals', 'Authentic spices', 'Traditional recipes', 'Halal certified'],
       badge: 'Authentic',
-      image: '/api/placeholder/300/300',
+      image: '/images/prod7.jpg',
       category: 'Cultural'
     },
     {
@@ -78,7 +78,7 @@ const Shop = () => {
       reviews: 67,
       features: ['3 sample meals', 'Plantable packaging', 'Eco-friendly', 'Wildflower seeds'],
       badge: 'Eco-Friendly',
-      image: '/api/placeholder/300/300',
+      image: '/images/ori2.jpg',
       category: 'Sustainability'
     }
   ]
@@ -351,7 +351,7 @@ const Shop = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-              Why Choose ReachFood?
+              Why Choose R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D?
             </h2>
             <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
               Every product represents our commitment to innovation, sustainability, and accessibility
@@ -426,7 +426,7 @@ const Shop = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Ready to Experience ReachFood?
+              Ready to Experience R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D?
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
               Contact us to discuss your specific needs, request samples, or explore partnership opportunities.

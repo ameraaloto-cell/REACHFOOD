@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Atom, Globe, Lightbulb, Heart, Leaf } from 'lucide-react'
+import { Lightbulb, Heart, Leaf, Globe } from 'lucide-react'
 
 const About = () => {
   const foundingValues = [
@@ -31,31 +31,48 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: 'Dr. Sarah Al-Rahman',
-      role: 'CEO & Co-Founder',
-      background: 'Former NASA food scientist with 15 years in space nutrition technology',
-      expertise: 'Food Science, Space Technology, Product Innovation',
+      name: 'Amera Otoum',
+      role: 'CEO & Packaging CPO',
+      background: 'Researcher in Economics and Environmental Psychology. Expert working in emergencies and empowering vulnerable communities.',
+      expertise: 'MSc: Economic and Environmental Resources, BS: Agricultural Engineering',
+      email: 'Ameraaloto@gmail.com',
+      phone: '+962 792977610',
       image: '/api/placeholder/200/200'
     },
     {
-      name: 'Ahmed Kaseem',
-      role: 'CTO & Co-Founder',
-      background: 'Chemical engineer specializing in sustainable packaging and reaction chemistry',
-      expertise: 'Chemical Engineering, Sustainable Materials, Technology Development',
+      name: 'Aljawharah Alsubaie',
+      role: 'CPO-Food Advisor',
+      background: 'Researcher in Therapeutic Effectiveness. Filed Patent in 2014, Patent in innovative candy for dental care. Hospital training in NHS hospitals.',
+      expertise: 'PhD: Doctor of Pharmacy, MS: Clinical pharmacy as a postgraduate',
+      email: 'jalkhuzem@gmail.com',
+      phone: '+447508186988',
       image: '/api/placeholder/200/200'
     },
     {
-      name: 'Dr. Maria Santos',
-      role: 'Head of Nutrition',
-      background: 'Registered dietitian and food technologist with expertise in emergency nutrition',
-      expertise: 'Clinical Nutrition, Food Safety, Cultural Cuisine',
+      name: 'Wadia Safia',
+      role: 'Finance Company Advisor',
+      background: 'Expert in Finance / INGOs & Private sector. Certified Finance Manager.',
+      expertise: 'BSc: Accounting',
+      email: 'wadiasafiafen@yahoo.com',
+      phone: '+962795677936',
       image: '/api/placeholder/200/200'
     },
     {
-      name: 'Omar Ibrahim',
-      role: 'Head of Sustainability',
-      background: 'Environmental scientist focused on circular economy and biodegradable materials',
-      expertise: 'Environmental Science, Circular Economy, Biodegradable Packaging',
+      name: 'Ali Ali Redha',
+      role: 'Food R&D part time Advisor',
+      background: 'Researcher in Food Bioactives',
+      expertise: 'PhD: Food, Nutrition & Health, MSc: Analytical Chemistry, BSc: Chemistry',
+      email: '',
+      phone: '',
+      image: '/api/placeholder/200/200'
+    },
+    {
+      name: 'Mahmoud Alkhatib',
+      role: 'Food For Emergency Company Advisor',
+      background: 'Served as QRC Consultant Dietitian in Somalia (2011) and led nutrition efforts in multiple disaster management camps (2012–2018). Participated in key regional meetings and courses in Amman and Doha, including leading the Yemen malnutrition assessment mission (2012) and delivering expert presentations (2016–2018).',
+      expertise: 'Emergency Nutrition, Disaster Management, Malnutrition Assessment',
+      email: '',
+      phone: '',
       image: '/api/placeholder/200/200'
     }
   ]
@@ -126,51 +143,50 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center mb-6">
-              <Atom className="w-8 h-8 text-teal-400 mr-3" />
-              <span className="text-teal-400 font-semibold text-lg">
-                Revolutionizing Nutrition Technology
-              </span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">About ReachFood</h1>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              We're on a mission to ensure that hot, nutritious meals are accessible to everyone, everywhere. 
-              Through groundbreaking self-heating technology and sustainable innovation, we're transforming 
-              how the world thinks about nutrition access.
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D
+              <span className="block text-teal-400">Flavors of Innovation</span>
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-semibold text-teal-300 mb-8">
+              Team Work
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Founded on the belief that nutrition should never be limited by circumstance, 
+              ReachFood combines cutting-edge food science with sustainable innovation to deliver 
+              hot, nutritious meals anywhere in the world.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Story Section */}
-      <section className="py-20 bg-white">
+      {/* Our Story */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-serif font-bold text-slate-900 mb-6">
-                Our Mission: Nutrition Without Limits
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+                Our Story
               </h2>
-              <div className="space-y-4 text-slate-700">
+              <div className="space-y-6 text-slate-700">
                 <p>
-                  ReachFood was born from a simple but powerful realization: access to hot, nutritious food 
-                  shouldn't depend on infrastructure, location, or circumstances. Whether you're an aid worker 
-                  in a crisis zone, an adventurer on a mountain peak, or a busy professional in the city, 
-                  everyone deserves quality nutrition.
+                  Born from the urgent need to provide reliable nutrition in emergency situations, 
+                  ReachFood emerged when our founders witnessed the challenges of delivering hot meals 
+                  to disaster-affected communities without access to electricity or cooking facilities.
                 </p>
                 <p>
-                  Our founders, Dr. Sarah Al-Rahman and Ahmed Kaseem, combined their expertise in space food 
-                  technology and sustainable chemistry to create a solution that seemed impossible: meals that 
-                  heat themselves safely and completely, with packaging that gives back to the environment.
+                  What started as a mission to solve emergency nutrition has evolved into a comprehensive 
+                  food technology platform serving outdoor enthusiasts, busy professionals, and families 
+                  seeking convenient, sustainable nutrition solutions.
                 </p>
                 <p>
-                  Today, ReachFood represents more than just innovative technology. We're building a movement 
-                  toward inclusive, sustainable nutrition that respects cultural heritage while serving the 
-                  most critical needs of our time.
+                  Our breakthrough self-heating technology, combined with plantable packaging that 
+                  transforms into wildflowers, represents our commitment to innovation that serves 
+                  both people and planet.
                 </p>
               </div>
             </motion.div>
@@ -178,122 +194,120 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-teal-50 to-slate-50 rounded-xl p-8"
+              className="relative"
             >
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.description}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-2xl md:text-3xl font-bold text-teal-600 mb-1">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm font-semibold text-slate-600 mb-2">
-                      {stat.unit}
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      {stat.description}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <img 
+                src="/api/placeholder/600/400" 
+                alt="ReachFood founders in emergency relief setting"
+                className="rounded-lg shadow-xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-transparent rounded-lg"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Founding Values */}
+      <section className="py-20 relative bg-white">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/images/owners.jpg)' }}
+        ></div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-slate-900/70"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Our Core Values</h2>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Every decision we make is guided by our commitment to innovation, impact, sustainability, and accessibility
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Our Founding Values
+            </h2>
+            <p className="text-xl text-teal-100 max-w-3xl mx-auto">
+              These core principles guide every decision we make and every innovation we pursue
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {foundingValues.map((value, index) => {
-              const IconComponent = value.icon
-              return (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 text-center hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-800/50 mb-4"
-                  >
-                    <IconComponent className={`w-8 h-8 ${value.color}`} />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-teal-100 text-sm leading-relaxed">{value.description}</p>
-                </motion.div>
-              )
-            })}
+            {foundingValues.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center`}>
+                  <value.icon className={`w-8 h-8 text-teal-400`} />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
+                <p className="text-teal-100">{value.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
+      {/* Our Team */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Meet Our Team</h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Our diverse team brings together expertise in food science, technology, sustainability, and cultural cuisine
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Experts united by a shared vision of making nutrition accessible to everyone, everywhere
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300"
-                whileHover={{ 
-                  y: -5,
-                  transition: { duration: 0.3 }
-                }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-teal-400 to-teal-500 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h3>
-                <p className="text-teal-600 font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-slate-600 text-sm mb-3 leading-relaxed">{member.background}</p>
-                <div className="text-xs text-slate-500">
-                  <strong>Expertise:</strong> {member.expertise}
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
+                  <p className="text-teal-600 font-medium mb-3">{member.role}</p>
+                  <p className="text-slate-600 mb-3 text-sm">{member.background}</p>
+                  <p className="text-slate-500 text-sm mb-4">{member.expertise}</p>
+                  {(member.email || member.phone) && (
+                    <div className="border-t pt-4">
+                      {member.email && (
+                        <p className="text-xs text-slate-500 mb-1">
+                          <span className="font-medium">Email:</span> {member.email}
+                        </p>
+                      )}
+                      {member.phone && (
+                        <p className="text-xs text-slate-500">
+                          <span className="font-medium">Tel:</span> {member.phone}
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -301,74 +315,93 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+      {/* Company Timeline */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Our Journey</h2>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              From breakthrough innovation to global impact - the ReachFood timeline
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Our Journey
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              From concept to global impact - the milestones that shaped ReachFood
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-teal-200"></div>
+            
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
+                className={`relative flex items-center mb-12 ${
+                  index % 2 === 0 ? 'justify-start' : 'justify-end'
+                }`}
               >
-                <div className="text-2xl font-bold text-teal-400 mb-2">{milestone.year}</div>
-                <h3 className="text-lg font-semibold text-white mb-3">{milestone.title}</h3>
-                <p className="text-teal-100 text-sm leading-relaxed">{milestone.description}</p>
+                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div className="bg-white border border-teal-200 rounded-lg p-6 shadow-lg">
+                    <div className="text-2xl font-bold text-teal-600 mb-2">{milestone.year}</div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{milestone.title}</h3>
+                    <p className="text-slate-600">{milestone.description}</p>
+                  </div>
+                </div>
+                
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-white shadow-lg"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Impact Statistics */}
+      <section className="py-20 bg-gradient-to-br from-teal-900 via-slate-900 to-teal-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-              Join the Nutrition Revolution
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Our Impact
             </h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Whether you're interested in our technology, want to partner with us, or simply share our vision 
-              for accessible nutrition, we'd love to hear from you.
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Numbers that represent lives touched and communities empowered
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="/contact"
-                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Partner With Us
-              </motion.a>
-              <motion.a
-                href="/services"
-                className="border-2 border-teal-500 text-teal-600 font-semibold py-4 px-8 rounded-lg hover:bg-teal-500 hover:text-white transition-all"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Our Technology
-              </motion.a>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.description}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-teal-400 mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-xl font-semibold text-white mb-2">
+                  {stat.unit}
+                </div>
+                <div className="text-slate-300">
+                  {stat.description}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
