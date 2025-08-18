@@ -141,12 +141,12 @@ const Home = () => {
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 5 }}
                       transition={{ duration: 0.3 }}
-                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4"
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4 p-3"
                     >
                       <img 
                         src={audience.iconPath} 
                         alt={`${audience.title} icon`}
-                        className="w-8 h-8 object-contain"
+                        className="w-full h-full object-contain filter drop-shadow-sm"
                       />
                     </motion.div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-3">{audience.title}</h3>
