@@ -17,7 +17,7 @@ const Home = () => {
   const targetAudiences = [
     {
       title: 'Emergency Relief',
-      icon: Shield,
+      iconPath: '/images/icons/7.png',
       description: 'Providing critical, life-sustaining nutrition to displaced communities and aid workers in crisis zones.',
       color: 'text-red-400',
       bgColor: 'bg-red-500/10',
@@ -25,7 +25,7 @@ const Home = () => {
     },
     {
       title: 'Adventurers & Travelers',
-      icon: Mountain,
+      iconPath: '/images/icons/adventure.png',
       description: 'Lightweight, easy-to-pack, and reliable hot meals for hikers, campers, and explorers on the go.',
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
@@ -33,7 +33,7 @@ const Home = () => {
     },
     {
       title: 'Busy Professionals',
-      icon: Building,
+      iconPath: '/images/icons/business.png',
       description: 'A healthy, convenient, and quick meal solution for demanding workdays and fast-paced lifestyles.',
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
@@ -41,7 +41,7 @@ const Home = () => {
     },
     {
       title: 'Daily Wellness',
-      icon: Heart,
+      iconPath: '/images/icons/family.png',
       description: 'Nutrient-packed meals perfect for families, students, and anyone seeking a wholesome, hassle-free option.',
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
@@ -53,9 +53,9 @@ const Home = () => {
   const technologyImpacts = [
     {
       icon: Globe,
-      title: 'Global Reach Ready',
-      metric: '50+ Countries',
-      description: 'Deployment capability with rapid international distribution network',
+      title: 'MENA Region Focus',
+      metric: 'Strategic Targeting',
+      description: 'Strategic deployment across Middle East and North Africa with cultural understanding',
       color: 'text-blue-500',
       bgColor: 'bg-blue-100'
     },
@@ -86,7 +86,7 @@ const Home = () => {
     {
       icon: Heart,
       title: 'Cultural Authenticity',
-      metric: '25+ Recipes',
+      metric: '12+ health recovery food research-based, 2/batch',
       description: 'Traditional MENA flavors with Halal certification and cultural respect',
       color: 'text-red-500',
       bgColor: 'bg-red-100'
@@ -94,7 +94,7 @@ const Home = () => {
     {
       icon: Shield,
       title: 'Emergency Ready',
-      metric: '2-Year Shelf Life',
+      metric: 'Long Shelf Life',
       description: 'No power required, works anywhere, perfect for crisis response',
       color: 'text-teal-500',
       bgColor: 'bg-teal-100'
@@ -123,7 +123,6 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {targetAudiences.map((audience, index) => {
-              const IconComponent = audience.icon
               return (
                 <motion.div
                   key={audience.title}
@@ -144,7 +143,11 @@ const Home = () => {
                       transition={{ duration: 0.3 }}
                       className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4"
                     >
-                      <IconComponent className={`w-8 h-8 ${audience.color}`} />
+                      <img 
+                        src={audience.iconPath} 
+                        alt={`${audience.title} icon`}
+                        className="w-8 h-8 object-contain"
+                      />
                     </motion.div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-3">{audience.title}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{audience.description}</p>
