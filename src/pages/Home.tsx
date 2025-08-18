@@ -130,7 +130,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 hover:border-teal-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border-2 border-orange-400 hover:border-orange-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
                   whileHover={{ 
                     scale: 1.05,
                     y: -10,
@@ -141,16 +141,16 @@ const Home = () => {
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 5 }}
                       transition={{ duration: 0.3 }}
-                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4 p-3"
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 mb-4 relative"
                     >
                       <img 
                         src={audience.iconPath} 
                         alt={`${audience.title} icon`}
-                        className="w-full h-full object-contain filter drop-shadow-sm"
+                        className="w-8 h-8 object-contain absolute inset-0 m-auto"
                       />
                     </motion.div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{audience.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{audience.description}</p>
+                    <h3 className="text-xl font-semibold text-white drop-shadow-lg mb-3">{audience.title}</h3>
+                    <p className="text-orange-100 text-sm leading-relaxed">{audience.description}</p>
                   </div>
                 </motion.div>
               )

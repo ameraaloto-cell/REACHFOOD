@@ -35,22 +35,22 @@ const Contact = () => {
 
   const offices = [
     {
-      location: 'Global Headquarters',
-      address: 'Innovation District, San Francisco, CA',
-      country: 'United States',
-      focus: 'Technology Development & Global Operations'
-    },
-    {
       location: 'MENA Operations Center',
       address: 'Dubai Technology Park, UAE',
       country: 'United Arab Emirates',
       focus: 'Cultural Cuisine & Regional Partnerships'
     },
     {
-      location: 'European Distribution Hub',
-      address: 'Amsterdam, Netherlands',
-      country: 'Netherlands',
-      focus: 'Emergency Relief & Corporate Solutions'
+      location: 'Jordan Office',
+      address: 'Amman, Jordan',
+      country: 'Jordan',
+      focus: 'Research & Development Hub'
+    },
+    {
+      location: 'KSA Office',
+      address: 'Riyadh, Saudi Arabia',
+      country: 'Saudi Arabia',
+      focus: 'Regional Distribution & Partnerships'
     }
   ]
 

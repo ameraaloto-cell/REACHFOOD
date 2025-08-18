@@ -46,8 +46,8 @@ const ParallaxHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          Revolutionizing nutrition with self-heating meals that activate in 3-5 minutes. 
-          Sustainable, accessible, and culturally authentic food for everyone, everywhere.
+          Revolutionizing nutrition with 12+ health-focused recovery meals self-heating and ready in just 3–5 minutes. 
+          A sustainable, accessible, and culturally authentic food solution for everyone, everywhere.
         </motion.p>
         
         <motion.div 

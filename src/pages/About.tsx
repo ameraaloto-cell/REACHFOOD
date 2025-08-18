@@ -53,8 +53,8 @@ const About = () => {
       role: 'Finance Company Advisor',
       background: 'Expert in Finance / INGOs & Private sector. Certified Finance Manager.',
       expertise: 'BSc: Accounting',
-      email: 'wadiasafiafen@yahoo.com',
-      phone: '+962795677936',
+      email: 'wadiasafieh@yahoo.com',
+      phone: '00962795657793',
       image: '/images/Wadia Safia.jpg'
     },
     {
