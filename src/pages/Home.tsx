@@ -49,32 +49,6 @@ const Home = () => {
     }
   ]
 
-  const features = [
-    {
-      title: 'Ready in 5 Minutes',
-      description: 'No stove, no microwave. Just press or rotate the designated spot, and enjoy a hot, nourishing meal without the hassle.',
-      icon: Zap,
-      color: 'text-orange-400'
-    },
-    {
-      title: 'Sustainable Packaging',
-      description: 'Our packaging transforms into plantable seeds, creating a truly circular, sustainable system that gives back to the earth.',
-      icon: Leaf,
-      color: 'text-green-400'
-    },
-    {
-      title: 'Culturally Inspired Flavors',
-      description: 'Our meals reflect the rich culinary heritage of the MENA region, ensuring a delicious and familiar taste experience.',
-      icon: Globe,
-      color: 'text-blue-400'
-    },
-    {
-      title: 'Inclusive by Design',
-      description: 'Packaging features Braille labeling and audio scanning for maximum accessibility, ensuring everyone can enjoy our meals.',
-      icon: UserCheck,
-      color: 'text-purple-400'
-    }
-  ]
 
   const technologyImpacts = [
     {
