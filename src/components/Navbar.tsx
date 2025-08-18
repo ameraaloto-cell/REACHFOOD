@@ -23,7 +23,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-teal-700/30">
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -44,7 +44,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-serif font-bold"
             >
-              <span className="text-white">R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D</span>
+              <span className="text-gray-800">R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D</span>
             </motion.div>
           </Link>
 
@@ -56,8 +56,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.path
-                    ? 'text-teal-400'
-                    : 'text-gray-300 hover:text-teal-400'
+                    ? 'text-orange-500'
+                    : 'text-orange-400 hover:text-orange-500'
                 }`}
               >
                 {item.name}
@@ -70,7 +70,7 @@ const Navbar = () => {
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 px-3 py-1 rounded-full border border-teal-600/50 text-gray-300 hover:text-white hover:border-teal-500 transition-colors"
+              className="flex items-center space-x-1 px-3 py-1 rounded-full border border-orange-300/50 text-orange-400 hover:text-orange-500 hover:border-orange-400 transition-colors"
             >
               <Globe className="w-4 h-4" />
               <span className="text-sm font-medium">{currentLang}</span>
@@ -79,7 +79,7 @@ const Navbar = () => {
             {/* Shopping Cart */}
             <Link
               to="/shop"
-              className="relative p-2 text-gray-300 hover:text-teal-400 transition-colors"
+              className="relative p-2 text-orange-400 hover:text-orange-500 transition-colors"
             >
               <ShoppingCart className="w-6 h-6" />
             </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white p-2"
+              className="text-orange-400 hover:text-orange-500 p-2"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -112,7 +112,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800 border-t border-teal-700/30">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/90 border-t border-gray-200/30">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -120,8 +120,8 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     location.pathname === item.path
-                      ? 'text-teal-400 bg-slate-700'
-                      : 'text-gray-300 hover:text-teal-400 hover:bg-slate-700'
+                      ? 'text-orange-500 bg-orange-50'
+                      : 'text-orange-400 hover:text-orange-500 hover:bg-orange-50'
                   }`}
                 >
                   {item.name}
@@ -130,14 +130,14 @@ const Navbar = () => {
               <div className="px-3 py-2 flex items-center justify-between">
                 <button
                   onClick={toggleLanguage}
-                  className="flex items-center space-x-1 px-3 py-1 rounded-full border border-teal-600/50 text-gray-300"
+                  className="flex items-center space-x-1 px-3 py-1 rounded-full border border-orange-300/50 text-orange-400"
                 >
                   <Globe className="w-4 h-4" />
                   <span className="text-sm">{currentLang}</span>
                 </button>
                 <Link
                   to="/shop"
-                  className="relative p-2 text-gray-300"
+                  className="relative p-2 text-orange-400"
                 >
                   <ShoppingCart className="w-6 h-6" />
                 </Link>
@@ -157,4 +157,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

@@ -108,9 +108,28 @@ The build process runs TypeScript compilation first (`tsc -b`) followed by Vite 
 - Consistent color usage through design tokens
 - Mobile-first responsive design patterns throughout
 
+### Image Assets & Deployment
+- All images stored in `public/images/` directory
+- **Critical Issue**: Use `<img>` tags instead of CSS `background-image` for Vercel deployment compatibility
+- Avoid spaces in image filenames (use `product1.jpg` not `product 1.jpg`)
+- Background images should be implemented as `<img className="absolute inset-0 w-full h-full object-cover" />`
+- CSS `style={{ backgroundImage: 'url(...)' }}` patterns don't work reliably on Vercel
+
 ### Content Management
 - All content is hardcoded in React components (no CMS)
 - Testimonials, team members, and product data defined as typed arrays
 - Brand messaging emphasizes technology innovation and sustainability impact
+
+## Important Deployment Notes
+
+### Vercel-Specific Issues
+- Background images must use `<img>` tags with absolute positioning instead of CSS background-image
+- File names with spaces cause 404 errors on production servers
+- Static assets in `public/` folder are served directly but CSS references may fail
+
+### REACHFOOD Branding
+- Company name styling: `R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D`
+- Consistent orange coloring on "E" and "OO" letters throughout the site
+- All navigation and branding should maintain this pattern
 
 This codebase represents a complete transformation from a barber shop website to a food technology company, maintaining the technical architecture while completely replacing content and branding.
