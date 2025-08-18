@@ -37,7 +37,7 @@ const About = () => {
       expertise: 'MSc: Economic and Environmental Resources, BS: Agricultural Engineering',
       email: 'Ameraaloto@gmail.com',
       phone: '+962 792977610',
-      image: '/api/placeholder/200/200'
+      image: '/images/Amera Otoum.jpg'
     },
     {
       name: 'Aljawharah Alsubaie',
@@ -46,7 +46,7 @@ const About = () => {
       expertise: 'PhD: Doctor of Pharmacy, MS: Clinical pharmacy as a postgraduate',
       email: 'jalkhuzem@gmail.com',
       phone: '+447508186988',
-      image: '/api/placeholder/200/200'
+      image: '/images/Aljawharah Alsubaie.jpg'
     },
     {
       name: 'Wadia Safia',
@@ -55,7 +55,7 @@ const About = () => {
       expertise: 'BSc: Accounting',
       email: 'wadiasafiafen@yahoo.com',
       phone: '+962795677936',
-      image: '/api/placeholder/200/200'
+      image: '/images/Wadia Safia.jpg'
     },
     {
       name: 'Ali Ali Redha',
@@ -64,7 +64,7 @@ const About = () => {
       expertise: 'PhD: Food, Nutrition & Health, MSc: Analytical Chemistry, BSc: Chemistry',
       email: '',
       phone: '',
-      image: '/api/placeholder/200/200'
+      image: '/images/Ali Ali Redha.jpg'
     },
     {
       name: 'Mahmoud Alkhatib',
@@ -73,7 +73,7 @@ const About = () => {
       expertise: 'Emergency Nutrition, Disaster Management, Malnutrition Assessment',
       email: '',
       phone: '',
-      image: '/api/placeholder/200/200'
+      image: '/images/Mahmoud Alkhatib.jpg'
     }
   ]
 
@@ -174,19 +174,31 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-slate-700">
                 <p>
-                  Born from the urgent need to provide reliable nutrition in emergency situations, 
-                  ReachFood emerged when our founders witnessed the challenges of delivering hot meals 
-                  to disaster-affected communities without access to electricity or cooking facilities.
+                  ReachFood was founded on a simple yet powerful principle:
+                  access to hot, nutritious meals should not be constrained by
+                  infrastructure, geography, or circumstance. Whether
+                  supporting aid workers in crisis zones, adventurers in remote
+                  locations, or professional women and their families in
+                  dynamic urban environments, ReachFood ensures reliable
+                  access to high-quality nutrition, recovery-focused meals, and
+                  enhanced food security.
                 </p>
                 <p>
-                  What started as a mission to solve emergency nutrition has evolved into a comprehensive 
-                  food technology platform serving outdoor enthusiasts, busy professionals, and families 
-                  seeking convenient, sustainable nutrition solutions.
+                  Our founders, Amera Otoum and Aljawhara Alsubaai,
+                  brought together their passion for development and
+                  humanitarian relief with a strong commitment to Inclusion,
+                  Diversity, Equality, and Accessibility (IDEA), as well as
+                  natural resource management and sustainability research.
+                  Their vision led to an innovative solution: self-heating meals
+                  that are safe, convenient, and packaged in environmentally
+                  regenerative materials designed to support sustainable
+                  agriculture. This achievement builds on extensive research in
+                  collaboration with the ReachSci Association.
                 </p>
                 <p>
-                  Our breakthrough self-heating technology, combined with plantable packaging that 
-                  transforms into wildflowers, represents our commitment to innovation that serves 
-                  both people and planet.
+                  Today, ReachFood is more than an innovation it is a movement for inclusive and sustainable nutrition.
+                  We are committed to honoring cultural heritage while addressing the urgent needs of our time,
+                  delivering food solutions that are accessible, safe, and sustainable for all.
                 </p>
               </div>
             </motion.div>
@@ -199,7 +211,7 @@ const About = () => {
               className="relative"
             >
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/gg.avif" 
                 alt="ReachFood founders in emergency relief setting"
                 className="rounded-lg shadow-xl"
               />
@@ -213,8 +225,8 @@ const About = () => {
       <section className="py-20 relative bg-white">
         {/* Background Image */}
         <img 
-          src="/images/owners.jpg"
-          alt="ReachFood founders background"
+          src="/images/hero5a.jpg"
+          alt="ReachFood difference background"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Background Overlay */}
@@ -349,10 +361,10 @@ const About = () => {
                 }`}
               >
                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className="bg-white border border-teal-200 rounded-lg p-6 shadow-lg">
-                    <div className="text-2xl font-bold text-teal-600 mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{milestone.title}</h3>
-                    <p className="text-slate-600">{milestone.description}</p>
+                  <div className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border border-orange-400 rounded-lg p-6 shadow-lg">
+                    <div className="text-2xl font-bold text-orange-200 mb-2">{milestone.year}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{milestone.title}</h3>
+                    <p className="text-orange-100">{milestone.description}</p>
                   </div>
                 </div>
                 

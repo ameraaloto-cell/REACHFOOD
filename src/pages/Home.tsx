@@ -182,54 +182,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+      {/* Full Background Image Section */}
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">The R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D Difference</h2>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Revolutionary technology meets sustainable innovation to deliver nutrition wherever you need it most.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon
-              return (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 group hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <div className="flex items-start space-x-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex-shrink-0 w-12 h-12 rounded-lg bg-teal-800/50 flex items-center justify-center"
-                    >
-                      <IconComponent className={`w-6 h-6 ${feature.color}`} />
-                    </motion.div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                      <p className="text-teal-100 leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
+          <img 
+            src="/images/replace.jpg" 
+            alt="SULTION Smart Meals for Real Lives" 
+            className="w-full h-auto"
+          />
         </div>
       </section>
 
@@ -633,6 +593,14 @@ const Home = () => {
               >
                 <Link to="/contact" className="bg-teal-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-teal-600 transition-colors inline-flex items-center space-x-2">
                   <span>Partner With Us</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/about" className="bg-orange-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-orange-600 transition-colors inline-flex items-center space-x-2">
+                  <span>Join Our Research Journey</span>
                 </Link>
               </motion.div>
             </div>

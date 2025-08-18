@@ -148,7 +148,7 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 hover:border-teal-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border-2 border-orange-400 hover:border-orange-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
                   whileHover={{ 
                     scale: 1.05,
                     y: -10,
@@ -156,22 +156,22 @@ const Portfolio = () => {
                   }}
                 >
                   <div className="relative mb-6">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 mb-4">
                       <IconComponent className={`w-8 h-8 ${innovation.color}`} />
                     </div>
-                    <div className="absolute top-2 right-2 bg-teal-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       {innovation.category}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{innovation.title}</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{innovation.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-3">{innovation.title}</h3>
+                  <p className="text-orange-100 mb-4 leading-relaxed">{innovation.description}</p>
                   
                   <div className="space-y-2">
                     {innovation.details.map((detail, detailIndex) => (
                       <div key={detailIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-teal-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-slate-700 text-sm">{detail}</span>
+                        <div className="w-1.5 h-1.5 bg-orange-300 rounded-full flex-shrink-0"></div>
+                        <span className="text-orange-100 text-sm">{detail}</span>
                       </div>
                     ))}
                   </div>
@@ -226,7 +226,7 @@ const Portfolio = () => {
       </section>
 
       {/* Technology Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -234,8 +234,8 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">How It Works</h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">How It Works</h2>
+            <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
               The step-by-step process that transforms our innovative technology into a hot, delicious meal
             </p>
           </motion.div>
@@ -282,15 +282,15 @@ const Portfolio = () => {
                   className="text-center"
                 >
                   <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className={`w-10 h-10 ${process.color}`} />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                       {process.step}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{process.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{process.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{process.title}</h3>
+                  <p className="text-orange-100 leading-relaxed">{process.description}</p>
                 </motion.div>
               )
             })}

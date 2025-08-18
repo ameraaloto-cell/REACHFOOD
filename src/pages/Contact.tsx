@@ -279,24 +279,24 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-6">
               Ready to Transform Nutrition Access?
             </h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
               Join organizations worldwide who are using ReachFood to provide reliable, 
               hot nutrition in any environment, anywhere, anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
                 href="/services"
-                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -304,7 +304,7 @@ const Contact = () => {
               </motion.a>
               <motion.a
                 href="/about"
-                className="border-2 border-teal-500 text-teal-600 font-semibold py-4 px-8 rounded-lg hover:bg-teal-500 hover:text-white transition-all"
+                className="border-2 border-orange-400 text-orange-200 font-semibold py-4 px-8 rounded-lg hover:bg-orange-500 hover:text-white transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
