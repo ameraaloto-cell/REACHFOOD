@@ -5,7 +5,7 @@ const About = () => {
   const foundingValues = [
     {
       icon: Lightbulb,
-      title: 'Innovation',
+      title: 'Innovation based research',
       description: 'Pioneering breakthrough food technology that transforms how nutrition is accessed worldwide',
       color: 'text-orange-400'
     },
@@ -79,34 +79,29 @@ const About = () => {
 
   const milestones = [
     {
-      year: '2020',
-      title: 'Foundation',
-      description: 'ReachFood founded with mission to revolutionize emergency nutrition access'
-    },
-    {
-      year: '2021',
-      title: 'Technology Breakthrough',
-      description: 'Successfully developed safe, reliable self-heating technology using calcium oxide reactions'
-    },
-    {
-      year: '2022',
-      title: 'Sustainability Innovation',
-      description: 'Created first biodegradable packaging embedded with native wildflower seeds'
-    },
-    {
       year: '2023',
-      title: 'Cultural Partnership',
-      description: 'Partnered with MENA culinary experts to ensure authentic flavors and Halal certification'
+      title: 'Research Collaboration',
+      description: 'Launched collaboration with Women\'s Research Group and ReashSci'
     },
     {
       year: '2024',
-      title: 'Accessibility Integration',
-      description: 'Launched Braille labeling and audio scanning features for inclusive access'
+      title: 'Award Recognition',
+      description: 'Won Best Research Poster Award (Food Security & Health Recovery) with ReashSci'
     },
     {
       year: '2025',
-      title: 'Global Scale',
-      description: 'Expanding to serve emergency organizations, outdoor enthusiasts, and corporate wellness programs'
+      title: 'Innovation Development',
+      description: 'Developed eco-friendly packaging and 12+ health recovery food recipes'
+    },
+    {
+      year: '2025',
+      title: 'Research Publication',
+      description: 'Published research on unique recipes & sustainable agriculture for harsh environments'
+    },
+    {
+      year: '2026–2027',
+      title: 'Global Events',
+      description: 'Served at major global events including Hajj, Umrah, and the World Cup, providing sustainable and culturally authentic meals'
     }
   ]
 
@@ -118,8 +113,8 @@ const About = () => {
     },
     {
       number: '100%',
-      unit: 'Biodegradable',
-      description: 'Packaging transforms into wildflowers'
+      unit: 'Plantable and Biodegradable',
+      description: 'Packaging transforms into wildflowers and using as hypotonic Agriculture system'
     },
     {
       number: '15+',
@@ -127,9 +122,9 @@ const About = () => {
       description: 'Emergency relief deployments'
     },
     {
-      number: '1M+',
+      number: '+1M',
       unit: 'Meals',
-      description: 'Served in critical situations'
+      description: 'Serving professionals and families with busy lifestyles'
     }
   ]
 
