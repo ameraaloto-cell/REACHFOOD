@@ -148,7 +148,8 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border-2 border-orange-400 hover:border-orange-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
+                  className="rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300 border-2 border-teal-400 hover:border-teal-300"
+                  style={{ backgroundColor: '#2d6f7b' }}
                   whileHover={{ 
                     scale: 1.05,
                     y: -10,
@@ -156,22 +157,22 @@ const Portfolio = () => {
                   }}
                 >
                   <div className="relative mb-6">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 mb-4">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white mb-4">
                       <IconComponent className={`w-8 h-8 ${innovation.color}`} />
                     </div>
-                    <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute top-2 right-2 text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#2d6f7b' }}>
                       {innovation.category}
                     </div>
                   </div>
                   
                   <h3 className="text-xl font-semibold text-white mb-3">{innovation.title}</h3>
-                  <p className="text-orange-100 mb-4 leading-relaxed">{innovation.description}</p>
+                  <p className="text-teal-100 mb-4 leading-relaxed">{innovation.description}</p>
                   
                   <div className="space-y-2">
                     {innovation.details.map((detail, detailIndex) => (
                       <div key={detailIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-orange-300 rounded-full flex-shrink-0"></div>
-                        <span className="text-orange-100 text-sm">{detail}</span>
+                        <div className="w-1.5 h-1.5 bg-teal-300 rounded-full flex-shrink-0"></div>
+                        <span className="text-teal-100 text-sm">{detail}</span>
                       </div>
                     ))}
                   </div>

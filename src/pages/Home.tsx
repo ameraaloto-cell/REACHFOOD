@@ -130,7 +130,8 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border-2 border-orange-400 hover:border-orange-300 rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300"
+                  className="rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300 border-2 border-teal-400 hover:border-teal-300"
+                  style={{ backgroundColor: '#2d6f7b' }}
                   whileHover={{ 
                     scale: 1.05,
                     y: -10,
@@ -138,19 +139,8 @@ const Home = () => {
                   }}
                 >
                   <div className="text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 mb-4 relative"
-                    >
-                      <img 
-                        src={audience.iconPath} 
-                        alt={`${audience.title} icon`}
-                        className="w-8 h-8 object-contain absolute inset-0 m-auto"
-                      />
-                    </motion.div>
                     <h3 className="text-xl font-semibold text-white drop-shadow-lg mb-3">{audience.title}</h3>
-                    <p className="text-orange-100 text-sm leading-relaxed">{audience.description}</p>
+                    <p className="text-teal-100 text-sm leading-relaxed">{audience.description}</p>
                   </div>
                 </motion.div>
               )
@@ -163,7 +153,7 @@ const Home = () => {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <img 
-            src="/images/replace.jpg" 
+            src="/images/h.jpg" 
             alt="SULTION Smart Meals for Real Lives" 
             className="w-full h-auto"
           />
