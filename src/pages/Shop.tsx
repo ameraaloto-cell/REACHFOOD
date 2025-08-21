@@ -12,7 +12,7 @@ const Shop = () => {
       reviews: 247,
       features: ['Self-heating in 5 minutes', 'Authentic MENA flavors', 'High nutritional value', 'Halal certified', 'Plantable packaging'],
       badge: 'Health Focused',
-      image: '/images/product1.jpg',
+      image: '/images/reachfood-package.jpg',
       category: 'Wellness'
     },
     {
@@ -25,7 +25,7 @@ const Shop = () => {
       reviews: 312,
       features: ['Gourmet variety selection', 'Traditional cooking methods', 'Premium ingredients', 'Cultural authenticity', 'Instant preparation'],
       badge: 'Gourmet Choice',
-      image: '/images/pro3.jpg',
+      image: '/images/icons/3dzz.jpg',
       category: 'Gourmet'
     }
   ]
