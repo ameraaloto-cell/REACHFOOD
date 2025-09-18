@@ -191,7 +191,7 @@ const About = () => {
               className="relative"
             >
               <img 
-                src="/images/gg.avif" 
+                src="/images/ourstoryimage.jpg" 
                 alt="ReachFood founders in emergency relief setting"
                 className="rounded-lg shadow-xl"
               />
