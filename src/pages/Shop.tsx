@@ -15,7 +15,7 @@ const Shop = () => {
       reviews: 247,
       features: isArabic ? ['تسخين ذاتي خلال 5 دقائق', 'نكهات أصيلة من الشرق الأوسط وشمال أفريقيا', 'قيمة غذائية عالية', 'معتمد حلال', 'تغليف قابل للزراعة'] : ['Self-heating in 5 minutes', 'Authentic MENA flavors', 'High nutritional value', 'Halal certified', 'Plantable packaging'],
       badge: isArabic ? 'صحي' : 'Health Focused',
-      image: '/images/reachfood-package.jpg',
+      image: '/images/prod7.jpg',
       category: 'Wellness'
     },
     {

@@ -70,7 +70,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-serif font-bold"
             >
-              <span className="text-gray-800">R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D</span>
+              <span className="text-gray-800"><span className="text-[#1DC6D1]">R</span><span className="text-orange-400">E</span><span className="text-[#1DC6D1]">A</span><span className="text-[#1DC6D1]">C</span><span className="text-[#1DC6D1]">H</span><span className="text-[#1DC6D1]">F</span><span className="text-orange-400">OO</span><span className="text-[#1DC6D1]">D</span></span>
             </motion.div>
           </Link>
 
