@@ -40,7 +40,7 @@ const About = () => {
       expertise: 'MSc: Economic and Environmental Resources, BS: Agricultural Engineering',
       email: 'Ameraaloto@gmail.com',
       phone: '+962 792977610',
-      image: '/images/Amera Otoum.jpg'
+      image: '/images/amera.jpg'
     },
     {
       name: 'Aljawharah Alsubaie',
@@ -192,7 +192,7 @@ const About = () => {
               className="relative"
             >
               <img 
-                src="/images/ourstoryimage.jpg" 
+                src="/images/ourstorya.jpg" 
                 alt="ReachFood founders in emergency relief setting"
                 className="rounded-lg shadow-xl"
               />
