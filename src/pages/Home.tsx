@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { 
   Shield, 
   Leaf, 
@@ -16,7 +16,6 @@ import { useIsArabic, tr } from '../i18n'
 
 const Home = () => {
   const isArabic = useIsArabic()
-  const location = useLocation()
   const targetAudiences = [
     {
       title: isArabic ? 'الإغاثة الطارئة' : 'Emergency Relief',
