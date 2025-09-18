@@ -1,4 +1,11 @@
 {
+  "rewrites": [
+    { "source": "/ar", "destination": "/index.html" },
+    { "source": "/ar/(.*)", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+{
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
