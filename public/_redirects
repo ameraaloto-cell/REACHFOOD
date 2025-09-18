@@ -1,0 +1,7 @@
+# SPA fallback for client-side routing (Vite + React)
+# If the requested file doesn't exist, serve index.html
+/* /index.html 200
+
+# Ensure Arabic-prefixed routes also resolve to the SPA entry
+/ar* /index.html 200
+
