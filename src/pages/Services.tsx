@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { 
   Shield, 
   Mountain, 
@@ -14,119 +14,121 @@ import {
 } from 'lucide-react'
 
 const Services = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const serviceCategories = [
     {
-      category: 'Emergency Relief Services',
+      category: isArabic ? 'خدمات الإغاثة الطارئة' : 'Emergency Relief Services',
       icon: Shield,
       color: 'text-red-400',
       bgColor: 'bg-red-500/10',
-      description: 'Rapid nutrition deployment for disaster zones and crisis situations',
+      description: isArabic ? 'نشر سريع للتغذية في مناطق الكوارث وحالات الأزمات' : 'Rapid nutrition deployment for disaster zones and crisis situations',
       applications: [
-        'Disaster response and relief operations',
-        'Refugee camp nutrition programs',
-        'Emergency preparedness kits',
-        'First responder support'
+        isArabic ? 'الاستجابة للكوارث وعمليات الإغاثة' : 'Disaster response and relief operations',
+        isArabic ? 'برامج التغذية في مخيمات اللاجئين' : 'Refugee camp nutrition programs',
+        isArabic ? 'حِزم الاستعداد للطوارئ' : 'Emergency preparedness kits',
+        isArabic ? 'دعم فرق الاستجابة الأولى' : 'First responder support'
       ],
       image: '/images/1.jpg',
-      stats: { deployments: '15+ countries', response: '24-hour', capacity: '10,000+ meals' }
+      stats: { deployments: isArabic ? 'أكثر من 15 دولة' : '15+ countries', response: isArabic ? 'استجابة خلال 24 ساعة' : '24-hour', capacity: isArabic ? 'أكثر من 10,000 وجبة' : '10,000+ meals' }
     },
     {
-      category: 'Adventure & Outdoor Services',
+      category: isArabic ? 'خدمات المغامرة والهواء الطلق' : 'Adventure & Outdoor Services',
       icon: Mountain,
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
-      description: 'Lightweight nutrition solutions for extreme environments and outdoor activities',
+      description: isArabic ? 'حلول تغذية خفيفة للبيئات القاسية والأنشطة الخارجية' : 'Lightweight nutrition solutions for extreme environments and outdoor activities',
       applications: [
-        'Mountain climbing expeditions',
-        'Military field operations',
-        'Remote research stations',
-        'Extended camping trips'
+        isArabic ? 'بعثات تسلق الجبال' : 'Mountain climbing expeditions',
+        isArabic ? 'عمليات ميدانية عسكرية' : 'Military field operations',
+        isArabic ? 'محطات بحثية نائية' : 'Remote research stations',
+        isArabic ? 'رحلات تخييم ممتدة' : 'Extended camping trips'
       ],
       image: '/images/2.jpg',
-      stats: { altitude: '8,000m tested', weight: '40% lighter', temperature: '-40°C rated' }
+      stats: { altitude: isArabic ? 'تم الاختبار حتى 8000م' : '8,000m tested', weight: isArabic ? 'أخف بنسبة 40%' : '40% lighter', temperature: isArabic ? 'مصمم حتى -40°م' : '-40°C rated' }
     },
     {
-      category: 'Corporate Wellness Services',
+      category: isArabic ? 'خدمات العافية للشركات' : 'Corporate Wellness Services',
       icon: Building,
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
-      description: 'Office-friendly nutrition programs for busy professionals and teams',
+      description: isArabic ? 'برامج تغذية مناسبة للمكاتب للمهنيين والفرق المشغولة' : 'Office-friendly nutrition programs for busy professionals and teams',
       applications: [
-        '24/7 workplace nutrition',
-        'Remote worker meal programs',
-        'Conference and event catering',
-        'Shift worker nutrition support'
+        isArabic ? 'تغذية مكان العمل على مدار الساعة' : '24/7 workplace nutrition',
+        isArabic ? 'برامج وجبات للعاملين عن بُعد' : 'Remote worker meal programs',
+        isArabic ? 'تموين المؤتمرات والفعاليات' : 'Conference and event catering',
+        isArabic ? 'دعم تغذية العاملين بالورديات' : 'Shift worker nutrition support'
       ],
       image: '/images/3.jpg',
-      stats: { companies: '200+ served', productivity: '+25% reported', satisfaction: '98% rating' }
+      stats: { companies: isArabic ? 'خدمة 200+ شركة' : '200+ served', productivity: isArabic ? '+25% إنتاجية' : '+25% reported', satisfaction: isArabic ? 'تقييم 96%' : '96% rating' }
     },
     {
-      category: 'Healthcare & Senior Services',
+      category: isArabic ? 'خدمات الرعاية الصحية وكبار السن' : 'Healthcare & Senior Services',
       icon: Heart,
       color: 'text-pink-400',
       bgColor: 'bg-pink-500/10',
-      description: 'Specialized nutrition support for healthcare facilities and senior communities',
+      description: isArabic ? 'دعم تغذوي متخصص للمرافق الصحية ومجتمعات كبار السن' : 'Specialized nutrition support for healthcare facilities and senior communities',
       applications: [
-        'Hospital patient nutrition',
-        'Senior living facilities',
-        'Home healthcare support',
-        'Therapeutic diet programs'
+        isArabic ? 'تغذية المرضى في المستشفيات' : 'Hospital patient nutrition',
+        isArabic ? 'مرافق سكن كبار السن' : 'Senior living facilities',
+        isArabic ? 'دعم الرعاية الصحية المنزلية' : 'Home healthcare support',
+        isArabic ? 'برامج الحميات العلاجية' : 'Therapeutic diet programs'
       ],
       image: '/images/4.jpg',
-      stats: { facilities: '150+ partners', compliance: '100% dietary', satisfaction: '96% rating' }
+      stats: { facilities: isArabic ? '150+ شريك' : '150+ partners', compliance: isArabic ? 'التزام غذائي 100%' : '100% dietary', satisfaction: isArabic ? 'تقييم 96%' : '96% rating' }
     },
     {
-      category: 'Educational Institution Services',
+      category: isArabic ? 'خدمات المؤسسات التعليمية' : 'Educational Institution Services',
       icon: Users,
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
-      description: 'Campus nutrition solutions for students and educational programs',
+      description: isArabic ? 'حلول تغذية للحرم الجامعي للطلاب والبرامج التعليمية' : 'Campus nutrition solutions for students and educational programs',
       applications: [
-        'University dining programs',
-        'School emergency preparedness',
-        'Field study expeditions',
-        'International exchange programs'
+        isArabic ? 'برامج طعام جامعية' : 'University dining programs',
+        isArabic ? 'الاستعداد للطوارئ في المدارس' : 'School emergency preparedness',
+        isArabic ? 'بعثات دراسية ميدانية' : 'Field study expeditions',
+        isArabic ? 'برامج تبادل دولي' : 'International exchange programs'
       ],
       image: '/images/5.jpg',
-      stats: { students: '50,000+ served', schools: '75+ institutions', nutrition: '100% balanced' }
+      stats: { students: isArabic ? 'خدمة 50,000+ طالب' : '50,000+ served', schools: isArabic ? '75+ مؤسسة' : '75+ institutions', nutrition: isArabic ? 'توازن غذائي 100%' : '100% balanced' }
     },
     {
-      category: 'Global Distribution Services',
+      category: isArabic ? 'خدمات التوزيع العالمية' : 'Global Distribution Services',
       icon: Globe,
       color: 'text-teal-400',
       bgColor: 'bg-teal-500/10',
-      description: 'Worldwide supply chain and distribution network for scalable nutrition access',
+      description: isArabic ? 'سلسلة توريد وشبكة توزيع عالمية لإتاحة التغذية على نطاق واسع' : 'Worldwide supply chain and distribution network for scalable nutrition access',
       applications: [
-        'International aid distribution',
-        'Remote location delivery',
-        'Bulk institutional supply',
-        'Custom packaging solutions'
+        isArabic ? 'توزيع المساعدات الدولية' : 'International aid distribution',
+        isArabic ? 'توصيل للمواقع النائية' : 'Remote location delivery',
+        isArabic ? 'إمداد مؤسسي بالجملة' : 'Bulk institutional supply',
+        isArabic ? 'حلول تغليف مخصصة' : 'Custom packaging solutions'
       ],
       image: '/images/6.jpg',
-      stats: { countries: '25+ active', logistics: '48-hour delivery', scale: '1M+ meals/month' }
+      stats: { countries: isArabic ? 'أكثر من 25 دولة نشطة' : '25+ active', logistics: isArabic ? 'تسليم خلال 48 ساعة' : '48-hour delivery', scale: isArabic ? 'أكثر من مليون وجبة/شهر' : '1M+ meals/month' }
     }
   ]
 
   const keyFeatures = [
     {
       icon: Zap,
-      title: '3-5 Minute Activation',
-      description: 'Revolutionary self-heating technology that works anywhere'
+      title: isArabic ? 'تفعيل خلال 3-5 دقائق' : '3-5 Minute Activation',
+      description: isArabic ? 'تقنية تسخين ذاتي ثورية تعمل في أي مكان' : 'Revolutionary self-heating technology that works anywhere'
     },
     {
       icon: Clock,
-      title: '24/7 Availability',
-      description: 'Round-the-clock support and emergency response capabilities'
+      title: isArabic ? 'متاح 24/7' : '24/7 Availability',
+      description: isArabic ? 'دعم على مدار الساعة وقدرات استجابة للطوارئ' : 'Round-the-clock support and emergency response capabilities'
     },
     {
       icon: Award,
-      title: 'Certified Quality',
-      description: 'Halal certified, FDA approved, and accessibility compliant'
+      title: isArabic ? 'جودة معتمدة' : 'Certified Quality',
+      description: isArabic ? 'معتمد حلال، موافق عليه من FDA، ومتوافق مع معايير الوصول' : 'Halal certified, FDA approved, and accessibility compliant'
     },
     {
       icon: Truck,
-      title: 'Global Delivery',
-      description: 'Worldwide distribution network with rapid deployment'
+      title: isArabic ? 'تسليم عالمي' : 'Global Delivery',
+      description: isArabic ? 'شبكة توزيع عالمية مع نشر سريع' : 'Worldwide distribution network with rapid deployment'
     }
   ]
 
@@ -143,14 +145,13 @@ const Services = () => {
             <div className="flex items-center justify-center mb-6">
               <Globe className="w-8 h-8 text-teal-400 mr-3" />
               <span className="text-teal-400 font-semibold text-lg">
-                Global Nutrition Services
+                {isArabic ? 'خدمات تغذية عالمية' : 'Global Nutrition Services'}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Service Categories</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'تصنيفات الخدمات' : 'Service Categories'}</h1>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Comprehensive nutrition solutions tailored to diverse environments and communities. 
-              From emergency relief to corporate wellness, we deliver hot, nutritious meals anywhere they're needed.
+              {isArabic ? 'حلول تغذية شاملة مصممة لبيئات ومجتمعات متنوعة. من الإغاثة الطارئة إلى عافية الشركات، نوفر وجبات ساخنة ومغذية أينما دعت الحاجة.' : "Comprehensive nutrition solutions tailored to diverse environments and communities. From emergency relief to corporate wellness, we deliver hot, nutritious meals anywhere they're needed."}
             </p>
           </motion.div>
         </div>
@@ -189,9 +190,9 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Our Service Solutions</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{isArabic ? 'حلول خدماتنا' : 'Our Service Solutions'}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Specialized nutrition services designed for specific environments, communities, and use cases
+              {isArabic ? 'خدمات تغذية متخصصة مصممة لبيئات ومجتمعات وحالات استخدام محددة' : 'Specialized nutrition services designed for specific environments, communities, and use cases'}
             </p>
           </motion.div>
 
@@ -222,7 +223,7 @@ const Services = () => {
                   <p className="text-slate-600 mb-4">{service.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-slate-700 mb-2">Key Applications:</h4>
+                    <h4 className="text-sm font-semibold text-slate-700 mb-2">{isArabic ? 'أهم الاستخدامات:' : 'Key Applications:'}</h4>
                     <ul className="space-y-1">
                       {service.applications.map((app, appIndex) => (
                         <li key={appIndex} className="text-sm text-slate-600 flex items-start">
@@ -258,28 +259,30 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-              Why Choose R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D Services?
+              {isArabic ? 'لماذا تختار خدمات ريتشفود؟' : (<>
+                {"Why Choose R"}<span className="text-orange-400">E</span>{"ACHF"}<span className="text-orange-400">OO</span>{"D Services?"}
+              </>)}
             </h2>
             <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
-              Comprehensive nutrition solutions backed by revolutionary technology and global expertise
+              {isArabic ? 'حلول تغذية شاملة مدعومة بتقنية ثورية وخبرة عالمية' : 'Comprehensive nutrition solutions backed by revolutionary technology and global expertise'}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Proven Reliability',
-                description: 'Deployed in 25+ countries with 99.9% success rate in critical situations',
+                title: isArabic ? 'موثوقية مثبتة' : 'Proven Reliability',
+                description: isArabic ? 'تم النشر في أكثر من 25 دولة بمعدل نجاح 99.9% في الحالات الحرجة' : 'Deployed in 25+ countries with 99.9% success rate in critical situations',
                 icon: Shield
               },
               {
-                title: 'Scalable Solutions',
-                description: 'From individual meals to large-scale institutional deployments',
+                title: isArabic ? 'حلول قابلة للتوسّع' : 'Scalable Solutions',
+                description: isArabic ? 'من وجبات فردية إلى عمليات نشر مؤسسية واسعة' : 'From individual meals to large-scale institutional deployments',
                 icon: Zap
               },
               {
-                title: 'Global Support',
-                description: '24/7 worldwide support network with rapid response capabilities',
+                title: isArabic ? 'دعم عالمي' : 'Global Support',
+                description: isArabic ? 'شبكة دعم عالمية على مدار الساعة مع قدرات استجابة سريعة' : '24/7 worldwide support network with rapid response capabilities',
                 icon: Globe
               }
             ].map((benefit, index) => (
@@ -311,23 +314,23 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Ready to Deploy Nutrition Solutions?
+              {isArabic ? 'جاهزون لتنفيذ حلول التغذية؟' : 'Ready to Deploy Nutrition Solutions?'}
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-              Contact our team to discuss your specific requirements and create a custom nutrition solution.
+              {isArabic ? 'تواصل مع فريقنا لمناقشة متطلباتك وإنشاء حل تغذوي مخصص.' : 'Contact our team to discuss your specific requirements and create a custom nutrition solution.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                to={isArabic ? '/ar/contact' : '/contact'}
                 className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
               >
-                Contact Our Team
+                {isArabic ? 'تواصل مع فريقنا' : 'Contact Our Team'}
               </Link>
               <Link
-                to="/shop"
+                to={isArabic ? '/ar/shop' : '/shop'}
                 className="border-2 border-teal-400 text-teal-300 font-semibold py-4 px-8 rounded-lg hover:bg-teal-400 hover:text-white transition-all"
               >
-                Browse Products
+                {isArabic ? 'تصفح المنتجات' : 'Browse Products'}
               </Link>
             </div>
           </motion.div>

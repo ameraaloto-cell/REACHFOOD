@@ -1,56 +1,59 @@
 import { motion } from 'framer-motion'
 import { MapPin, Mail, Clock, Globe, Users, Building, Lightbulb } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 const Contact = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const contactTypes = [
     {
-      title: 'General Inquiries',
+      title: isArabic ? 'استفسارات عامة' : 'General Inquiries',
       icon: Mail,
       email: 'info@reachfood.com',
-      description: 'Questions about our products, technology, or company',
+      description: isArabic ? 'أسئلة حول منتجاتنا أو تقنيتنا أو شركتنا' : 'Questions about our products, technology, or company',
       color: 'text-teal-400'
     },
     {
-      title: 'Partnership Opportunities',
+      title: isArabic ? 'فرص الشراكة' : 'Partnership Opportunities',
       icon: Users,
       email: 'partnerships@reachfood.com',
-      description: 'Emergency organizations, corporate wellness, distribution partnerships',
+      description: isArabic ? 'منظمات الإغاثة، عافية الشركات، شراكات التوزيع' : 'Emergency organizations, corporate wellness, distribution partnerships',
       color: 'text-blue-400'
     },
     {
-      title: 'Technology & Innovation',
+      title: isArabic ? 'التقنية والابتكار' : 'Technology & Innovation',
       icon: Lightbulb,
       email: 'tech@reachfood.com',
-      description: 'Technical questions, R&D collaborations, innovation discussions',
+      description: isArabic ? 'أسئلة تقنية، تعاون بحث وتطوير، مناقشات ابتكار' : 'Technical questions, R&D collaborations, innovation discussions',
       color: 'text-orange-400'
     },
     {
-      title: 'Press & Media',
+      title: isArabic ? 'الصحافة والإعلام' : 'Press & Media',
       icon: Globe,
       email: 'media@reachfood.com',
-      description: 'Media inquiries, press releases, interview requests',
+      description: isArabic ? 'استفسارات إعلامية، بيانات صحفية، طلبات مقابلات' : 'Media inquiries, press releases, interview requests',
       color: 'text-purple-400'
     }
   ]
 
   const offices = [
     {
-      location: 'MENA Operations Center',
-      address: 'Dubai Technology Park, UAE',
-      country: 'United Arab Emirates',
-      focus: 'Cultural Cuisine & Regional Partnerships'
+      location: isArabic ? 'مركز عمليات الشرق الأوسط وشمال أفريقيا' : 'MENA Operations Center',
+      address: isArabic ? 'مجمع دبي التكنولوجي، الإمارات' : 'Dubai Technology Park, UAE',
+      country: isArabic ? 'الإمارات العربية المتحدة' : 'United Arab Emirates',
+      focus: isArabic ? 'المطبخ الثقافي والشراكات الإقليمية' : 'Cultural Cuisine & Regional Partnerships'
     },
     {
-      location: 'Jordan Office',
-      address: 'Amman, Jordan',
-      country: 'Jordan',
-      focus: 'Research & Development Hub'
+      location: isArabic ? 'مكتب الأردن' : 'Jordan Office',
+      address: isArabic ? 'عمّان، الأردن' : 'Amman, Jordan',
+      country: isArabic ? 'الأردن' : 'Jordan',
+      focus: isArabic ? 'مركز البحث والتطوير' : 'Research & Development Hub'
     },
     {
-      location: 'KSA Office',
-      address: 'Riyadh, Saudi Arabia',
-      country: 'Saudi Arabia',
-      focus: 'Regional Distribution & Partnerships'
+      location: isArabic ? 'مكتب السعودية' : 'KSA Office',
+      address: isArabic ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia',
+      country: isArabic ? 'المملكة العربية السعودية' : 'Saudi Arabia',
+      focus: isArabic ? 'التوزيع الإقليمي والشراكات' : 'Regional Distribution & Partnerships'
     }
   ]
 
@@ -67,14 +70,13 @@ const Contact = () => {
             <div className="flex items-center justify-center mb-6">
               <Globe className="w-8 h-8 text-teal-400 mr-3" />
               <span className="text-teal-400 font-semibold text-lg">
-                Connect With ReachFood
+                {isArabic ? 'تواصل مع ReachFood' : 'Connect With ReachFood'}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Get In Touch</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'تواصل معنا' : 'Get In Touch'}</h1>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Whether you're interested in partnerships, have questions about our technology, 
-              or want to bring ReachFood to your organization, we'd love to hear from you.
+              {isArabic ? 'سواء كنت مهتماً بالشراكات، أو لديك أسئلة حول تقنيتنا، أو ترغب في تقديم ReachFood لمؤسستك، يسعدنا سماعك.' : "Whether you're interested in partnerships, have questions about our technology, or want to bring ReachFood to your organization, we'd love to hear from you."}
             </p>
           </motion.div>
         </div>
@@ -89,9 +91,9 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">How Can We Help?</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{isArabic ? 'كيف يمكننا المساعدة؟' : 'How Can We Help?'}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Choose the best way to reach us based on your specific needs and interests
+              {isArabic ? 'اختر الطريقة الأنسب للتواصل معنا بناءً على احتياجاتك واهتماماتك' : 'Choose the best way to reach us based on your specific needs and interests'}
             </p>
           </motion.div>
 
@@ -143,68 +145,68 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-serif font-bold text-white mb-8">Send Us a Message</h2>
+              <h2 className="text-3xl font-serif font-bold text-white mb-8">{isArabic ? 'أرسل لنا رسالة' : 'Send Us a Message'}</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-teal-100 mb-2">First Name</label>
+                    <label className="block text-teal-100 mb-2">{isArabic ? 'الاسم الأول' : 'First Name'}</label>
                     <input
                       type="text"
                       required
                       className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm"
-                      placeholder="Your first name"
+                      placeholder={isArabic ? 'اسمك الأول' : 'Your first name'}
                     />
                   </div>
                   <div>
-                    <label className="block text-teal-100 mb-2">Last Name</label>
+                    <label className="block text-teal-100 mb-2">{isArabic ? 'اسم العائلة' : 'Last Name'}</label>
                     <input
                       type="text"
                       required
                       className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm"
-                      placeholder="Your last name"
+                      placeholder={isArabic ? 'اسم عائلتك' : 'Your last name'}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-teal-100 mb-2">Email</label>
+                  <label className="block text-teal-100 mb-2">{isArabic ? 'البريد الإلكتروني' : 'Email'}</label>
                   <input
                     type="email"
                     required
                     className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm"
-                    placeholder="your.email@example.com"
+                    placeholder={isArabic ? 'your.email@example.com' : 'your.email@example.com'}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-teal-100 mb-2">Organization (Optional)</label>
+                  <label className="block text-teal-100 mb-2">{isArabic ? 'المنظمة (اختياري)' : 'Organization (Optional)'}</label>
                   <input
                     type="text"
                     className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm"
-                    placeholder="Your organization or company"
+                    placeholder={isArabic ? 'منظمتك أو شركتك' : 'Your organization or company'}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-teal-100 mb-2">Inquiry Type</label>
+                  <label className="block text-teal-100 mb-2">{isArabic ? 'نوع الاستفسار' : 'Inquiry Type'}</label>
                   <select className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm">
-                    <option value="">Select inquiry type</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="emergency">Emergency Relief Programs</option>
-                    <option value="corporate">Corporate Wellness</option>
-                    <option value="technology">Technology Questions</option>
-                    <option value="media">Media/Press Inquiry</option>
-                    <option value="general">General Question</option>
+                    <option value="">{isArabic ? 'اختر نوع الاستفسار' : 'Select inquiry type'}</option>
+                    <option value="partnership">{isArabic ? 'فرصة شراكة' : 'Partnership Opportunity'}</option>
+                    <option value="emergency">{isArabic ? 'برامج الإغاثة الطارئة' : 'Emergency Relief Programs'}</option>
+                    <option value="corporate">{isArabic ? 'عافية الشركات' : 'Corporate Wellness'}</option>
+                    <option value="technology">{isArabic ? 'أسئلة تقنية' : 'Technology Questions'}</option>
+                    <option value="media">{isArabic ? 'استفسار إعلامي/صحفي' : 'Media/Press Inquiry'}</option>
+                    <option value="general">{isArabic ? 'سؤال عام' : 'General Question'}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-teal-100 mb-2">Message</label>
+                  <label className="block text-teal-100 mb-2">{isArabic ? 'الرسالة' : 'Message'}</label>
                   <textarea
                     rows={5}
                     required
                     className="w-full p-3 bg-slate-800/50 border border-teal-700/30 rounded-lg text-white focus:border-teal-400 focus:outline-none backdrop-blur-sm resize-none"
-                    placeholder="Tell us about your interest in ReachFood..."
+                    placeholder={isArabic ? 'أخبرنا عن اهتمامك بـ ReachFood...' : 'Tell us about your interest in ReachFood...'}
                   ></textarea>
                 </div>
 
@@ -214,7 +216,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Send Message
+                  {isArabic ? 'إرسال الرسالة' : 'Send Message'}
                 </motion.button>
               </form>
             </motion.div>
@@ -227,11 +229,9 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-serif font-bold text-white mb-6">Global Presence</h2>
+                <h2 className="text-3xl font-serif font-bold text-white mb-6">{isArabic ? 'حضور عالمي' : 'Global Presence'}</h2>
                 <p className="text-teal-100 mb-8 leading-relaxed">
-                  ReachFood operates globally with strategic locations that support our mission 
-                  of making nutrition accessible everywhere. From technology development to 
-                  cultural cuisine expertise and emergency response.
+                  {isArabic ? 'تعمل ReachFood عالمياً من خلال مواقع استراتيجية تدعم مهمتنا في جعل التغذية متاحة في كل مكان — من تطوير التقنية إلى خبرة المطبخ الثقافي والاستجابة للطوارئ.' : 'ReachFood operates globally with strategic locations that support our mission of making nutrition accessible everywhere. From technology development to cultural cuisine expertise and emergency response.'}
                 </p>
               </div>
 
@@ -257,19 +257,19 @@ const Contact = () => {
               ))}
 
               <div className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">Response Times</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">{isArabic ? 'أوقات الاستجابة' : 'Response Times'}</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center space-x-3">
                     <Clock className="w-4 h-4 text-teal-400" />
-                    <span className="text-teal-100">General inquiries: 24-48 hours</span>
+                    <span className="text-teal-100">{isArabic ? 'استفسارات عامة: 24-48 ساعة' : 'General inquiries: 24-48 hours'}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Users className="w-4 h-4 text-blue-400" />
-                    <span className="text-teal-100">Partnership opportunities: 2-5 business days</span>
+                    <span className="text-teal-100">{isArabic ? 'فرص الشراكة: 2-5 أيام عمل' : 'Partnership opportunities: 2-5 business days'}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Building className="w-4 h-4 text-orange-400" />
-                    <span className="text-teal-100">Emergency relief: Priority response</span>
+                    <span className="text-teal-100">{isArabic ? 'الإغاثة الطارئة: أولوية استجابة' : 'Emergency relief: Priority response'}</span>
                   </div>
                 </div>
               </div>
@@ -287,28 +287,27 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-6">
-              Ready to Transform Nutrition Access?
+              {isArabic ? 'جاهزون لتحويل الوصول إلى التغذية؟' : 'Ready to Transform Nutrition Access?'}
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
-              Join organizations worldwide who are using ReachFood to provide reliable, 
-              hot nutrition in any environment, anywhere, anytime.
+              {isArabic ? 'انضم إلى منظمات حول العالم تستخدم ReachFood لتقديم تغذية ساخنة وموثوقة في أي بيئة، في أي مكان وزمان.' : 'Join organizations worldwide who are using ReachFood to provide reliable, hot nutrition in any environment, anywhere, anytime.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="/services"
+                href={isArabic ? '/ar/services' : '/services'}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Our Products
+                {isArabic ? 'استكشف منتجاتنا' : 'Explore Our Products'}
               </motion.a>
               <motion.a
-                href="/about"
+                href={isArabic ? '/ar/about' : '/about'}
                 className="border-2 border-orange-400 text-orange-200 font-semibold py-4 px-8 rounded-lg hover:bg-orange-500 hover:text-white transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn About Our Mission
+                {isArabic ? 'تعرّف على مهمتنا' : 'Learn About Our Mission'}
               </motion.a>
             </div>
           </motion.div>

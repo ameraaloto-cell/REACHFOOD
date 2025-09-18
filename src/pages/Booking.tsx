@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import { 
   ShoppingCart, 
   Package, 
@@ -15,6 +16,8 @@ import {
 } from 'lucide-react'
 
 const Booking = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const [selectedPlan, setSelectedPlan] = useState('')
   const [orderType, setOrderType] = useState<'one-time' | 'subscription'>('subscription')
   const [step, setStep] = useState(1)
@@ -22,48 +25,48 @@ const Booking = () => {
   const subscriptionPlans = [
     {
       id: 'emergency-prep',
-      name: 'Emergency Preparedness',
+      name: isArabic ? 'الاستعداد للطوارئ' : 'Emergency Preparedness',
       price: '$89.99',
       period: 'monthly',
       meals: 8,
-      description: 'Essential emergency nutrition for families and organizations',
-      features: ['High shelf-life meals', 'Emergency response support', 'Bulk storage friendly', 'Multi-language labels'],
+      description: isArabic ? 'تغذية طوارئ أساسية للعائلات والمؤسسات' : 'Essential emergency nutrition for families and organizations',
+      features: isArabic ? ['وجبات طويلة الصلاحية', 'دعم الاستجابة للطوارئ', 'مناسبة للتخزين بالجملة', 'ملصقات متعددة اللغات'] : ['High shelf-life meals', 'Emergency response support', 'Bulk storage friendly', 'Multi-language labels'],
       icon: Shield,
       color: 'text-red-400',
       popular: false
     },
     {
       id: 'adventure-explorer',
-      name: 'Adventure Explorer',
+      name: isArabic ? 'مستكشف المغامرة' : 'Adventure Explorer',
       price: '$49.99',
       period: 'monthly',
       meals: 4,
-      description: 'Perfect for regular outdoor adventures and camping trips',
-      features: ['Lightweight packaging', 'High energy density', 'Weather resistant', 'Compact storage'],
+      description: isArabic ? 'مثالي للمغامرات الخارجية والرحلات التخييمية المنتظمة' : 'Perfect for regular outdoor adventures and camping trips',
+      features: isArabic ? ['تغليف خفيف الوزن', 'كثافة طاقة عالية', 'مقاوم للطقس', 'تخزين مدمج'] : ['Lightweight packaging', 'High energy density', 'Weather resistant', 'Compact storage'],
       icon: Globe,
       color: 'text-green-400',
       popular: true
     },
     {
       id: 'professional-go',
-      name: 'Professional On-the-Go',
+      name: isArabic ? 'المهني أثناء التنقل' : 'Professional On-the-Go',
       price: '$69.99',
       period: 'monthly',
       meals: 6,
-      description: 'Convenient nutrition for busy work schedules',
-      features: ['Office-friendly heating', 'Balanced nutrition', 'Quick consumption', 'Professional packaging'],
+      description: isArabic ? 'تغذية مريحة لجدول أعمال مزدحم' : 'Convenient nutrition for busy work schedules',
+      features: isArabic ? ['تسخين مناسب للمكاتب', 'تغذية متوازنة', 'تناول سريع', 'تغليف احترافي'] : ['Office-friendly heating', 'Balanced nutrition', 'Quick consumption', 'Professional packaging'],
       icon: Clock,
       color: 'text-blue-400',
       popular: false
     },
     {
       id: 'family-wellness',
-      name: 'Family Wellness',
+      name: isArabic ? 'عافية الأسرة' : 'Family Wellness',
       price: '$129.99',
       period: 'monthly',
       meals: 12,
-      description: 'Nutritious family meals for busy households',
-      features: ['Family-size portions', 'Kid-friendly options', 'Traditional flavors', 'Sharing meals'],
+      description: isArabic ? 'وجبات عائلية مغذية للأسر المشغولة' : 'Nutritious family meals for busy households',
+      features: isArabic ? ['حصص بحجم عائلي', 'خيارات مناسبة للأطفال', 'نكهات تقليدية', 'وجبات قابلة للمشاركة'] : ['Family-size portions', 'Kid-friendly options', 'Traditional flavors', 'Sharing meals'],
       icon: Heart,
       color: 'text-purple-400',
       popular: false
@@ -73,31 +76,31 @@ const Booking = () => {
   const oneTimePacks = [
     {
       id: 'emergency-starter',
-      name: 'Emergency Starter Pack',
+      name: isArabic ? 'حزمة الطوارئ الأساسية' : 'Emergency Starter Pack',
       price: '$49.99',
       meals: 4,
-      description: '4 emergency relief meals for immediate preparedness'
+      description: isArabic ? '4 وجبات إغاثة طارئة للاستعداد الفوري' : '4 emergency relief meals for immediate preparedness'
     },
     {
       id: 'adventure-weekend',
-      name: 'Adventure Weekend Pack',
+      name: isArabic ? 'حزمة عطلة نهاية الأسبوع للمغامرة' : 'Adventure Weekend Pack',
       price: '$29.99',
       meals: 2,
-      description: '2 lightweight meals perfect for weekend adventures'
+      description: isArabic ? 'وجبتان خفيفتان مثاليتان لمغامرات نهاية الأسبوع' : '2 lightweight meals perfect for weekend adventures'
     },
     {
       id: 'professional-week',
-      name: 'Professional Week Pack',
+      name: isArabic ? 'حزمة أسبوع المهني' : 'Professional Week Pack',
       price: '$39.99',
       meals: 3,
-      description: '3 office-friendly meals for busy work weeks'
+      description: isArabic ? '3 وجبات مناسبة للمكتب لأسابيع العمل المزدحمة' : '3 office-friendly meals for busy work weeks'
     },
     {
       id: 'family-trial',
-      name: 'Family Trial Pack',
+      name: isArabic ? 'حزمة تجربة العائلة' : 'Family Trial Pack',
       price: '$59.99',
       meals: 5,
-      description: '5 family-style meals to try our service'
+      description: isArabic ? '5 وجبات عائلية لتجربة خدمتنا' : '5 family-style meals to try our service'
     }
   ]
 
@@ -124,14 +127,13 @@ const Booking = () => {
             <div className="flex items-center justify-center mb-6">
               <Zap className="w-8 h-8 text-teal-400 mr-3" />
               <span className="text-teal-400 font-semibold text-lg">
-                Revolutionary Meal Delivery
+                {isArabic ? 'توصيل وجبات ثوري' : 'Revolutionary Meal Delivery'}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Order Your Meals</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'اطلب وجباتك' : 'Order Your Meals'}</h1>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Choose from our subscription plans for regular delivery or order individual meal packs. 
-              Hot, sustainable, and culturally authentic nutrition delivered to your door.
+              {isArabic ? 'اختر من خطط الاشتراك للتسليم المنتظم أو اطلب حزم وجبات فردية. تغذية ساخنة، مستدامة، وأصيلة ثقافياً تُسلم إلى باب منزلك.' : 'Choose from our subscription plans for regular delivery or order individual meal packs. Hot, sustainable, and culturally authentic nutrition delivered to your door.'}
             </p>
           </motion.div>
         </div>
@@ -147,7 +149,7 @@ const Booking = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">
-              How would you like to order?
+              {isArabic ? 'كيف تود الطلب؟' : 'How would you like to order?'}
             </h2>
           </motion.div>
 
@@ -165,18 +167,18 @@ const Booking = () => {
             >
               <div className="text-center">
                 <Package className="w-12 h-12 text-teal-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Subscription Plans</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{isArabic ? 'خطط الاشتراك' : 'Subscription Plans'}</h3>
                 <p className="text-slate-600 mb-4">
-                  Regular delivery of meals tailored to your lifestyle with flexible scheduling and savings
+                  {isArabic ? 'تسليم منتظم لوجبات ملائمة لنمط حياتك مع جدولة مرنة وتوفير' : 'Regular delivery of meals tailored to your lifestyle with flexible scheduling and savings'}
                 </p>
                 <div className="flex items-center justify-center space-x-4 text-sm text-slate-500">
                   <span className="flex items-center">
                     <Check className="w-4 h-4 mr-1 text-green-500" />
-                    Save up to 20%
+                    {isArabic ? 'وفر حتى 20%' : 'Save up to 20%'}
                   </span>
                   <span className="flex items-center">
                     <Check className="w-4 h-4 mr-1 text-green-500" />
-                    Skip anytime
+                    {isArabic ? 'يمكن التخطي في أي وقت' : 'Skip anytime'}
                   </span>
                 </div>
               </div>
@@ -195,18 +197,18 @@ const Booking = () => {
             >
               <div className="text-center">
                 <ShoppingCart className="w-12 h-12 text-teal-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">One-Time Purchase</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{isArabic ? 'شراء مرة واحدة' : 'One-Time Purchase'}</h3>
                 <p className="text-slate-600 mb-4">
-                  Perfect for trying our meals or stocking up for specific needs and occasions
+                  {isArabic ? 'مثالي لتجربة وجباتنا أو التخزين لاحتياجات ومناسبات محددة' : 'Perfect for trying our meals or stocking up for specific needs and occasions'}
                 </p>
                 <div className="flex items-center justify-center space-x-4 text-sm text-slate-500">
                   <span className="flex items-center">
                     <Check className="w-4 h-4 mr-1 text-green-500" />
-                    No commitment
+                    {isArabic ? 'بدون التزام' : 'No commitment'}
                   </span>
                   <span className="flex items-center">
                     <Check className="w-4 h-4 mr-1 text-green-500" />
-                    Instant delivery
+                    {isArabic ? 'تسليم فوري' : 'Instant delivery'}
                   </span>
                 </div>
               </div>
@@ -243,9 +245,9 @@ const Booking = () => {
               ))}
             </div>
             <div className="flex justify-between text-sm text-slate-500">
-              <span>Select Plan</span>
-              <span>Customize</span>
-              <span>Checkout</span>
+              <span>{isArabic ? 'اختر الخطة' : 'Select Plan'}</span>
+              <span>{isArabic ? 'تخصيص' : 'Customize'}</span>
+              <span>{isArabic ? 'الدفع' : 'Checkout'}</span>
             </div>
           </div>
 
@@ -257,7 +259,7 @@ const Booking = () => {
               className="space-y-6"
             >
               <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
-                {orderType === 'subscription' ? 'Choose Your Subscription Plan' : 'Select a Meal Pack'}
+                {orderType === 'subscription' ? (isArabic ? 'اختر خطة الاشتراك' : 'Choose Your Subscription Plan') : (isArabic ? 'اختر حزمة وجبات' : 'Select a Meal Pack')}
               </h2>
               
               {orderType === 'subscription' ? (
@@ -279,7 +281,7 @@ const Booking = () => {
                         {plan.popular && (
                           <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                             <span className="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                              Most Popular
+                              {isArabic ? 'الأكثر شعبية' : 'Most Popular'}
                             </span>
                           </div>
                         )}
@@ -292,7 +294,7 @@ const Booking = () => {
                             <span className="text-slate-500">/{plan.period}</span>
                           </div>
                           <div className="text-slate-600 mb-4">
-                            {plan.meals} meals included
+                            {isArabic ? `${plan.meals} وجبة متضمنة` : `${plan.meals} meals included`}
                           </div>
                           <p className="text-slate-600 mb-6 text-sm">{plan.description}</p>
                           
@@ -326,7 +328,7 @@ const Booking = () => {
                           <span className="text-3xl font-bold text-teal-600">{pack.price}</span>
                         </div>
                         <div className="text-slate-600 mb-4">
-                          {pack.meals} meals included
+                          {isArabic ? `${pack.meals} وجبة متضمنة` : `${pack.meals} meals included`}
                         </div>
                         <p className="text-slate-600 text-sm">{pack.description}</p>
                       </div>
@@ -345,11 +347,11 @@ const Booking = () => {
               className="space-y-6"
             >
               <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
-                Customize Your Order
+                {isArabic ? 'خصص طلبك' : 'Customize Your Order'}
               </h2>
               
               <div className="bg-slate-50 rounded-xl p-6 mb-8">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Selected Plan</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">{isArabic ? 'الخطة المختارة' : 'Selected Plan'}</h3>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-700">
                     {orderType === 'subscription' 
@@ -368,18 +370,18 @@ const Booking = () => {
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">Delivery Frequency</label>
+                  <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'تكرار التسليم' : 'Delivery Frequency'}</label>
                   <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none">
-                    <option>Every 4 weeks</option>
-                    <option>Every 6 weeks</option>
-                    <option>Every 8 weeks</option>
+                    <option>{isArabic ? 'كل 4 أسابيع' : 'Every 4 weeks'}</option>
+                    <option>{isArabic ? 'كل 6 أسابيع' : 'Every 6 weeks'}</option>
+                    <option>{isArabic ? 'كل 8 أسابيع' : 'Every 8 weeks'}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">Dietary Preferences</label>
+                  <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'تفضيلات غذائية' : 'Dietary Preferences'}</label>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {['Halal', 'Vegetarian', 'Vegan', 'Gluten-Free'].map((diet) => (
+                    {(isArabic ? ['حلال', 'نباتي', 'نباتي صرف', 'خالٍ من الغلوتين'] : ['Halal', 'Vegetarian', 'Vegan', 'Gluten-Free']).map((diet) => (
                       <label key={diet} className="flex items-center space-x-2">
                         <input type="checkbox" className="text-teal-500" />
                         <span className="text-slate-700">{diet}</span>
@@ -389,11 +391,11 @@ const Booking = () => {
                 </div>
 
                 <div>
-                  <label className="block text-slate-700 font-medium mb-2">Special Instructions</label>
+                  <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'تعليمات خاصة' : 'Special Instructions'}</label>
                   <textarea
                     className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
                     rows={3}
-                    placeholder="Any special dietary needs or delivery instructions..."
+                    placeholder={isArabic ? 'أي احتياجات غذائية خاصة أو تعليمات تسليم...' : 'Any special dietary needs or delivery instructions...'}
                   />
                 </div>
               </div>
@@ -402,7 +404,7 @@ const Booking = () => {
                 onClick={() => setStep(3)}
                 className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all"
               >
-                Continue to Checkout
+                {isArabic ? 'متابعة إلى الدفع' : 'Continue to Checkout'}
               </button>
             </motion.div>
           )}
@@ -415,54 +417,54 @@ const Booking = () => {
               className="space-y-6"
             >
               <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
-                Complete Your Order
+                {isArabic ? 'أكمل طلبك' : 'Complete Your Order'}
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-slate-700 font-medium mb-2">Full Name</label>
+                    <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'الاسم الكامل' : 'Full Name'}</label>
                     <input
                       type="text"
                       required
                       className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
-                      placeholder="Your full name"
+                      placeholder={isArabic ? 'الاسم الكامل' : 'Your full name'}
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-700 font-medium mb-2">Email</label>
+                    <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'البريد الإلكتروني' : 'Email'}</label>
                     <input
                       type="email"
                       required
                       className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
-                      placeholder="your@email.com"
+                      placeholder={isArabic ? 'your@email.com' : 'your@email.com'}
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-700 font-medium mb-2">Phone Number</label>
+                    <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'رقم الهاتف' : 'Phone Number'}</label>
                     <input
                       type="tel"
                       required
                       className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder={isArabic ? '+962 7X XXX XXXX' : '+1 (555) 123-4567'}
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-700 font-medium mb-2">Delivery Address</label>
+                    <label className="block text-slate-700 font-medium mb-2">{isArabic ? 'عنوان التسليم' : 'Delivery Address'}</label>
                     <input
                       type="text"
                       required
                       className="w-full p-3 border border-slate-300 rounded-lg focus:border-teal-500 focus:outline-none"
-                      placeholder="Street address"
+                      placeholder={isArabic ? 'عنوان الشارع' : 'Street address'}
                     />
                   </div>
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">Order Summary</h3>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{isArabic ? 'ملخص الطلب' : 'Order Summary'}</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span>Plan:</span>
+                      <span>{isArabic ? 'الخطة:' : 'Plan:'}</span>
                       <span>
                         {orderType === 'subscription' 
                           ? subscriptionPlans.find(p => p.id === selectedPlan)?.name
@@ -471,16 +473,16 @@ const Booking = () => {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Meals:</span>
+                      <span>{isArabic ? 'الوجبات:' : 'Meals:'}</span>
                       <span>
                         {orderType === 'subscription' 
                           ? subscriptionPlans.find(p => p.id === selectedPlan)?.meals
                           : oneTimePacks.find(p => p.id === selectedPlan)?.meals
-                        } meals
+                        } {isArabic ? 'وجبة' : 'meals'}
                       </span>
                     </div>
                     <div className="border-t pt-2 flex justify-between font-bold">
-                      <span>Total:</span>
+                      <span>{isArabic ? 'الإجمالي:' : 'Total:'}</span>
                       <span>
                         {orderType === 'subscription' 
                           ? subscriptionPlans.find(p => p.id === selectedPlan)?.price
@@ -492,7 +494,7 @@ const Booking = () => {
                 </div>
 
                 <button type="submit" className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all">
-                  Complete Order
+                  {isArabic ? 'إتمام الطلب' : 'Complete Order'}
                 </button>
               </form>
             </motion.div>
@@ -505,7 +507,7 @@ const Booking = () => {
                 onClick={() => setStep(step - 1)}
                 className="border-2 border-slate-300 text-slate-700 px-6 py-2 rounded-lg hover:border-slate-400 transition-colors"
               >
-                Back
+                {isArabic ? 'رجوع' : 'Back'}
               </button>
             </div>
           )}

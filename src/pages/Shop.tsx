@@ -1,30 +1,33 @@
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 const Shop = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const featuredProducts = [
     {
       id: 1,
-      name: 'Re-Collagen',
+      name: isArabic ? 'ري-كولاجين' : 'Re-Collagen',
       price: '$12.00',
       originalPrice: null,
       description: 'ريتش فود– وجبتك الساخنة أينما كنت! وجبات ذاتية التسخين، طبيعية 100%، خالية من المواد الحافظة، ومدعّمة بالكولاجين الحيوي لدعم صحتك ونشاطك. بتغليف صديق للبيئة وخفيف الوزن، كل ما عليك هو إضافة أي سائل… دقائق معدودة وتستمتع بوجبة لذيذة، مغذية، وجاهزة أينما أخذتك الحياة.',
       rating: 5,
       reviews: 247,
-      features: ['Self-heating in 5 minutes', 'Authentic MENA flavors', 'High nutritional value', 'Halal certified', 'Plantable packaging'],
-      badge: 'Health Focused',
+      features: isArabic ? ['تسخين ذاتي خلال 5 دقائق', 'نكهات أصيلة من الشرق الأوسط وشمال أفريقيا', 'قيمة غذائية عالية', 'معتمد حلال', 'تغليف قابل للزراعة'] : ['Self-heating in 5 minutes', 'Authentic MENA flavors', 'High nutritional value', 'Halal certified', 'Plantable packaging'],
+      badge: isArabic ? 'صحي' : 'Health Focused',
       image: '/images/reachfood-package.jpg',
       category: 'Wellness'
     },
     {
       id: 2,
-      name: 'The re-protein 8$',
+      name: isArabic ? 'ري-بروتين 8$' : 'The re-protein 8$',
       price: '$8',
       originalPrice: null,
       description: 'ري-بروتين وجبة مدعمة للتعافي الصحي، غنية بالبروتين، سهلة التناول والتسخين في أي مكان بفضل خاصية التسخين الذاتي. دعم عضلاتك وطاقة جسمك أينما كنت، بدون تعب ولا مجهود! جرّب ري-بروتين الآن واستمتع بوجبة دافئة وصحية في لحظات!',
       rating: 5,
       reviews: 312,
-      features: ['Gourmet variety selection', 'Traditional cooking methods', 'Premium ingredients', 'Cultural authenticity', 'Instant preparation'],
-      badge: 'Gourmet Choice',
+      features: isArabic ? ['تشكيلة فاخرة', 'طرق طهي تقليدية', 'مكونات مميزة', 'أصالة ثقافية', 'تحضير فوري'] : ['Gourmet variety selection', 'Traditional cooking methods', 'Premium ingredients', 'Cultural authenticity', 'Instant preparation'],
+      badge: isArabic ? 'اختيار الذواقة' : 'Gourmet Choice',
       image: '/images/icons/3dzz.jpg',
       category: 'Gourmet'
     }
@@ -32,12 +35,18 @@ const Shop = () => {
 
   const subscriptionPlans = [
     {
-      name: 'Emergency Preparedness',
+      name: isArabic ? 'الاستعداد للطوارئ' : 'Emergency Preparedness',
       monthlyPrice: '$89',
       annualPrice: '$890',
       savings: '$178',
       meals: '8 meals/month',
-      features: [
+      features: isArabic ? [
+        'تشكيلة وجبات طوارئ متنوعة',
+        'تخزين طويل الأمد',
+        'شحن أولوية',
+        'دليل تخطيط للطوارئ',
+        'خصومات للمنظمات'
+      ] : [
         'Mixed emergency meal selection',
         'Extended shelf life storage',
         'Priority shipping',
@@ -47,12 +56,18 @@ const Shop = () => {
       popular: false
     },
     {
-      name: 'Adventure Explorer',
+      name: isArabic ? 'مستكشف المغامرة' : 'Adventure Explorer',
       monthlyPrice: '$49',
       annualPrice: '$490',
       savings: '$98',
       meals: '4 meals/month',
-      features: [
+      features: isArabic ? [
+        'وجبات خارجية عالية الطاقة',
+        'تغليف خفيف جداً',
+        'تصميم مقاوم للطقس',
+        'تخطيط وجبات للمغامرة',
+        'خصومات على معدات الشركاء'
+      ] : [
         'High-energy outdoor meals',
         'Ultra-lightweight packaging',
         'Weather-resistant design',
@@ -62,12 +77,18 @@ const Shop = () => {
       popular: true
     },
     {
-      name: 'Corporate Wellness',
+      name: isArabic ? 'عافية الشركات' : 'Corporate Wellness',
       monthlyPrice: '$129',
       annualPrice: '$1290',
       savings: '$258',
       meals: '12 meals/month',
-      features: [
+      features: isArabic ? [
+        'وجبات محسّنة للمكاتب',
+        'خيارات مشاركة للفِرَق',
+        'تكامل مع برامج العافية',
+        'تتبع التغذية',
+        'خصومات للشركات'
+      ] : [
         'Office-optimized meals',
         'Team sharing options',
         'Wellness program integration',
@@ -89,18 +110,17 @@ const Shop = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D Shop
+              R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D {isArabic ? 'المتجر' : 'Shop'}
             </h1>
             <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
-              Experience revolutionary self-heating technology with meals that cook themselves in 5 minutes. 
-              Premium nutrition meets convenience wherever you are.
+              {isArabic ? 'اختبر تقنية التسخين الذاتي الثورية مع وجبات تطهى بنفسها خلال 5 دقائق. تغذية مميزة تلتقي بالراحة أينما كنت.' : 'Experience revolutionary self-heating technology with meals that cook themselves in 5 minutes. Premium nutrition meets convenience wherever you are.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Shop Now
+                {isArabic ? 'تسوق الآن' : 'Shop Now'}
               </button>
               <button className="border border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Learn More
+                {isArabic ? 'اعرف المزيد' : 'Learn More'}
               </button>
             </div>
           </motion.div>
@@ -118,10 +138,10 @@ const Shop = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Featured Products
+              {isArabic ? 'منتجات مميزة' : 'Featured Products'}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Discover our premium self-heating meals designed for modern lifestyles
+              {isArabic ? 'اكتشف وجباتنا ذاتية التسخين المصممة لأنماط الحياة العصرية' : 'Discover our premium self-heating meals designed for modern lifestyles'}
             </p>
           </motion.div>
 
@@ -191,7 +211,7 @@ const Shop = () => {
 
                     {/* Features with 3D Icons */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-white mb-2 drop-shadow-md">Key Features:</h4>
+                      <h4 className="font-semibold text-white mb-2 drop-shadow-md">{isArabic ? 'مميزات أساسية:' : 'Key Features:'}</h4>
                       <ul className="space-y-1">
                         {product.features.slice(0, 3).map((feature, idx) => (
                           <li key={idx} className="flex items-center text-sm text-white/90">
@@ -216,7 +236,7 @@ const Shop = () => {
                         ))}
                       </div>
                       <span className="text-sm text-white/90 ml-2 drop-shadow-sm">
-                        ({product.reviews} reviews)
+                        ({product.reviews} {isArabic ? 'مراجعة' : 'reviews'})
                       </span>
                     </div>
 
@@ -228,7 +248,7 @@ const Shop = () => {
                         </span>
                       </div>
                       <button className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 shadow-lg">
-                        Add to Cart
+                        {isArabic ? 'أضف إلى السلة' : 'Add to Cart'}
                       </button>
                     </div>
                   </div>
@@ -247,14 +267,13 @@ const Shop = () => {
           >
             <div className="bg-gradient-to-r from-teal-50 to-orange-50 rounded-2xl p-8 transform hover:scale-105 transition-transform duration-500">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Experience the Future of Food
+                {isArabic ? 'اختبر مستقبل الغذاء' : 'Experience the Future of Food'}
               </h3>
               <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-                Revolutionary self-heating technology meets authentic flavors. 
-                Each meal is a perfect blend of convenience, nutrition, and taste.
+                {isArabic ? 'تلتقي تقنية التسخين الذاتي الثورية بالنكهات الأصيلة. كل وجبة مزيج مثالي من الراحة والتغذية والطعم.' : 'Revolutionary self-heating technology meets authentic flavors. Each meal is a perfect blend of convenience, nutrition, and taste.'}
               </p>
               <button className="bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                View All Products
+                {isArabic ? 'عرض كل المنتجات' : 'View All Products'}
               </button>
             </div>
           </motion.div>
@@ -272,10 +291,10 @@ const Shop = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Subscription Plans
+              {isArabic ? 'خطط الاشتراك' : 'Subscription Plans'}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Choose the plan that fits your lifestyle and never run out of delicious, self-heating meals
+              {isArabic ? 'اختر الخطة التي تناسب نمط حياتك ولا تفوت وجباتنا اللذيذة ذاتية التسخين' : 'Choose the plan that fits your lifestyle and never run out of delicious, self-heating meals'}
             </p>
           </motion.div>
 
@@ -293,7 +312,7 @@ const Shop = () => {
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-0 right-0 bg-teal-500 text-white text-center py-2 text-sm font-semibold">
-                    Most Popular
+                    {isArabic ? 'الأكثر شعبية' : 'Most Popular'}
                   </div>
                 )}
                 
@@ -301,14 +320,14 @@ const Shop = () => {
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
                   <div className="mb-6">
                     <span className="text-3xl font-bold text-teal-600">{plan.monthlyPrice}</span>
-                    <span className="text-slate-600">/month</span>
+                    <span className="text-slate-600">{isArabic ? '/شهر' : '/month'}</span>
                     <div className="text-sm text-slate-500 mt-1">
-                      or {plan.annualPrice}/year (save {plan.savings})
+                      {isArabic ? `أو ${plan.annualPrice}/سنة (وفر ${plan.savings})` : `or ${plan.annualPrice}/year (save ${plan.savings})`}
                     </div>
                   </div>
                   
                   <div className="mb-6">
-                    <div className="text-lg font-semibold text-slate-800 mb-2">{plan.meals}</div>
+                    <div className="text-lg font-semibold text-slate-800 mb-2">{isArabic ? plan.meals.replace('meals/month', 'وجبة/شهر') : plan.meals}</div>
                     <ul className="space-y-3">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
@@ -324,7 +343,7 @@ const Shop = () => {
                       ? 'bg-teal-500 hover:bg-teal-600 text-white'
                       : 'border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white'
                   }`}>
-                    Choose Plan
+                    {isArabic ? 'اختر الخطة' : 'Choose Plan'}
                   </button>
                 </div>
               </motion.div>
@@ -396,17 +415,17 @@ const Shop = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Experience the Future of Food?
+              {isArabic ? 'هل أنت مستعد لاختبار مستقبل الغذاء؟' : 'Ready to Experience the Future of Food?'}
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
               Join thousands of satisfied customers who have discovered the convenience and taste of self-heating meals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-teal-600 hover:bg-teal-50 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Shop Now
+                {isArabic ? 'تسوق الآن' : 'Shop Now'}
               </button>
               <button className="border border-white text-white hover:bg-white hover:text-teal-600 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Learn More
+                {isArabic ? 'اعرف المزيد' : 'Learn More'}
               </button>
             </div>
           </motion.div>

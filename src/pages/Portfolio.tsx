@@ -11,8 +11,11 @@ import {
   Clock, 
   Beaker
 } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 const Portfolio = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const innovations = [
     {
       id: 1,
@@ -110,14 +113,13 @@ const Portfolio = () => {
             <div className="flex items-center justify-center mb-6">
               <Lightbulb className="w-8 h-8 text-teal-400 mr-3" />
               <span className="text-teal-400 font-semibold text-lg">
-                Revolutionary Food Technology
+                {isArabic ? 'تقنية غذائية ثورية' : 'Revolutionary Food Technology'}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Innovation Lab</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'مختبر الابتكار' : 'Innovation Lab'}</h1>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Discover the cutting-edge technology and sustainable innovations that power ReachFood's revolutionary meal system. 
-              From self-heating mechanisms to plantable packaging, we're reimagining what's possible in food technology.
+              {isArabic ? 'اكتشف التكنولوجيا المتقدمة والابتكارات المستدامة التي تدعم نظام الوجبات الثوري من ReachFood. من آليات التسخين الذاتي إلى التغليف القابل للزراعة، نعيد تخيل الممكن في تقنية الغذاء.' : "Discover the cutting-edge technology and sustainable innovations that power ReachFood's revolutionary meal system. From self-heating mechanisms to plantable packaging, we're reimagining what's possible in food technology."}
             </p>
           </motion.div>
         </div>
@@ -132,9 +134,9 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Core Innovations</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{isArabic ? 'الابتكارات الأساسية' : 'Core Innovations'}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              The groundbreaking technologies that make ReachFood's vision a reality
+              {isArabic ? 'التقنيات الرائدة التي تجعل رؤية ReachFood حقيقة' : "The groundbreaking technologies that make ReachFood's vision a reality"}
             </p>
           </motion.div>
 
@@ -192,9 +194,9 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Research & Development</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'البحث والتطوير' : 'Research & Development'}</h2>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Ongoing research initiatives that continue to push the boundaries of food technology
+              {isArabic ? 'مبادرات بحثية مستمرة تواصل دفع حدود تقنية الغذاء' : 'Ongoing research initiatives that continue to push the boundaries of food technology'}
             </p>
           </motion.div>
 
@@ -235,9 +237,9 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">How It Works</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">{isArabic ? 'كيف تعمل' : 'How It Works'}</h2>
             <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
-              The step-by-step process that transforms our innovative technology into a hot, delicious meal
+              {isArabic ? 'العملية خطوة بخطوة التي تحول تقنيتنا المبتكرة إلى وجبة ساخنة ولذيذة' : 'The step-by-step process that transforms our innovative technology into a hot, delicious meal'}
             </p>
           </motion.div>
 
@@ -245,29 +247,29 @@ const Portfolio = () => {
             {[
               {
                 step: '01',
-                title: 'Press',
-                description: 'Press the pack to start heating',
+                title: isArabic ? 'اضغط' : 'Press',
+                description: isArabic ? 'اضغط على العبوة لبدء التسخين' : 'Press the pack to start heating',
                 icon: Zap,
                 color: 'text-orange-400'
               },
               {
                 step: '02',
-                title: 'Place',
-                description: 'Place this side facing downward on the ground',
+                title: isArabic ? 'ضع' : 'Place',
+                description: isArabic ? 'ضع هذا الجانب للأسفل على الأرض' : 'Place this side facing downward on the ground',
                 icon: Beaker,
                 color: 'text-blue-400'
               },
               {
                 step: '03',
-                title: 'Wait',
-                description: 'Leave it for 3–5 minutes until heating is complete',
+                title: isArabic ? 'انتظر' : 'Wait',
+                description: isArabic ? 'اتركها لمدة 3–5 دقائق حتى يكتمل التسخين' : 'Leave it for 3–5 minutes until heating is complete',
                 icon: Thermometer,
                 color: 'text-red-400'
               },
               {
                 step: '04',
-                title: 'Enjoy',
-                description: 'Open the pack from the top sides away from the steam outlet, take out the food pack, and enjoy a delicious taste and good health',
+                title: isArabic ? 'استمتع' : 'Enjoy',
+                description: isArabic ? 'افتح العبوة من الجانبين العلويين بعيداً عن فتحة البخار، أخرج كيس الطعام واستمتع بمذاق لذيذ وصحة جيدة' : 'Open the pack from the top sides away from the steam outlet, take out the food pack, and enjoy a delicious taste and good health',
                 icon: Clock,
                 color: 'text-green-400'
               }

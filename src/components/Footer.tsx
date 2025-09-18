@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Leaf, Zap, Globe, Shield } from 'lucide-react'
+import { tr } from '../i18n'
 
 const Footer = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -28,8 +31,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-gray-600 mb-4 max-w-md">
-                Revolutionizing nutrition with eco friendly self-heating meals and sustainable packaging. 
-                Bringing hot, culturally authentic food to emergency zones, adventures, and busy lives worldwide.
+                {tr('footerTagline', isArabic)}
               </p>
               <div className="flex space-x-4 mb-6">
                 <a
@@ -56,19 +58,19 @@ const Footer = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-2">
                   <Zap className="w-4 h-4 text-orange-400" />
-                  <span className="text-sm text-gray-600">5-Min Heating</span>
+                  <span className="text-sm text-gray-600">{isArabic ? 'تسخين خلال 5 دقائق' : '5-Min Heating'}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Leaf className="w-4 h-4 text-green-400" />
-                  <span className="text-sm text-gray-600">Plantable Packaging</span>
+                  <span className="text-sm text-gray-600">{isArabic ? 'تغليف قابل للزراعة' : 'Plantable Packaging'}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Globe className="w-4 h-4 text-blue-400" />
-                  <span className="text-sm text-gray-600">MENA Flavors</span>
+                  <span className="text-sm text-gray-600">{isArabic ? 'نكهات الشرق الأوسط وشمال أفريقيا' : 'MENA Flavors'}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Shield className="w-4 h-4 text-purple-400" />
-                  <span className="text-sm text-gray-600">Accessible Design</span>
+                  <span className="text-sm text-gray-600">{isArabic ? 'تصميم يسهل الوصول إليه' : 'Accessible Design'}</span>
                 </div>
               </div>
             </motion.div>
@@ -81,51 +83,51 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Products</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">{tr('products', isArabic)}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Meal Kits
+                <Link to={isArabic ? '/ar/services' : '/services'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {isArabic ? 'وجبات جاهزة' : 'Meal Kits'}
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Innovation Lab
+                <Link to={isArabic ? '/ar/portfolio' : '/portfolio'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('innovationLab', isArabic)}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Our Story
+                <Link to={isArabic ? '/ar/about' : '/about'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('ourStory', isArabic)}
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Shop Now
+                <Link to={isArabic ? '/ar/shop' : '/shop'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('shop', isArabic)}
                 </Link>
               </li>
               <li>
-                <Link to="/booking" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Subscriptions
+                <Link to={isArabic ? '/ar/booking' : '/booking'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('subscriptions', isArabic)}
                 </Link>
               </li>
             </ul>
             
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 mt-6">Categories</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4 mt-6">{tr('categories', isArabic)}</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-600">Emergency Relief</span>
+                <span className="text-gray-600">{tr('emergencyRelief', isArabic)}</span>
               </li>
               <li>
-                <span className="text-gray-600">Adventure Meals</span>
+                <span className="text-gray-600">{tr('adventureMeals', isArabic)}</span>
               </li>
               <li>
-                <span className="text-gray-600">Professional Quick</span>
+                <span className="text-gray-600">{tr('professionalQuick', isArabic)}</span>
               </li>
               <li>
-                <span className="text-gray-600">Family Wellness</span>
+                <span className="text-gray-600">{tr('familyWellness', isArabic)}</span>
               </li>
               <li>
-                <span className="text-gray-600">Athletes</span>
+                <span className="text-gray-600">{tr('athletes', isArabic)}</span>
               </li>
             </ul>
           </motion.div>
@@ -137,11 +139,11 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Contact</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">{tr('contact', isArabic)}</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-teal-500" />
-                <span className="text-gray-600">Global Distribution</span>
+                <span className="text-gray-600">{tr('globalDistribution', isArabic)}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-teal-500" />
@@ -153,25 +155,25 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-teal-500" />
-                <span className="text-gray-600">24/7 Emergency Support</span>
+                <span className="text-gray-600">{tr('support247', isArabic)}</span>
               </div>
             </div>
             
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 mt-6">Partners</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4 mt-6">{tr('partners', isArabic)}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  NGO Partnerships
+                <Link to={isArabic ? '/ar/contact' : '/contact'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('ngoPartnerships', isArabic)}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Corporate Sales
+                <Link to={isArabic ? '/ar/contact' : '/contact'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('corporateSales', isArabic)}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-teal-500 transition-colors">
-                  Distribution Network
+                <Link to={isArabic ? '/ar/contact' : '/contact'} className="text-gray-600 hover:text-teal-500 transition-colors">
+                  {tr('distributionNetwork', isArabic)}
                 </Link>
               </li>
             </ul>
@@ -190,17 +192,17 @@ const Footer = () => {
             © 2024 ReachFood. Revolutionizing nourishment worldwide.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-500 hover:text-teal-500 text-sm">
-              Privacy Policy
+            <Link to={isArabic ? '/ar/privacy' : '/privacy'} className="text-gray-500 hover:text-teal-500 text-sm">
+              {tr('privacyPolicy', isArabic)}
             </Link>
-            <Link to="/terms" className="text-gray-500 hover:text-teal-500 text-sm">
-              Terms of Service
+            <Link to={isArabic ? '/ar/terms' : '/terms'} className="text-gray-500 hover:text-teal-500 text-sm">
+              {tr('termsOfService', isArabic)}
             </Link>
-            <Link to="/sustainability" className="text-gray-500 hover:text-teal-500 text-sm">
-              Sustainability
+            <Link to={isArabic ? '/ar/sustainability' : '/sustainability'} className="text-gray-500 hover:text-teal-500 text-sm">
+              {tr('sustainability', isArabic)}
             </Link>
-            <Link to="/accessibility" className="text-gray-500 hover:text-teal-500 text-sm">
-              Accessibility
+            <Link to={isArabic ? '/ar/accessibility' : '/accessibility'} className="text-gray-500 hover:text-teal-500 text-sm">
+              {tr('accessibility', isArabic)}
             </Link>
           </div>
         </motion.div>

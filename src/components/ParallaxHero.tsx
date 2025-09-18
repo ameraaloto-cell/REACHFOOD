@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { useIsArabic, tr } from '../i18n'
 
 const ParallaxHero = () => {
+  const isArabic = useIsArabic()
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image - Full Display */}
@@ -26,7 +28,7 @@ const ParallaxHero = () => {
         >
           <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
             <span className="text-teal-400 font-semibold">
-              Revolutionary Food Technology
+              {tr('heroBadge', isArabic)}
             </span>
           </div>
         </motion.div>
@@ -46,8 +48,7 @@ const ParallaxHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          Revolutionizing nutrition with 12+ health-focused recovery meals self-heating and ready in just 3–5 minutes. 
-          A sustainable, accessible, and culturally authentic food solution for everyone, everywhere.
+          {tr('heroParagraph', isArabic)}
         </motion.p>
         
         <motion.div 
@@ -57,20 +58,20 @@ const ParallaxHero = () => {
           transition={{ duration: 1, delay: 1.6 }}
         >
           <motion.a
-            href="/services"
+            href={isArabic ? '/ar/services' : '/services'}
             className="bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all shadow-lg"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Products
+            {tr('exploreProducts', isArabic)}
           </motion.a>
           <motion.a
-            href="/about"
+            href={isArabic ? '/ar/about' : '/about'}
             className="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-lg border border-white/20 hover:bg-white/20 transition-all"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            Learn More
+            {tr('learnMore', isArabic)}
           </motion.a>
         </motion.div>
         </div>

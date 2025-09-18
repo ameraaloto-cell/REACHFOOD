@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { 
   Shield, 
   Leaf, 
@@ -12,37 +12,40 @@ import {
   CheckCircle
 } from 'lucide-react'
 import ParallaxHero from '../components/ParallaxHero'
+import { useIsArabic, tr } from '../i18n'
 
 const Home = () => {
+  const isArabic = useIsArabic()
+  const location = useLocation()
   const targetAudiences = [
     {
-      title: 'Emergency Relief',
+      title: isArabic ? 'الإغاثة الطارئة' : 'Emergency Relief',
       iconPath: '/images/icons/7.png',
-      description: 'Providing critical, life-sustaining nutrition to displaced communities and aid workers in crisis zones.',
+      description: isArabic ? 'تقديم تغذية حيوية منقذة للحياة للمجتمعات النازحة والعاملين في مناطق الأزمات.' : 'Providing critical, life-sustaining nutrition to displaced communities and aid workers in crisis zones.',
       color: 'text-red-400',
       bgColor: 'bg-red-500/10',
       borderColor: 'border-red-500/20'
     },
     {
-      title: 'Adventurers & Travelers',
+      title: isArabic ? 'المغامرون والمسافرون' : 'Adventurers & Travelers',
       iconPath: '/images/icons/adventure.png',
-      description: 'Lightweight, easy-to-pack, and reliable hot meals for hikers, campers, and explorers on the go.',
+      description: isArabic ? 'وجبات ساخنة خفيفة الوزن وسهلة الحمل للمتنزهين والمخيمين والمستكشفين أثناء التنقل.' : 'Lightweight, easy-to-pack, and reliable hot meals for hikers, campers, and explorers on the go.',
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
       borderColor: 'border-green-500/20'
     },
     {
-      title: 'Busy Professionals',
+      title: isArabic ? 'المهنيون المشغولون' : 'Busy Professionals',
       iconPath: '/images/icons/business.png',
-      description: 'A healthy, convenient, and quick meal solution for demanding workdays and fast-paced lifestyles.',
+      description: isArabic ? 'حل وجبات صحي ومريح وسريع لأيام العمل المرهقة وأنماط الحياة السريعة.' : 'A healthy, convenient, and quick meal solution for demanding workdays and fast-paced lifestyles.',
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
       borderColor: 'border-blue-500/20'
     },
     {
-      title: 'Daily Wellness',
+      title: isArabic ? 'العافية اليومية' : 'Daily Wellness',
       iconPath: '/images/icons/family.png',
-      description: 'Nutrient-packed meals perfect for families, students, and anyone seeking a wholesome, hassle-free option.',
+      description: isArabic ? 'وجبات غنية بالعناصر الغذائية مناسبة للعائلات والطلاب وكل من يبحث عن خيار صحي وخالٍ من التعقيد.' : 'Nutrient-packed meals perfect for families, students, and anyone seeking a wholesome, hassle-free option.',
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
       borderColor: 'border-purple-500/20'
@@ -53,49 +56,49 @@ const Home = () => {
   const technologyImpacts = [
     {
       icon: Globe,
-      title: 'MENA Region Focus',
-      metric: 'Strategic Targeting',
-      description: 'Strategic deployment across Middle East and North Africa with cultural understanding',
+      title: isArabic ? 'تركيز على منطقة الشرق الأوسط وشمال أفريقيا' : 'MENA Region Focus',
+      metric: isArabic ? 'استهداف استراتيجي' : 'Strategic Targeting',
+      description: isArabic ? 'انتشار استراتيجي عبر الشرق الأوسط وشمال أفريقيا بفهم ثقافي' : 'Strategic deployment across Middle East and North Africa with cultural understanding',
       color: 'text-blue-500',
       bgColor: 'bg-blue-100'
     },
     {
       icon: Leaf,
-      title: 'Environmental Impact',
-      metric: '100% Sustainable',
-      description: 'Every package becomes wildflowers, reducing waste completely',
+      title: isArabic ? 'الأثر البيئي' : 'Environmental Impact',
+      metric: isArabic ? 'استدامة 100%' : '100% Sustainable',
+      description: isArabic ? 'كل عبوة تتحول إلى زهور برية، مما يقلل النفايات تماماً' : 'Every package becomes wildflowers, reducing waste completely',
       color: 'text-green-500',
       bgColor: 'bg-green-100'
     },
     {
       icon: Zap,
-      title: 'Technology Innovation',
-      metric: '99.9% Reliability',
-      description: '5-minute heating works in extreme conditions from -40°C to 60°C',
+      title: isArabic ? 'ابتكار تقني' : 'Technology Innovation',
+      metric: isArabic ? 'موثوقية 99.9%' : '99.9% Reliability',
+      description: isArabic ? 'تسخين لمدة 5 دقائق يعمل في ظروف قاسية من -40° حتى 60° م' : '5-minute heating works in extreme conditions from -40°C to 60°C',
       color: 'text-orange-500',
       bgColor: 'bg-orange-100'
     },
     {
       icon: UserCheck,
-      title: 'Accessibility Features',
-      metric: 'Universal Design',
-      description: 'Braille labeling, audio scanning, and inclusive nutrition access',
+      title: isArabic ? 'ميزات إمكانية الوصول' : 'Accessibility Features',
+      metric: isArabic ? 'تصميم شامل' : 'Universal Design',
+      description: isArabic ? 'وسم برايل، مسح صوتي، وإتاحة تغذية شاملة' : 'Braille labeling, audio scanning, and inclusive nutrition access',
       color: 'text-purple-500',
       bgColor: 'bg-purple-100'
     },
     {
       icon: Heart,
-      title: 'Cultural Authenticity',
-      metric: '12+ health recovery food research-based, 2/batch',
-      description: 'Traditional MENA flavors with Halal certification and cultural respect',
+      title: isArabic ? 'أصالة ثقافية' : 'Cultural Authenticity',
+      metric: isArabic ? 'أكثر من 12 وجبة تعافٍ بحثية، 2/دفعة' : '12+ health recovery food research-based, 2/batch',
+      description: isArabic ? 'نكهات تقليدية من الشرق الأوسط وشمال أفريقيا مع اعتماد حلال واحترام ثقافي' : 'Traditional MENA flavors with Halal certification and cultural respect',
       color: 'text-red-500',
       bgColor: 'bg-red-100'
     },
     {
       icon: Shield,
-      title: 'Emergency Ready',
-      metric: 'Long Shelf Life',
-      description: 'No power required, works anywhere, perfect for crisis response',
+      title: isArabic ? 'جاهزية الطوارئ' : 'Emergency Ready',
+      metric: isArabic ? 'عمر تخزيني طويل' : 'Long Shelf Life',
+      description: isArabic ? 'لا حاجة للكهرباء، يعمل في أي مكان، مثالي للاستجابة للأزمات' : 'No power required, works anywhere, perfect for crisis response',
       color: 'text-teal-500',
       bgColor: 'bg-teal-100'
     }
@@ -115,9 +118,9 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Smart Meals for Real Lives</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{tr('smartMeals', isArabic)}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Our innovative meals are designed for diverse lifestyles and critical situations, ensuring nutrition is always within reach.
+              {isArabic ? 'صممت وجباتنا المبتكرة لتناسب أنماط الحياة المتنوعة والظروف الحرجة، لتضمن بقاء التغذية في متناول الجميع دائماً.' : 'Our innovative meals are designed for diverse lifestyles and critical situations, ensuring nutrition is always within reach.'}
             </p>
           </motion.div>
 
@@ -169,9 +172,9 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Technology That Makes a Difference</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{tr('technologyMakesDifference', isArabic)}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Revolutionary capabilities that transform how nutrition reaches people worldwide
+              {isArabic ? 'قدرات ثورية تُغير طريقة وصول التغذية إلى الناس حول العالم' : 'Revolutionary capabilities that transform how nutrition reaches people worldwide'}
             </p>
           </motion.div>
 
@@ -222,9 +225,9 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">See The Technology In Action</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'شاهد التقنية على أرض الواقع' : 'See The Technology In Action'}</h2>
             <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              Experience how our revolutionary self-heating technology transforms a simple meal into hot, nutritious food in exactly 5 minutes
+              {isArabic ? 'اختبر كيف تحول تقنيتنا الثورية للتسخين الذاتي وجبة بسيطة إلى طعام ساخن ومغذٍ خلال 5 دقائق بالضبط' : 'Experience how our revolutionary self-heating technology transforms a simple meal into hot, nutritious food in exactly 5 minutes'}
             </p>
           </motion.div>
 
@@ -236,7 +239,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-8"
             >
-              <h3 className="text-2xl font-semibold text-white mb-6 text-center">5-Minute Heating Process</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6 text-center">{isArabic ? 'عملية التسخين خلال 5 دقائق' : '5-Minute Heating Process'}</h3>
               
               <div className="space-y-6">
                 {/* Step 1 */}
@@ -249,8 +252,8 @@ const Home = () => {
                 >
                   <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
                   <div>
-                    <p className="text-white font-medium">Press the activation spot</p>
-                    <p className="text-teal-200 text-sm">Calcium oxide reaction begins instantly</p>
+                    <p className="text-white font-medium">{isArabic ? 'اضغط على نقطة التفعيل' : 'Press the activation spot'}</p>
+                    <p className="text-teal-200 text-sm">{isArabic ? 'تبدأ تفاعل أكسيد الكالسيوم فوراً' : 'Calcium oxide reaction begins instantly'}</p>
                   </div>
                   <motion.div
                     animate={{ rotate: [0, 10, -10, 0] }}
@@ -271,8 +274,8 @@ const Home = () => {
                 >
                   <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
                   <div>
-                    <p className="text-white font-medium">Heat spreads evenly</p>
-                    <p className="text-teal-200 text-sm">Safe, controlled heating to 65°C</p>
+                    <p className="text-white font-medium">{isArabic ? 'يسري الحرارة بالتساوي' : 'Heat spreads evenly'}</p>
+                    <p className="text-teal-200 text-sm">{isArabic ? 'تسخين آمن ومتحكم به حتى 65° م' : 'Safe, controlled heating to 65°C'}</p>
                   </div>
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
@@ -293,8 +296,8 @@ const Home = () => {
                 >
                   <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
                   <div>
-                    <p className="text-white font-medium">Ready to eat!</p>
-                    <p className="text-teal-200 text-sm">Perfect temperature, perfect nutrition</p>
+                    <p className="text-white font-medium">{isArabic ? 'جاهزة للأكل!' : 'Ready to eat!'}</p>
+                    <p className="text-teal-200 text-sm">{isArabic ? 'درجة حرارة مثالية وتغذية متكاملة' : 'Perfect temperature, perfect nutrition'}</p>
                   </div>
                   <motion.div
                     animate={{ 
@@ -327,7 +330,7 @@ const Home = () => {
                     5:00
                   </motion.span>
                 </motion.div>
-                <p className="text-teal-200 text-sm">Average heating time</p>
+                <p className="text-teal-200 text-sm">{isArabic ? 'متوسط وقت التسخين' : 'Average heating time'}</p>
               </div>
             </motion.div>
 
@@ -339,37 +342,37 @@ const Home = () => {
               className="space-y-6"
             >
               <div>
-                <h3 className="text-2xl font-semibold text-white mb-6">Why This Technology Matters</h3>
+                <h3 className="text-2xl font-semibold text-white mb-6">{isArabic ? 'لماذا تهم هذه التقنية' : 'Why This Technology Matters'}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
                     <Shield className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-white font-medium">Emergency Situations</h4>
-                      <p className="text-teal-200 text-sm">When power grids fail and cooking fuel is unavailable, ReachFood provides life-sustaining hot nutrition</p>
+                      <h4 className="text-white font-medium">{isArabic ? 'حالات الطوارئ' : 'Emergency Situations'}</h4>
+                      <p className="text-teal-200 text-sm">{isArabic ? 'عندما تفشل شبكات الكهرباء ولا يتوفر وقود الطبخ، تقدم ReachFood تغذية ساخنة منقذة للحياة' : 'When power grids fail and cooking fuel is unavailable, ReachFood provides life-sustaining hot nutrition'}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <Mountain className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-white font-medium">Extreme Environments</h4>
-                      <p className="text-teal-200 text-sm">From Arctic research stations to mountain peaks, hot meals boost morale and provide essential calories</p>
+                      <h4 className="text-white font-medium">{isArabic ? 'بيئات قاسية' : 'Extreme Environments'}</h4>
+                      <p className="text-teal-200 text-sm">{isArabic ? 'من محطات الأبحاث القطبية إلى قمم الجبال، الوجبات الساخنة ترفع المعنويات وتوفر السعرات الأساسية' : 'From Arctic research stations to mountain peaks, hot meals boost morale and provide essential calories'}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <Building className="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-white font-medium">Urban Convenience</h4>
-                      <p className="text-teal-200 text-sm">Busy professionals get restaurant-quality nutrition without kitchens, microwaves, or takeout delays</p>
+                      <h4 className="text-white font-medium">{isArabic ? 'راحة حضرية' : 'Urban Convenience'}</h4>
+                      <p className="text-teal-200 text-sm">{isArabic ? 'يحصل المهنيون المشغولون على تغذية بجودة المطاعم دون مطابخ أو ميكروويف أو تأخير الطلبات' : 'Busy professionals get restaurant-quality nutrition without kitchens, microwaves, or takeout delays'}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <Leaf className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-white font-medium">Environmental Impact</h4>
-                      <p className="text-teal-200 text-sm">Zero cooking energy required, biodegradable packaging that becomes wildflowers, minimal carbon footprint</p>
+                      <h4 className="text-white font-medium">{isArabic ? 'الأثر البيئي' : 'Environmental Impact'}</h4>
+                      <p className="text-teal-200 text-sm">{isArabic ? 'لا حاجة لطاقة للطهي، تغليف قابل للتحلل يتحول إلى زهور برية، وانبعاثات كربونية منخفضة' : 'Zero cooking energy required, biodegradable packaging that becomes wildflowers, minimal carbon footprint'}</p>
                     </div>
                   </div>
                 </div>
@@ -388,9 +391,9 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Circular Economy in Action</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{isArabic ? 'اقتصاد دائري فعّال' : 'Circular Economy in Action'}</h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Every ReachFood meal represents our commitment to environmental stewardship - from zero cooking energy to packaging that becomes part of nature
+              {isArabic ? 'كل وجبة من ReachFood تمثل التزامنا بحماية البيئة — من صفر طاقة للطهي إلى تغليف يصبح جزءاً من الطبيعة' : 'Every ReachFood meal represents our commitment to environmental stewardship - from zero cooking energy to packaging that becomes part of nature'}
             </p>
           </motion.div>
 
@@ -409,19 +412,19 @@ const Home = () => {
               >
                 <Leaf className="w-full h-full text-green-500" />
               </motion.div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Plantable Packaging</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">{isArabic ? 'تغليف قابل للزراعة' : 'Plantable Packaging'}</h3>
               <div className="space-y-3 text-sm text-slate-700">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Biodegradable materials break down safely</span>
+                  <span>{isArabic ? 'مواد قابلة للتحلل تتحلل بأمان' : 'Biodegradable materials break down safely'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>Embedded wildflower seeds activate in soil</span>
+                  <span>{isArabic ? 'بذور زهور برية مدمجة تنبت في التربة' : 'Embedded wildflower seeds activate in soil'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span>Native plants support local ecosystems</span>
+                  <span>{isArabic ? 'نباتات محلية تدعم النظم البيئية' : 'Native plants support local ecosystems'}</span>
                 </div>
               </div>
             </motion.div>
@@ -441,19 +444,19 @@ const Home = () => {
               >
                 <Zap className="w-full h-full text-orange-500" />
               </motion.div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Zero External Energy</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">{isArabic ? 'دون طاقة خارجية' : 'Zero External Energy'}</h3>
               <div className="space-y-3 text-sm text-slate-700">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span>No electricity or gas required</span>
+                  <span>{isArabic ? 'لا حاجة للكهرباء أو الغاز' : 'No electricity or gas required'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span>Calcium oxide reaction is carbon neutral</span>
+                  <span>{isArabic ? 'تفاعل أكسيد الكالسيوم محايد كربونياً' : 'Calcium oxide reaction is carbon neutral'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span>Reduces cooking infrastructure demands</span>
+                  <span>{isArabic ? 'يقلل متطلبات بنية الطهي التحتية' : 'Reduces cooking infrastructure demands'}</span>
                 </div>
               </div>
             </motion.div>
@@ -473,19 +476,19 @@ const Home = () => {
               >
                 <Globe className="w-full h-full text-blue-500" />
               </motion.div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Global Scale Impact</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">{isArabic ? 'أثر عالمي النطاق' : 'Global Scale Impact'}</h3>
               <div className="space-y-3 text-sm text-slate-700">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>1M+ meals served in crisis zones</span>
+                  <span>{isArabic ? 'أكثر من مليون وجبة قُدمت في مناطق الأزمات' : '1M+ meals served in crisis zones'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                  <span>500K wildflowers planted through packaging</span>
+                  <span>{isArabic ? '500 ألف زهرة برية زُرعت عبر التغليف' : '500K wildflowers planted through packaging'}</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>75% reduction vs traditional meal heating</span>
+                  <span>{isArabic ? 'انخفاض 75% مقارنة بالتسخين التقليدي' : '75% reduction vs traditional meal heating'}</span>
                 </div>
               </div>
             </motion.div>
@@ -498,23 +501,23 @@ const Home = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-slate-900 to-teal-900 rounded-xl p-8 text-center"
           >
-            <h3 className="text-2xl font-semibold text-white mb-8">Environmental Impact Per Meal</h3>
+            <h3 className="text-2xl font-semibold text-white mb-8">{isArabic ? 'الأثر البيئي لكل وجبة' : 'Environmental Impact Per Meal'}</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div>
                 <div className="text-3xl font-bold text-teal-400 mb-2">0 kWh</div>
-                <div className="text-teal-200 text-sm">Electricity consumed</div>
+                <div className="text-teal-200 text-sm">{isArabic ? 'استهلاك الكهرباء' : 'Electricity consumed'}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-green-400 mb-2">-75%</div>
-                <div className="text-teal-200 text-sm">Carbon footprint vs cooking</div>
+                <div className="text-teal-200 text-sm">{isArabic ? 'البصمة الكربونية مقارنة بالطهي' : 'Carbon footprint vs cooking'}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-blue-400 mb-2">5-15</div>
-                <div className="text-teal-200 text-sm">Wildflower seeds planted</div>
+                <div className="text-teal-200 text-sm">{isArabic ? 'بذور زهور برية مزروعة' : 'Wildflower seeds planted'}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-purple-400 mb-2">100%</div>
-                <div className="text-teal-200 text-sm">Biodegradable materials</div>
+                <div className="text-teal-200 text-sm">{isArabic ? 'مواد قابلة للتحلل' : 'Biodegradable materials'}</div>
               </div>
             </div>
           </motion.div>
@@ -531,7 +534,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Join the Movement
+              {tr('joinMovement', isArabic)}
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
               Whether you're looking to fuel your life's journey or invest in a sustainable future, 
@@ -542,32 +545,32 @@ const Home = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/shop" className="bg-white text-slate-900 font-semibold py-4 px-8 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center space-x-2">
-                  <span>Shop Meals</span>
+                <Link to={isArabic ? '/ar/shop' : '/shop'} className="bg-white text-slate-900 font-semibold py-4 px-8 rounded-lg hover:bg-slate-100 transition-colors inline-flex items-center space-x-2">
+                  <span>{isArabic ? 'تسوق الوجبات' : 'Shop Meals'}</span>
                 </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/portfolio" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-slate-900 transition-colors inline-flex items-center space-x-2">
-                  <span>See Innovation</span>
+                <Link to={isArabic ? '/ar/portfolio' : '/portfolio'} className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-slate-900 transition-colors inline-flex items-center space-x-2">
+                  <span>{isArabic ? 'اكتشف الابتكار' : 'See Innovation'}</span>
                 </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/contact" className="bg-teal-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-teal-600 transition-colors inline-flex items-center space-x-2">
-                  <span>Partner With Us</span>
+                <Link to={isArabic ? '/ar/contact' : '/contact'} className="bg-teal-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-teal-600 transition-colors inline-flex items-center space-x-2">
+                  <span>{isArabic ? 'شاركنا الشراكة' : 'Partner With Us'}</span>
                 </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/about" className="bg-orange-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-orange-600 transition-colors inline-flex items-center space-x-2">
-                  <span>Join Our Research Journey</span>
+                <Link to={isArabic ? '/ar/about' : '/about'} className="bg-orange-500 text-white font-semibold py-4 px-8 rounded-lg hover:bg-orange-600 transition-colors inline-flex items-center space-x-2">
+                  <span>{isArabic ? 'انضم إلى رحلتنا البحثية' : 'Join Our Research Journey'}</span>
                 </Link>
               </motion.div>
             </div>

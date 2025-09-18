@@ -1,30 +1,33 @@
 import { motion } from 'framer-motion'
 import { Lightbulb, Heart, Leaf, Globe } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 const About = () => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const foundingValues = [
     {
       icon: Lightbulb,
-      title: 'Innovation based research',
-      description: 'Pioneering breakthrough food technology that transforms how nutrition is accessed worldwide',
+      title: isArabic ? 'ابتكار قائم على البحث' : 'Innovation based research',
+      description: isArabic ? 'ريادة تقنيات غذائية رائدة تُغير طريقة الوصول إلى التغذية عالمياً' : 'Pioneering breakthrough food technology that transforms how nutrition is accessed worldwide',
       color: 'text-orange-400'
     },
     {
       icon: Heart,
-      title: 'Impact',
-      description: 'Creating solutions for emergency relief, adventure, professional life, and family wellness',
+      title: isArabic ? 'أثر' : 'Impact',
+      description: isArabic ? 'ابتكار حلول للإغاثة الطارئة والمغامرة والحياة المهنية وعافية الأسرة' : 'Creating solutions for emergency relief, adventure, professional life, and family wellness',
       color: 'text-red-400'
     },
     {
       icon: Leaf,
-      title: 'Sustainability',
-      description: 'Building a circular economy where packaging becomes part of the natural ecosystem',
+      title: isArabic ? 'استدامة' : 'Sustainability',
+      description: isArabic ? 'بناء اقتصاد دائري يصبح فيه التغليف جزءاً من النظام البيئي' : 'Building a circular economy where packaging becomes part of the natural ecosystem',
       color: 'text-green-400'
     },
     {
       icon: Globe,
-      title: 'Accessibility',
-      description: 'Ensuring nutrition is accessible to all communities regardless of circumstances or abilities',
+      title: isArabic ? 'إتاحة الوصول' : 'Accessibility',
+      description: isArabic ? 'ضمان وصول التغذية إلى جميع المجتمعات بغض النظر عن الظروف أو القدرات' : 'Ensuring nutrition is accessible to all communities regardless of circumstances or abilities',
       color: 'text-blue-400'
     }
   ]
@@ -140,15 +143,13 @@ const About = () => {
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               R<span className="text-orange-400">E</span>ACHF<span className="text-orange-400">OO</span>D
-              <span className="block text-teal-400">Flavors of Innovation</span>
+              <span className="block text-teal-400">{isArabic ? 'نكهات الابتكار' : 'Flavors of Innovation'}</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-teal-300 mb-8">
-              Team Work
+              {isArabic ? 'العمل الجماعي' : 'Team Work'}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Founded on the belief that nutrition should never be limited by circumstance, 
-              ReachFood combines cutting-edge food science with sustainable innovation to deliver 
-              hot, nutritious meals anywhere in the world.
+              {isArabic ? 'انطلقت ReachFood من قناعة بأن الحصول على التغذية لا ينبغي أن يُقيد بالظروف. نحن ندمج علوم الغذاء المتقدمة مع الابتكار المستدام لتقديم وجبات ساخنة ومغذية إلى أي مكان في العالم.' : 'Founded on the belief that nutrition should never be limited by circumstance, ReachFood combines cutting-edge food science with sustainable innovation to deliver hot, nutritious meals anywhere in the world.'}
             </p>
           </motion.div>
         </div>
@@ -165,20 +166,20 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
-                Our Story
+                {isArabic ? 'قصتنا' : 'Our Story'}
               </h2>
               <div className="space-y-6 text-slate-700">
                 <p>
-                  Our journey began at ReachSci — the place where it all started. There, we launched an intervention in Madagascar, a country struggling with famine, food insecurity, and widespread vitamin A deficiency. ReachSci brought our team together to take on this urgent challenge.
+                  {isArabic ? 'بدأت رحلتنا في ReachSci — حيث انطلق كل شيء. هناك أطلقنا تدخلاً في مدغشقر، البلد الذي يواجه المجاعة وانعدام الأمن الغذائي ونقصاً واسعاً في فيتامين أ. جمعنا ReachSci كفريق لمواجهة هذا التحدي الملح.' : 'Our journey began at ReachSci — the place where it all started. There, we launched an intervention in Madagascar, a country struggling with famine, food insecurity, and widespread vitamin A deficiency. ReachSci brought our team together to take on this urgent challenge.'}
                 </p>
                 <p>
-                  It was there we learned how to transform research into real innovation and that experience inspired us to go even further. We developed complete, nutritious meals using local crops, designed to nourish communities while supporting local agriculture.
+                  {isArabic ? 'هناك تعلمنا كيف نحول البحث إلى ابتكار حقيقي، وألهمتنا تلك التجربة للمضي أبعد. طورنا وجبات غذائية متكاملة باستخدام محاصيل محلية، صممت لتغذية المجتمعات ودعم الزراعة المحلية.' : 'It was there we learned how to transform research into real innovation and that experience inspired us to go even further. We developed complete, nutritious meals using local crops, designed to nourish communities while supporting local agriculture.'}
                 </p>
                 <p>
-                  That's how ReachFood was born: food that not only feeds, but heals, sustains, and grows again.
+                  {isArabic ? 'هكذا وُلدت ReachFood: طعام لا يكتفي بالإشباع، بل يشفي ويدعم وينمو من جديد.' : "That's how ReachFood was born: food that not only feeds, but heals, sustains, and grows again."}
                 </p>
                 <p>
-                  A heartfelt thanks to ReachSci, and special credit to Dr. Mohammed, the President of ReachSci and our supervisor, for his guidance and support on this journey.
+                  {isArabic ? 'شكر من القلب لـ ReachSci، وتقدير خاص للدكتور محمد، رئيس ReachSci ومشرفنا، على توجيهه ودعمه في هذه الرحلة.' : 'A heartfelt thanks to ReachSci, and special credit to Dr. Mohammed, the President of ReachSci and our supervisor, for his guidance and support on this journey.'}
                 </p>
               </div>
             </motion.div>
@@ -221,10 +222,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Our Founding Values
+              {isArabic ? 'قيمنا المؤسسة' : 'Our Founding Values'}
             </h2>
             <p className="text-xl text-teal-100 max-w-3xl mx-auto">
-              These core principles guide every decision we make and every innovation we pursue
+              {isArabic ? 'هذه المبادئ الأساسية توجه كل قرار نتخذه وكل ابتكار نسعى إليه' : 'These core principles guide every decision we make and every innovation we pursue'}
             </p>
           </motion.div>
 
@@ -260,10 +261,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Meet Our Team
+              {isArabic ? 'تعرف على فريقنا' : 'Meet Our Team'}
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Experts united by a shared vision of making nutrition accessible to everyone, everywhere
+              {isArabic ? 'خبراء يجمعهم هدف واحد: جعل التغذية متاحة للجميع في كل مكان' : 'Experts united by a shared vision of making nutrition accessible to everyone, everywhere'}
             </p>
           </motion.div>
 
@@ -291,12 +292,12 @@ const About = () => {
                     <div className="border-t pt-4">
                       {member.email && (
                         <p className="text-xs text-slate-500 mb-1">
-                          <span className="font-medium">Email:</span> {member.email}
+                          <span className="font-medium">{isArabic ? 'البريد:' : 'Email:'}</span> {member.email}
                         </p>
                       )}
                       {member.phone && (
                         <p className="text-xs text-slate-500">
-                          <span className="font-medium">Tel:</span> {member.phone}
+                          <span className="font-medium">{isArabic ? 'هاتف:' : 'Tel:'}</span> {member.phone}
                         </p>
                       )}
                     </div>
@@ -319,10 +320,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Our Journey
+              {isArabic ? 'رحلتنا' : 'Our Journey'}
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              From concept to global impact - the milestones that shaped ReachFood
+              {isArabic ? 'من الفكرة إلى الأثر العالمي — المحطات التي شكّلت ReachFood' : 'From concept to global impact - the milestones that shaped ReachFood'}
             </p>
           </motion.div>
 
@@ -366,10 +367,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Our Impact
+              {isArabic ? 'أثرنا' : 'Our Impact'}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Numbers that represent lives touched and communities empowered
+              {isArabic ? 'أرقام تمثل حياة تغيرت ومجتمعات تم تمكينها' : 'Numbers that represent lives touched and communities empowered'}
             </p>
           </motion.div>
 

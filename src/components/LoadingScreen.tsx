@@ -2,13 +2,22 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { gsap } from 'gsap'
 import { Zap, Flame } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
+  const location = useLocation()
+  const isArabic = location.pathname.startsWith('/ar')
   const [progress, setProgress] = useState(0)
   const [currentText, setCurrentText] = useState('Initializing...')
 
   useEffect(() => {
-    const texts = [
+    const texts = isArabic ? [
+      'جاري التهيئة...',
+      'تحميل تقنية الغذاء...',
+      'تحضير واجهة التغذية...',
+      'إعداد تقنية التسخين الذاتي...',
+      'جاهز!'
+    ] : [
       'Initializing...',
       'Loading food technology...',
       'Preparing nutrition interface...',
@@ -69,7 +78,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               R<span className="text-orange-400 bg-none">E</span>ACHF<span className="text-orange-400 bg-none">OO</span>D
             </h1>
             <p className="text-teal-400 font-semibold mt-2">
-              Revolutionary Self-Heating Technology
+              {isArabic ? 'تقنية التسخين الذاتي الثورية' : 'Revolutionary Self-Heating Technology'}
             </p>
           </motion.div>
 
