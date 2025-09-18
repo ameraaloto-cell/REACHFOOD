@@ -58,21 +58,21 @@ const About = () => {
       image: '/images/Wadia Safia.jpg'
     },
     {
-      name: 'Ali Ali Redha',
+      name: 'Dr. Ali Ali Redha',
       role: 'Food R&D part time Advisor',
       background: 'Researcher in Food Bioactives',
       expertise: 'PhD: Food, Nutrition & Health, MSc: Analytical Chemistry, BSc: Chemistry',
-      email: '',
-      phone: '',
+      email: 'ali96chemx@gmail.com',
+      phone: '+447469772877',
       image: '/images/Ali Ali Redha.jpg'
     },
     {
-      name: 'Mahmoud Alkhatib',
+      name: 'Dr. Mahmoud Alkhateib',
       role: 'Food For Emergency Company Advisor',
       background: 'Served as QRC Consultant Dietitian in Somalia (2011) and led nutrition efforts in multiple disaster management camps (2012–2018). Participated in key regional meetings and courses in Amman and Doha, including leading the Yemen malnutrition assessment mission (2012) and delivering expert presentations (2016–2018).',
       expertise: 'Emergency Nutrition, Disaster Management, Malnutrition Assessment',
-      email: '',
-      phone: '',
+      email: 'mahmoudalkhateib@hotmail.com',
+      phone: '+962782307141',
       image: '/images/Mahmoud Alkhatib.jpg'
     }
   ]
@@ -169,31 +169,16 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-slate-700">
                 <p>
-                  ReachFood was founded on a simple yet powerful principle:
-                  access to hot, nutritious meals should not be constrained by
-                  infrastructure, geography, or circumstance. Whether
-                  supporting aid workers in crisis zones, adventurers in remote
-                  locations, or professional women and their families in
-                  dynamic urban environments, ReachFood ensures reliable
-                  access to high-quality nutrition, recovery-focused meals, and
-                  enhanced food security.
+                  Our journey began at ReachSci — the place where it all started. There, we launched an intervention in Madagascar, a country struggling with famine, food insecurity, and widespread vitamin A deficiency. ReachSci brought our team together to take on this urgent challenge.
                 </p>
                 <p>
-                  Our founders, Amera Otoum and Aljawhara Alsubaai,
-                  brought together their passion for development and
-                  humanitarian relief with a strong commitment to Inclusion,
-                  Diversity, Equality, and Accessibility (IDEA), as well as
-                  natural resource management and sustainability research.
-                  Their vision led to an innovative solution: self-heating meals
-                  that are safe, convenient, and packaged in environmentally
-                  regenerative materials designed to support sustainable
-                  agriculture. This achievement builds on extensive research in
-                  collaboration with the ReachSci Association.
+                  It was there we learned how to transform research into real innovation and that experience inspired us to go even further. We developed complete, nutritious meals using local crops, designed to nourish communities while supporting local agriculture.
                 </p>
                 <p>
-                  Today, ReachFood is more than an innovation it is a movement for inclusive and sustainable nutrition.
-                  We are committed to honoring cultural heritage while addressing the urgent needs of our time,
-                  delivering food solutions that are accessible, safe, and sustainable for all.
+                  That's how ReachFood was born: food that not only feeds, but heals, sustains, and grows again.
+                </p>
+                <p>
+                  A heartfelt thanks to ReachSci, and special credit to Dr. Mohammed, the President of ReachSci and our supervisor, for his guidance and support on this journey.
                 </p>
               </div>
             </motion.div>
