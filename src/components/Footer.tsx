@@ -27,7 +27,7 @@ const Footer = () => {
                   />
                 </div>
                 <div className="text-2xl font-serif font-bold">
-                  <span className="text-gray-800"><span className="text-[#1DC6D1]">R</span><span className="text-orange-400">E</span><span className="text-[#1DC6D1]">A</span><span className="text-[#1DC6D1]">C</span><span className="text-[#1DC6D1]">H</span><span className="text-[#1DC6D1]">F</span><span className="text-orange-400">OO</span><span className="text-[#1DC6D1]">D</span></span>
+                  <span className="text-gray-800"><span className="text-[#007BA7]">R</span><span className="text-orange-400">E</span><span className="text-[#007BA7]">A</span><span className="text-[#007BA7]">C</span><span className="text-[#007BA7]">H</span><span className="text-[#007BA7]">F</span><span className="text-orange-400">OO</span><span className="text-[#007BA7]">D</span></span>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 max-w-md">
