@@ -53,7 +53,7 @@ const About = () => {
     },
     {
       name: 'Wadia Safia',
-      role: 'Finance Company Advisor',
+      role: 'Finance Advisor',
       background: 'Expert in Finance / INGOs & Private sector. Certified Finance Manager.',
       expertise: 'BSc: Accounting',
       email: 'wadiasafieh@yahoo.com',
@@ -62,7 +62,7 @@ const About = () => {
     },
     {
       name: 'Dr. Ali Ali Redha',
-      role: 'Food R&D part time Advisor',
+      role: 'Food R&D Advisor',
       background: 'Researcher in Food Bioactives',
       expertise: 'PhD: Food, Nutrition & Health, MSc: Analytical Chemistry, BSc: Chemistry',
       email: 'ali96chemx@gmail.com',
@@ -71,7 +71,7 @@ const About = () => {
     },
     {
       name: 'Dr. Mahmoud Alkhateib',
-      role: 'Food For Emergency Company Advisor',
+      role: 'Food For Emergency Advisor',
       background: 'Served as QRC Consultant Dietitian in Somalia (2011) and led nutrition efforts in multiple disaster management camps (2012–2018). Participated in key regional meetings and courses in Amman and Doha, including leading the Yemen malnutrition assessment mission (2012) and delivering expert presentations (2016–2018).',
       expertise: 'Emergency Nutrition, Disaster Management, Malnutrition Assessment',
       email: 'mahmoudalkhateib@hotmail.com',
