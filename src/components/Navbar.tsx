@@ -15,8 +15,7 @@ const Navbar = () => {
       return [
         { name: 'الرئيسية', path: '/ar' },
         { name: 'المنتجات', path: '/ar/services' },
-        { name: 'الابتكار', path: '/ar/portfolio' },
-        { name: 'من نحن', path: '/ar/about' },
+        { name: 'تعاون معنا', path: '/ar/portfolio', hoverText: 'الاستثمار والشركاء', hoverPath: '/ar/about' },
         { name: 'المتجر', path: '/ar/shop' },
         { name: 'اتصل بنا', path: '/ar/contact' },
       ]
@@ -24,8 +23,7 @@ const Navbar = () => {
     return [
       { name: 'Home', path: '/' },
       { name: 'Products', path: '/services' },
-      { name: 'Innovation', path: '/portfolio' },
-      { name: 'About', path: '/about' },
+      { name: 'Collaborate with Us', path: '/portfolio', hoverText: 'Investment and Partners', hoverPath: '/about' },
       { name: 'Shop', path: '/shop' },
       { name: 'Contact', path: '/contact' },
     ]
@@ -70,24 +68,36 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-serif font-bold"
             >
-              <span className="text-gray-800"><span className="text-[#007BA7]">R</span><span className="text-orange-400">E</span><span className="text-[#007BA7]">A</span><span className="text-[#007BA7]">C</span><span className="text-[#007BA7]">H</span><span className="text-[#007BA7]">F</span><span className="text-orange-400">OO</span><span className="text-[#007BA7]">D</span></span>
+              <span className="text-gray-800"><span className="text-[#0080A3]">R</span><span className="text-orange-400">E</span><span className="text-[#0080A3]">A</span><span className="text-[#0080A3]">C</span><span className="text-[#0080A3]">H</span><span className="text-[#0080A3]">F</span><span className="text-orange-400">OO</span><span className="text-[#0080A3]">D</span></span>
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className={`hidden md:flex items-center space-x-8 ${isArabic ? 'flex-row-reverse space-x-reverse' : ''}`}>
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-orange-500'
-                    : 'text-orange-400 hover:text-orange-500'
-                }`}
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative group">
+                <Link
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? 'text-orange-500'
+                      : 'text-orange-400 hover:text-orange-500'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+                {item.hoverText && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                    <Link 
+                      to={item.hoverPath || item.path}
+                      className="block hover:text-teal-300 transition-colors duration-200"
+                    >
+                      {item.hoverText}
+                    </Link>
+                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -140,18 +150,28 @@ const Navbar = () => {
           >
             <div className={`px-2 pt-2 pb-3 space-y-1 bg-white/90 border-t border-gray-200/30 ${isArabic ? 'text-right' : ''}`}>
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    location.pathname === item.path
-                      ? 'text-orange-500 bg-orange-50'
-                      : 'text-orange-400 hover:text-orange-500 hover:bg-orange-50'
-                  }`}
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                      location.pathname === item.path
+                        ? 'text-orange-500 bg-orange-50'
+                        : 'text-orange-400 hover:text-orange-500 hover:bg-orange-50'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.hoverText && (
+                    <Link 
+                      to={item.hoverPath || item.path}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-3 py-1 text-xs text-gray-600 italic hover:text-orange-500 transition-colors duration-200"
+                    >
+                      {item.hoverText}
+                    </Link>
+                  )}
+                </div>
               ))}
               <div className="px-3 py-2 flex items-center justify-between">
                 <button

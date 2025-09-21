@@ -10,7 +10,9 @@ const Shop = () => {
       name: isArabic ? 'ري-كولاجين' : 'Re-Collagen',
       price: '$12.00',
       originalPrice: null,
-      description: 'ريتش فود– وجبتك الساخنة أينما كنت! وجبات ذاتية التسخين، طبيعية 100%، خالية من المواد الحافظة، ومدعّمة بالكولاجين الحيوي لدعم صحتك ونشاطك. بتغليف صديق للبيئة وخفيف الوزن، كل ما عليك هو إضافة أي سائل… دقائق معدودة وتستمتع بوجبة لذيذة، مغذية، وجاهزة أينما أخذتك الحياة.',
+      description: isArabic 
+        ? 'ريتش فود– وجبتك الساخنة أينما كنت! وجبات ذاتية التسخين، طبيعية 100%، خالية من المواد الحافظة، ومدعّمة بالكولاجين الحيوي لدعم صحتك ونشاطك. بتغليف صديق للبيئة وخفيف الوزن، كل ما عليك هو إضافة أي سائل… دقائق معدودة وتستمتع بوجبة لذيذة، مغذية، وجاهزة أينما أخذتك الحياة.'
+        : 'ReachFood– your hot meal wherever you are! Self-heating meals, 100% natural, preservative-free, and fortified with bio-collagen to support your health and vitality. With eco-friendly and lightweight packaging, all you need to do is add any liquid... minutes later and enjoy a delicious, nutritious, and ready meal wherever life takes you.',
       rating: 5,
       reviews: 247,
       features: isArabic ? ['تسخين ذاتي خلال 5 دقائق', 'نكهات أصيلة من الشرق الأوسط وشمال أفريقيا', 'قيمة غذائية عالية', 'معتمد حلال', 'تغليف قابل للزراعة'] : ['Self-heating in 5 minutes', 'Authentic MENA flavors', 'High nutritional value', 'Halal certified', 'Plantable packaging'],
@@ -23,7 +25,9 @@ const Shop = () => {
       name: isArabic ? 'ري-بروتين 8$' : 'The re-protein 8$',
       price: '$8',
       originalPrice: null,
-      description: 'ري-بروتين وجبة مدعمة للتعافي الصحي، غنية بالبروتين، سهلة التناول والتسخين في أي مكان بفضل خاصية التسخين الذاتي. دعم عضلاتك وطاقة جسمك أينما كنت، بدون تعب ولا مجهود! جرّب ري-بروتين الآن واستمتع بوجبة دافئة وصحية في لحظات!',
+      description: isArabic 
+        ? 'ري-بروتين وجبة مدعمة للتعافي الصحي، غنية بالبروتين، سهلة التناول والتسخين في أي مكان بفضل خاصية التسخين الذاتي. دعم عضلاتك وطاقة جسمك أينما كنت، بدون تعب ولا مجهود! جرّب ري-بروتين الآن واستمتع بوجبة دافئة وصحية في لحظات!'
+        : 'Re-Protein meal fortified for healthy recovery, protein-rich, easy to consume and heat anywhere thanks to self-heating technology. Support your muscles and body energy wherever you are, without fatigue or effort! Try Re-Protein now and enjoy a warm and healthy meal in moments!',
       rating: 5,
       reviews: 312,
       features: isArabic ? ['تشكيلة فاخرة', 'طرق طهي تقليدية', 'مكونات مميزة', 'أصالة ثقافية', 'تحضير فوري'] : ['Gourmet variety selection', 'Traditional cooking methods', 'Premium ingredients', 'Cultural authenticity', 'Instant preparation'],

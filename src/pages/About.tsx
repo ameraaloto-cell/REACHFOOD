@@ -44,7 +44,7 @@ const About = () => {
     },
     {
       name: 'Aljawharah Alsubaie',
-      role: 'CPO-Food Advisor',
+      role: 'Food Advisor',
       background: 'Researcher in Therapeutic Effectiveness. Filed Patent in 2014, Patent in innovative candy for dental care. Hospital training in NHS hospitals.',
       expertise: 'PhD: Doctor of Pharmacy, MS: Clinical pharmacy as a postgraduate',
       email: 'jalkhuzem@gmail.com',
@@ -179,7 +179,7 @@ const About = () => {
                   {isArabic ? 'هكذا وُلدت ReachFood: طعام لا يكتفي بالإشباع، بل يشفي ويدعم وينمو من جديد.' : "That's how ReachFood was born: food that not only feeds, but heals, sustains, and grows again."}
                 </p>
                 <p>
-                  {isArabic ? 'شكر من القلب لـ ReachSci، وتقدير خاص للدكتور محمد، رئيس ReachSci ومشرفنا، على توجيهه ودعمه في هذه الرحلة.' : 'A heartfelt thanks to ReachSci, and special credit to Dr. Mohammed, the President of ReachSci and our supervisor, for his guidance and support on this journey.'}
+                  {isArabic ? 'شكر من القلب لـ ReachSci، وتقدير خاص للدكتور محمد العوامي، رئيس ReachSci ومشرفنا، على توجيهه ودعمه في هذه الرحلة.' : 'A heartfelt thanks to ReachSci, and special credit to Dr. Mohammed alawami, the President of ReachSci and our supervisor, for his guidance and support on this journey.'}
                 </p>
               </div>
             </motion.div>
