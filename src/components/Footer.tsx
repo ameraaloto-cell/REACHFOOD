@@ -188,9 +188,14 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
           className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-500 text-sm">
-            © 2024 ReachFood. Revolutionizing nourishment worldwide.
-          </p>
+          <div className="flex flex-col items-center md:items-start">
+            <p className="text-gray-500 text-sm">
+              © 2024 ReachFood. Revolutionizing nourishment worldwide.
+            </p>
+            <p className="text-gray-400 text-xs mt-1">
+              {isArabic ? 'مطور بواسطة' : 'Developed by'} <a href="https://www.sitedz.store" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">www.sitedz.store</a>
+            </p>
+          </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to={isArabic ? '/ar/privacy' : '/privacy'} className="text-gray-500 hover:text-teal-500 text-sm">
               {tr('privacyPolicy', isArabic)}
