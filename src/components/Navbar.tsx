@@ -15,7 +15,16 @@ const Navbar = () => {
       return [
         { name: 'الرئيسية', path: '/ar' },
         { name: 'المنتجات', path: '/ar/services' },
-        { name: 'تعاون معنا', path: '/ar/portfolio', hoverText: 'الاستثمار والشركاء', hoverPath: '/ar/about' },
+        { 
+          name: 'تعاون معنا', 
+          path: '/ar/portfolio', 
+          hasDropdown: true,
+          dropdownItems: [
+            { name: 'الاستثمار', path: '/ar/investment' },
+            { name: 'الشركاء', path: '/ar/portfolio' },
+            { name: 'من نحن', path: '/ar/about' }
+          ]
+        },
         { name: 'المتجر', path: '/ar/shop' },
         { name: 'اتصل بنا', path: '/ar/contact' },
       ]
@@ -23,7 +32,16 @@ const Navbar = () => {
     return [
       { name: 'Home', path: '/' },
       { name: 'Products', path: '/services' },
-      { name: 'Collaborate with Us', path: '/portfolio', hoverText: 'Investment and Partners', hoverPath: '/about' },
+      { 
+        name: 'Collaborate with Us', 
+        path: '/portfolio', 
+        hasDropdown: true,
+        dropdownItems: [
+          { name: 'Investment', path: '/investment' },
+          { name: 'Partners', path: '/portfolio' },
+          { name: 'About Us', path: '/about' }
+        ]
+      },
       { name: 'Shop', path: '/shop' },
       { name: 'Contact', path: '/contact' },
     ]
@@ -78,23 +96,36 @@ const Navbar = () => {
               <div key={item.name} className="relative group">
                 <Link
                   to={item.path}
-                  className={`text-sm font-medium transition-colors duration-200 ${
+                  className={`text-sm font-medium transition-colors duration-200 flex items-center ${
                     location.pathname === item.path
                       ? 'text-orange-500'
                       : 'text-orange-400 hover:text-orange-500'
                   }`}
                 >
                   {item.name}
+                  {item.hasDropdown && (
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
                 </Link>
-                {item.hoverText && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-                    <Link 
-                      to={item.hoverPath || item.path}
-                      className="block hover:text-teal-300 transition-colors duration-200"
-                    >
-                      {item.hoverText}
-                    </Link>
-                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
+                {item.hasDropdown && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 min-w-[200px]">
+                    <div className="py-2">
+                      {item.dropdownItems?.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.name}
+                          to={dropdownItem.path}
+                          className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                            location.pathname === dropdownItem.path
+                              ? 'text-orange-500 bg-orange-50'
+                              : 'text-gray-700 hover:text-orange-500 hover:bg-gray-50'
+                          }`}
+                        >
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -162,14 +193,23 @@ const Navbar = () => {
                   >
                     {item.name}
                   </Link>
-                  {item.hoverText && (
-                    <Link 
-                      to={item.hoverPath || item.path}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-3 py-1 text-xs text-gray-600 italic hover:text-orange-500 transition-colors duration-200"
-                    >
-                      {item.hoverText}
-                    </Link>
+                  {item.hasDropdown && item.dropdownItems && (
+                    <div className="ml-4 space-y-1">
+                      {item.dropdownItems.map((dropdownItem) => (
+                        <Link 
+                          key={dropdownItem.name}
+                          to={dropdownItem.path}
+                          onClick={() => setIsOpen(false)}
+                          className={`block px-3 py-1 text-sm transition-colors duration-200 ${
+                            location.pathname === dropdownItem.path
+                              ? 'text-orange-500 bg-orange-50'
+                              : 'text-gray-600 hover:text-orange-500 hover:bg-orange-50'
+                          }`}
+                        >
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   )}
                 </div>
               ))}

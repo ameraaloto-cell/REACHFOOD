@@ -11,6 +11,7 @@ import Portfolio from './pages/Portfolio'
 import Booking from './pages/Booking'
 import About from './pages/About'
 import Shop from './pages/Shop'
+import Investment from './pages/Investment'
 import Contact from './pages/Contact'
 
 function AppContent() {
@@ -145,6 +146,20 @@ function AppContent() {
                 } 
               />
               <Route 
+                path="/investment" 
+                element={
+                  <motion.div
+                    key="investment"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Investment />
+                  </motion.div>
+                } 
+              />
+              <Route 
                 path="/contact" 
                 element={
                   <motion.div
@@ -241,6 +256,20 @@ function AppContent() {
                     transition={{ duration: 0.5 }}
                   >
                     <Shop />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/ar/investment" 
+                element={
+                  <motion.div
+                    key="investment-ar"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Investment />
                   </motion.div>
                 } 
               />
