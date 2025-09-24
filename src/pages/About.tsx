@@ -14,7 +14,7 @@ const About = () => {
     },
     {
       icon: Heart,
-      title: isArabic ? 'أثر' : 'Impact',
+      title: isArabic ? 'أثر' : 'Version Impact',
       description: isArabic ? 'ابتكار حلول للإغاثة الطارئة والمغامرة والحياة المهنية وعافية الأسرة' : 'Creating solutions for emergency relief, adventure, professional life, and family wellness',
       color: 'text-red-400'
     },
@@ -342,8 +342,8 @@ const About = () => {
                 }`}
               >
                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className="bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900 border border-orange-400 rounded-lg p-6 shadow-lg">
-                    <div className="text-2xl font-bold text-orange-200 mb-2">{milestone.year}</div>
+                  <div className="bg-gradient-to-br from-orange-500 to-orange-600 border border-orange-400 rounded-lg p-6 shadow-lg">
+                    <div className="text-2xl font-bold text-white mb-2">{milestone.year}</div>
                     <h3 className="text-xl font-semibold text-white mb-3">{milestone.title}</h3>
                     <p className="text-orange-100">{milestone.description}</p>
                   </div>
@@ -367,7 +367,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {isArabic ? 'أثرنا' : 'Our Impact'}
+              {isArabic ? 'أثرنا' : 'Version Impact'}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {isArabic ? 'أرقام تمثل حياة تغيرت ومجتمعات تم تمكينها' : 'Numbers that represent lives touched and communities empowered'}

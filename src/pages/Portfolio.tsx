@@ -229,7 +229,7 @@ const Portfolio = () => {
       </section>
 
       {/* Technology Process Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900">
+      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,7 +238,7 @@ const Portfolio = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">{isArabic ? 'كيف تعمل' : 'How It Works'}</h2>
-            <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
               {isArabic ? 'العملية خطوة بخطوة التي تحول تقنيتنا المبتكرة إلى وجبة ساخنة ولذيذة' : 'The step-by-step process that transforms our innovative technology into a hot, delicious meal'}
             </p>
           </motion.div>
@@ -285,15 +285,15 @@ const Portfolio = () => {
                   className="text-center"
                 >
                   <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className={`w-10 h-10 ${process.color}`} />
+                    <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="w-10 h-10 text-white" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white text-orange-500 rounded-full flex items-center justify-center text-sm font-bold border-2 border-orange-400">
                       {process.step}
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{process.title}</h3>
-                  <p className="text-orange-100 leading-relaxed">{process.description}</p>
+                  <p className="text-white leading-relaxed">{process.description}</p>
                 </motion.div>
               )
             })}

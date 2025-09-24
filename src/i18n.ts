@@ -23,7 +23,7 @@ export const dict: Dictionary = {
 
   // Footer
   footerTagline: {
-    en: 'Revolutionizing nutrition with eco friendly self-heating meals and sustainable packaging. Bringing hot, culturally authentic food to emergency zones, adventures, and busy lives worldwide.',
+    en: 'Revolutionizing nutrition with eco-friendly self heating meals and sustainable packaging. Bringing hot, culturally authentic food to emergency zones, adventures, and busy lives worldwide.',
     ar: 'نحدث ثورة في التغذية بوجبات ذاتية التسخين صديقة للبيئة وتغليف مستدام. نوصل طعاماً ساخناً وأصيلاً ثقافياً لمناطق الطوارئ والمغامرات والحياة المزدحمة حول العالم.'
   },
   products: { en: 'Products', ar: 'المنتجات' },

@@ -191,7 +191,7 @@ const Investment = () => {
       </section>
 
       {/* Partnership Opportunities */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900">
+      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,10 +202,10 @@ const Investment = () => {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
               {isArabic ? 'فرص الشراكة' : 'Partnership Opportunities'}
             </h2>
-            <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed mb-8">
               {isArabic ? 'انمو معنا كن شريكاً استراتيجياً' : 'Grow With Us Become a Strategic Partner'}
             </p>
-            <p className="text-lg text-orange-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
               {isArabic 
                 ? 'نحن نبحث بنشاط عن شركاء رؤيويين للانضمام إلى مهمتنا. من خلال الجمع بين وصولك وخبرتك مع ابتكارنا، يمكننا فتح أسواق جديدة وتقديم حلول غذائية مستدامة على نطاق واسع.'
                 : 'We are actively seeking visionary partners to join our mission. By combining your reach and expertise with our innovation, we can unlock new markets and deliver sustainable food solutions at scale.'
@@ -223,7 +223,7 @@ const Investment = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-slate-800/50 backdrop-blur-sm border border-orange-700/30 rounded-xl p-6 text-center hover:bg-slate-800/70 hover:border-orange-500/50 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl p-6 text-center hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                   whileHover={{ 
                     y: -5,
                     transition: { duration: 0.3 }
@@ -231,7 +231,7 @@ const Investment = () => {
                 >
                   <IconComponent className={`w-16 h-16 ${benefit.color} mx-auto mb-4`} />
                   <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-orange-100 leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     {benefit.description}
                   </p>
                 </motion.div>
@@ -245,7 +245,7 @@ const Investment = () => {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
               {isArabic 
                 ? 'سواء كنت موزعاً أو تاجراً تجزئة أو مؤسسة بحثية — نرحب بالشركاء الذين يتشاركون رؤيتنا.'
                 : "Whether you're a distributor, retailer, or research institution — we welcome partners who share our vision."
@@ -254,7 +254,7 @@ const Investment = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 hover:text-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl border-2 border-white"
             >
               {isArabic ? 'انضم كشريك' : 'Join as a Partner'}
             </motion.button>

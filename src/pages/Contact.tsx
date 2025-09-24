@@ -279,7 +279,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-600 to-slate-900">
+      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -289,13 +289,13 @@ const Contact = () => {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-6">
               {isArabic ? 'جاهزون لتحويل الوصول إلى التغذية؟' : 'Ready to Transform Nutrition Access?'}
             </h2>
-            <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
               {isArabic ? 'انضم إلى منظمات حول العالم تستخدم ReachFood لتقديم تغذية ساخنة وموثوقة في أي بيئة، في أي مكان وزمان.' : 'Join organizations worldwide who are using ReachFood to provide reliable, hot nutrition in any environment, anywhere, anytime.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
                 href={isArabic ? '/ar/services' : '/services'}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all"
+                className="bg-white text-orange-500 font-semibold py-4 px-8 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition-all border-2 border-white"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -303,7 +303,7 @@ const Contact = () => {
               </motion.a>
               <motion.a
                 href={isArabic ? '/ar/about' : '/about'}
-                className="border-2 border-orange-400 text-orange-200 font-semibold py-4 px-8 rounded-lg hover:bg-orange-500 hover:text-white transition-all"
+                className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-orange-500 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
