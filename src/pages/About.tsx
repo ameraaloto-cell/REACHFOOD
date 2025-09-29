@@ -14,7 +14,7 @@ const About = () => {
     },
     {
       icon: Heart,
-      title: isArabic ? 'أثر' : 'Version Impact',
+      title: isArabic ? 'أثر' : 'Our Future Goals',
       description: isArabic ? 'ابتكار حلول للإغاثة الطارئة والمغامرة والحياة المهنية وعافية الأسرة' : 'Creating solutions for emergency relief, adventure, professional life, and family wellness',
       color: 'text-red-400'
     },
@@ -367,10 +367,10 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {isArabic ? 'أثرنا' : 'Version Impact'}
+              {isArabic ? 'أهدافنا المستقبلية' : 'Our Future Goals'}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {isArabic ? 'أرقام تمثل حياة تغيرت ومجتمعات تم تمكينها' : 'Numbers that represent lives touched and communities empowered'}
+              {isArabic ? 'رؤيتنا وطموحاتنا لتحويل مستقبل التغذية عالمياً' : 'Our vision and ambitions for transforming the future of nutrition globally'}
             </p>
           </motion.div>
 
