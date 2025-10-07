@@ -1,109 +1,61 @@
 import { motion } from 'framer-motion'
 import { 
-  Zap, 
-  Leaf, 
   Globe, 
-  Thermometer, 
-  Atom, 
-  Recycle, 
-  Lightbulb, 
-  Shield, 
-  Clock, 
-  Beaker
+  Award,
+  Handshake,
+  Building,
+  Leaf,
+  DollarSign
 } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 const Portfolio = () => {
   const location = useLocation()
   const isArabic = location.pathname.startsWith('/ar')
-  const innovations = [
+
+  const partnershipBenefits = [
     {
-      id: 1,
-      title: 'Self-Heating Technology',
-      category: 'Core Innovation',
-      description: 'Revolutionary calcium oxide reaction system that heats meals to 65°C in exactly 5 minutes without external power',
-      icon: Zap,
-      color: 'text-orange-400',
-      bgColor: 'bg-orange-500/10',
-      details: ['Calcium oxide reaction chamber', 'Precisely controlled heating', 'Safe food-grade materials', 'No batteries required']
-    },
-    {
-      id: 2,
-      title: 'Plantable Packaging',
-      category: 'Sustainability',
-      description: 'Biodegradable packaging embedded with native plant seeds that transforms waste into new life',
-      icon: Leaf,
-      color: 'text-green-400',
-      bgColor: 'bg-green-500/10',
-      details: ['Native wildflower seeds', 'Biodegradable materials', 'Zero waste lifecycle', 'Soil enrichment']
-    },
-    {
-      id: 3,
-      title: 'Cultural Recipe Engine',
-      category: 'Culinary Innovation',
-      description: 'AI-powered system that preserves authentic MENA flavors while optimizing for nutrition and shelf-life',
       icon: Globe,
-      color: 'text-blue-400',
-      bgColor: 'bg-blue-500/10',
-      details: ['Traditional recipe analysis', 'Nutritional optimization', 'Flavor preservation', 'Cultural authenticity']
+      title: 'Regional Expansion',
+      description: 'Direct presence in local markets plus strong online reach.',
+      color: 'text-teal-400'
     },
     {
-      id: 4,
-      title: 'Temperature Control System',
-      category: 'Safety Technology',
-      description: 'Advanced thermal regulation ensures optimal heating temperature without risk of burns or overcooking',
-      icon: Thermometer,
-      color: 'text-red-400',
-      bgColor: 'bg-red-500/10',
-      details: ['Thermal regulation', 'Burn prevention', 'Optimal food temperature', 'Safety mechanisms']
+      icon: Award,
+      title: 'Local Flavors, Global Standards',
+      description: 'We design products around local crops and traditional tastes, while ensuring international quality.',
+      color: 'text-blue-400'
     },
     {
-      id: 5,
-      title: 'Accessibility Features',
-      category: 'Inclusive Design',
-      description: 'Braille labeling, audio scanning, and tactile indicators make our meals accessible to everyone',
-      icon: Shield,
-      color: 'text-purple-400',
-      bgColor: 'bg-purple-500/10',
-      details: ['Braille labeling', 'Audio QR codes', 'Tactile indicators', 'Universal design']
-    },
-    {
-      id: 6,
-      title: 'Preservation Science',
-      category: 'Food Technology',
-      description: 'Advanced preservation techniques maintain nutritional value and authentic flavors for extended shelf life',
-      icon: Beaker,
-      color: 'text-teal-400',
-      bgColor: 'bg-teal-500/10',
-      details: ['Nutrient preservation', 'Natural stabilizers', 'Flavor compounds', 'Extended shelf life']
+      icon: Handshake,
+      title: 'Shared Values',
+      description: 'We are driven by impact, sustainability, and long term collaboration.',
+      color: 'text-green-400'
     }
   ]
 
-  const researchAreas = [
+  const competitiveAdvantages = [
     {
-      title: 'Molecular Gastronomy',
-      description: 'Advanced food science techniques to enhance flavor while maintaining nutritional integrity',
-      icon: Atom,
-      color: 'text-cyan-400'
+      title: 'Market Presence',
+      description: 'Unlike most competitors who focus only on online channels, we combine on-the-ground market presence with strong online visibility and our patented eco-friendly packaging makes us stand out.',
+      icon: Building
     },
     {
-      title: 'Sustainable Materials',
-      description: 'Research into biodegradable packaging materials that support plant growth',
-      icon: Recycle,
-      color: 'text-green-400'
+      title: 'Local Focus',
+      description: 'While others overlook local preferences, we embrace local crops and traditional flavors.',
+      icon: Leaf
     },
     {
-      title: 'Thermal Engineering',
-      description: 'Optimization of heat transfer systems for consistent, safe meal preparation',
-      icon: Lightbulb,
-      color: 'text-yellow-400'
+      title: 'Affordable Access',
+      description: 'While their prices remain high, we keep our products affordable and accessible.',
+      icon: DollarSign
     }
   ]
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,125 +63,80 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <Lightbulb className="w-8 h-8 text-teal-400 mr-3" />
-              <span className="text-teal-400 font-semibold text-lg">
-                {isArabic ? 'تقنية غذائية ثورية' : 'Revolutionary Food Technology'}
+              <Handshake className="w-8 h-8 text-white mr-3" />
+              <span className="text-white font-semibold text-lg">
+                {isArabic ? 'فرص الشراكة' : 'Partnership Opportunities'}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'مختبر الابتكار' : 'Innovation Lab'}</h1>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              {isArabic ? 'اكتشف التكنولوجيا المتقدمة والابتكارات المستدامة التي تدعم نظام الوجبات الثوري من ReachFood. من آليات التسخين الذاتي إلى التغليف القابل للزراعة، نعيد تخيل الممكن في تقنية الغذاء.' : "Discover the cutting-edge technology and sustainable innovations that power ReachFood's revolutionary meal system. From self-heating mechanisms to plantable packaging, we're reimagining what's possible in food technology."}
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+              {isArabic ? 'انمو معنا كن شريكاً استراتيجياً' : 'Grow With Us Become a Strategic Partner'}
+            </h1>
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
+              {isArabic 
+                ? 'نحن نبحث بنشاط عن شركاء رؤيويين للانضمام إلى مهمتنا. من خلال الجمع بين وصولك وخبرتك مع ابتكارنا، يمكننا فتح أسواق جديدة وتقديم حلول غذائية مستدامة على نطاق واسع.'
+                : 'We are actively seeking visionary partners to join our mission. By combining your reach and expertise with our innovation, we can unlock new markets and deliver sustainable food solutions at scale.'
+              }
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Innovation Grid */}
+      {/* Partnership Benefits */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">{isArabic ? 'الابتكارات الأساسية' : 'Core Innovations'}</h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              {isArabic ? 'التقنيات الرائدة التي تجعل رؤية ReachFood حقيقة' : "The groundbreaking technologies that make ReachFood's vision a reality"}
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {innovations.map((innovation, index) => {
-              const IconComponent = innovation.icon
-              return (
-                <motion.div
-                  key={innovation.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="rounded-xl p-6 shadow-lg hover:shadow-xl group hover:scale-105 transition-all duration-300 border-2 border-teal-400 hover:border-teal-300"
-                  style={{ backgroundColor: '#2d6f7b' }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -10,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <div className="relative mb-6">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white mb-4">
-                      <IconComponent className={`w-8 h-8 ${innovation.color}`} />
-                    </div>
-                    <div className="absolute top-2 right-2 text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#2d6f7b' }}>
-                      {innovation.category}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-white mb-3">{innovation.title}</h3>
-                  <p className="text-teal-100 mb-4 leading-relaxed">{innovation.description}</p>
-                  
-                  <div className="space-y-2">
-                    {innovation.details.map((detail, detailIndex) => (
-                      <div key={detailIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-teal-300 rounded-full flex-shrink-0"></div>
-                        <span className="text-teal-100 text-sm">{detail}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Research & Development */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{isArabic ? 'البحث والتطوير' : 'Research & Development'}</h2>
-            <p className="text-xl text-teal-100 max-w-4xl mx-auto leading-relaxed">
-              {isArabic ? 'مبادرات بحثية مستمرة تواصل دفع حدود تقنية الغذاء' : 'Ongoing research initiatives that continue to push the boundaries of food technology'}
-            </p>
-          </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {researchAreas.map((area, index) => {
-              const IconComponent = area.icon
+            {partnershipBenefits.map((benefit, index) => {
+              const IconComponent = benefit.icon
               return (
                 <motion.div
-                  key={area.title}
+                  key={benefit.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-slate-800/50 backdrop-blur-sm border border-teal-700/30 rounded-xl p-6 text-center hover:bg-slate-800/70 hover:border-teal-500/50 transition-all duration-300"
+                  className="bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 rounded-xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-teal-400"
                   whileHover={{ 
                     y: -5,
+                    scale: 1.02,
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <IconComponent className={`w-16 h-16 ${area.color} mx-auto mb-4`} />
-                  <h3 className="text-xl font-semibold text-white mb-3">{area.title}</h3>
+                  <IconComponent className={`w-16 h-16 ${benefit.color} mx-auto mb-4`} />
+                  <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
                   <p className="text-teal-100 leading-relaxed">
-                    {area.description}
+                    {benefit.description}
                   </p>
                 </motion.div>
               )
             })}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <p className="text-xl text-slate-700 mb-8 max-w-3xl mx-auto">
+              {isArabic 
+                ? 'سواء كنت موزعاً أو تاجراً تجزئة أو مؤسسة بحثية — نرحب بالشركاء الذين يتشاركون رؤيتنا.'
+                : "Whether you're a distributor, retailer, or research institution — we welcome partners who share our vision."
+              }
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              {isArabic ? 'انضم كشريك' : 'Join as a Partner'}
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Technology Process Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600">
+      {/* Why Us Section */}
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -237,67 +144,70 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-lg mb-4">{isArabic ? 'كيف تعمل' : 'How It Works'}</h2>
-            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
-              {isArabic ? 'العملية خطوة بخطوة التي تحول تقنيتنا المبتكرة إلى وجبة ساخنة ولذيذة' : 'The step-by-step process that transforms our innovative technology into a hot, delicious meal'}
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
+              {isArabic ? 'لماذا نحن؟' : 'Why Us'}
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              {isArabic 
+                ? 'ما يجعلنا مختلفين في السوق'
+                : 'What sets us apart in the market'
+              }
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: isArabic ? 'اضغط' : 'Press',
-                description: isArabic ? 'اضغط على العبوة لبدء التسخين' : 'Press the pack to start heating',
-                icon: Zap,
-                color: 'text-orange-400'
-              },
-              {
-                step: '02',
-                title: isArabic ? 'ضع' : 'Place',
-                description: isArabic ? 'ضع هذا الجانب للأسفل على الأرض' : 'Place this side facing downward on the ground',
-                icon: Beaker,
-                color: 'text-blue-400'
-              },
-              {
-                step: '03',
-                title: isArabic ? 'انتظر' : 'Wait',
-                description: isArabic ? 'اتركها لمدة 3–5 دقائق حتى يكتمل التسخين' : 'Leave it for 3–5 minutes until heating is complete',
-                icon: Thermometer,
-                color: 'text-red-400'
-              },
-              {
-                step: '04',
-                title: isArabic ? 'استمتع' : 'Enjoy',
-                description: isArabic ? 'افتح العبوة من الجانبين العلويين بعيداً عن فتحة البخار، أخرج كيس الطعام واستمتع بمذاق لذيذ وصحة جيدة' : 'Open the pack from the top sides away from the steam outlet, take out the food pack, and enjoy a delicious taste and good health',
-                icon: Clock,
-                color: 'text-green-400'
-              }
-            ].map((process, index) => {
-              const IconComponent = process.icon
+          <div className="space-y-8">
+            {competitiveAdvantages.map((advantage, index) => {
+              const IconComponent = advantage.icon
               return (
                 <motion.div
-                  key={process.step}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  key={advantage.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="flex items-center gap-8 bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white text-orange-500 rounded-full flex items-center justify-center text-sm font-bold border-2 border-orange-400">
-                      {process.step}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{process.title}</h3>
-                  <p className="text-white leading-relaxed">{process.description}</p>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold text-slate-900 mb-3">{advantage.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-lg">{advantage.description}</p>
+                  </div>
                 </motion.div>
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">
+              {isArabic ? 'ابدأ رحلتك معنا اليوم' : 'Start Your Journey With Us Today'}
+            </h2>
+            <p className="text-xl text-teal-100 max-w-3xl mx-auto mb-12">
+              {isArabic 
+                ? 'انضم إلى ثورة الغذاء المستدام وكن جزءاً من التغيير الذي يحدث فرقاً في العالم'
+                : 'Join the sustainable food revolution and be part of the change that makes a difference in the world'
+              }
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              {isArabic ? 'انضم كشريك' : 'Join as a Partner'}
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

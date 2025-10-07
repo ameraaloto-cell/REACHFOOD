@@ -43,12 +43,11 @@ const About = () => {
       image: '/images/amera.jpg'
     },
     {
-      name: 'Aljawharah Alsubaie',
+      name: 'Dr.Aljawharah Alsubaie',
       role: 'Food Advisor',
       background: 'Researcher in Therapeutic Effectiveness. Filed Patent in 2014, Patent in innovative candy for dental care. Hospital training in NHS hospitals.',
-      expertise: 'PhD: Doctor of Pharmacy, MS: Clinical pharmacy as a postgraduate',
+      expertise: 'Doctor of Pharmacy (professional doctorate)',
       email: 'jalkhuzem@gmail.com',
-      phone: '+447508186988',
       image: '/images/Aljawharah Alsubaie.jpg'
     },
     {
@@ -57,7 +56,6 @@ const About = () => {
       background: 'Expert in Finance / INGOs & Private sector. Certified Finance Manager.',
       expertise: 'BSc: Accounting',
       email: 'wadiasafieh@yahoo.com',
-      phone: '00962795657793',
       image: '/images/Wadia Safia.jpg'
     },
     {
@@ -66,7 +64,6 @@ const About = () => {
       background: 'Researcher in Food Bioactives',
       expertise: 'PhD: Food, Nutrition & Health, MSc: Analytical Chemistry, BSc: Chemistry',
       email: 'ali96chemx@gmail.com',
-      phone: '+447469772877',
       image: '/images/Ali Ali Redha.jpg'
     },
     {
@@ -75,7 +72,6 @@ const About = () => {
       background: 'Served as QRC Consultant Dietitian in Somalia (2011) and led nutrition efforts in multiple disaster management camps (2012–2018). Participated in key regional meetings and courses in Amman and Doha, including leading the Yemen malnutrition assessment mission (2012) and delivering expert presentations (2016–2018).',
       expertise: 'Emergency Nutrition, Disaster Management, Malnutrition Assessment',
       email: 'mahmoudalkhateib@hotmail.com',
-      phone: '+962782307141',
       image: '/images/Mahmoud Alkhatib.jpg'
     }
   ]
