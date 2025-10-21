@@ -205,49 +205,14 @@ const Shop = () => {
                   </div>
                   
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-200 transition-colors duration-300 drop-shadow-lg">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-200 transition-colors duration-300 drop-shadow-lg">
                       {product.name}
                     </h3>
-                    
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm drop-shadow-md">
-                      {product.description}
-                    </p>
-
-                    {/* Features with 3D Icons */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-white mb-2 drop-shadow-md">{isArabic ? 'مميزات أساسية:' : 'Key Features:'}</h4>
-                      <ul className="space-y-1">
-                        {product.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-white/90">
-                            <div className="w-4 h-4 bg-teal-500 rounded-full mr-2 flex-shrink-0 group-hover:animate-pulse shadow-md"></div>
-                            <span className="drop-shadow-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Rating with 3D Stars */}
-                    <div className="flex items-center mb-4">
-                      <div className="flex space-x-1">
-                        {[...Array(5)].map((_, i) => (
-                          <div 
-                            key={i} 
-                            className="w-4 h-4 text-yellow-400 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 drop-shadow-md"
-                            style={{ transitionDelay: `${i * 100}ms` }}
-                          >
-                            ⭐
-                          </div>
-                        ))}
-                      </div>
-                      <span className="text-sm text-white/90 ml-2 drop-shadow-sm">
-                        ({product.reviews} {isArabic ? 'مراجعة' : 'reviews'})
-                      </span>
-                    </div>
 
                     {/* Price and Action */}
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-2xl font-bold text-teal-300 group-hover:text-teal-200 transition-colors duration-300 drop-shadow-lg">
+                        <span className="text-3xl font-bold text-teal-300 group-hover:text-teal-200 transition-colors duration-300 drop-shadow-lg">
                           {product.price}
                         </span>
                       </div>
